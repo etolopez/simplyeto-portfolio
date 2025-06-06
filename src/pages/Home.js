@@ -1,37 +1,12 @@
-import React, { useMemo, useState } from 'react';
-import { Box, Container, Typography, Button, IconButton, Modal, TextField, Grid } from '@mui/material';
+import React, { useMemo } from 'react';
+import { Box, Container, Typography, Button } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import TwitterIcon from '@mui/icons-material/Twitter';
-import CloseIcon from '@mui/icons-material/Close';
 import Gallery from '../components/Gallery';
-import ProfileImage from '../components/ProfileImage';
 
 const Home = () => {
-  const [contactOpen, setContactOpen] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-
-  const handleContactOpen = () => setContactOpen(true);
-  const handleContactClose = () => setContactOpen(false);
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-  };
-
   // Helper function to shuffle array
   const shuffleArray = (array) => {
     const newArray = [...array];
@@ -119,203 +94,129 @@ const Home = () => {
     return shuffleArray(allPhotographyItems).slice(0, 6);
   }, []);
 
-  // Art items (6 items total)
-  const artItems = useMemo(() => {
-    const allImages = [
-      { type: 'image', src: '/images/art/FINAL.png', ratio: 1 },
-      { type: 'image', src: '/images/art/HEGEEME.jpg', ratio: 1 },
-      { type: 'image', src: '/images/art/DSC03300 (1).jpg', ratio: 1 },
-      { type: 'image', src: '/images/art/Carne\'Gato.png', ratio: 1 },
-      { type: 'image', src: '/images/art/Untitled_Artwork 92.png', ratio: 1 },
-      { type: 'image', src: '/images/art/AZ.png', ratio: 1 },
-      { type: 'image', src: '/images/art/A_Long_Way_Home.jpg', ratio: 1 },
-      { type: 'image', src: '/images/art/Copos.png', ratio: 1 },
-      { type: 'image', src: '/images/art/Fly.jpg', ratio: 1 },
-      { type: 'image', src: '/images/art/IMG_2653.png', ratio: 1 },
-      { type: 'image', src: '/images/art/Mugennight (1).png', ratio: 1 },
-      { type: 'image', src: '/images/art/Sidewalk.png', ratio: 1 },
-      { type: 'image', src: '/images/art/THe Power of Balance.jpg', ratio: 1 },
-      { type: 'image', src: '/images/art/The_Wiz.png', ratio: 1 },
-      { type: 'image', src: '/images/art/Traveler.png', ratio: 1 }
-    ];
-    const allVideos = [
-      { type: 'video', src: '/images/art/Staccino\'s (1).mp4', ratio: 1 },
-      { type: 'video', src: '/images/art/Balloon2.mp4', ratio: 1 }
-    ];
-    return shuffleArray([...allImages, ...allVideos]).slice(0, 6);
-  }, []);
-
   return (
     <Box
       sx={{
         minHeight: '100vh',
         backgroundColor: 'black',
         color: 'white',
-        pt: { xs: 8, md: 10 },
-        pb: 8,
+        position: 'relative',
+        overflow: 'hidden'
       }}
     >
-      <ProfileImage />
-      <Container maxWidth="lg">
-        <Typography
-          variant="h2"
-          component="h1"
-          sx={{
-            textAlign: 'center',
-            mb: 6,
-            fontSize: { xs: '2.5rem', md: '3.5rem' },
-            fontWeight: 'bold',
-            background: 'linear-gradient(45deg, #FF6B6B, #4ECDC4)',
-            backgroundClip: 'text',
-            textFillColor: 'transparent',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-          }}
+      {/* Hero Video Background */}
+      <Box
+        sx={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          zIndex: 0,
+          '& video': {
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover'
+          }
+        }}
+      >
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
         >
-          Welcome to My Portfolio
-        </Typography>
+          <source src="/videos/hero.mp4" type="video/mp4" />
+        </video>
+      </Box>
 
-        {/* Photography Section */}
-        <Box sx={{ mb: 8 }}>
-          <Typography
-            variant="h3"
+      {/* Content Overlay */}
+      <Box
+        sx={{
+          position: 'relative',
+          zIndex: 1,
+          minHeight: '100vh',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          backgroundColor: 'rgba(0, 0, 0, 0.5)',
+          pt: { xs: 8, md: 10 },
+          pb: 8,
+        }}
+      >
+        <Container maxWidth="lg">
+          {/* Social Media Buttons */}
+          <Box
             sx={{
-              color: 'white',
-              mb: 4,
-              fontSize: { xs: '2rem', md: '2.5rem' },
+              display: 'flex',
+              justifyContent: 'center',
+              gap: 2,
+              mb: 4
             }}
           >
-            Photography
-          </Typography>
-          <Gallery items={photographyItems} type="photography" />
-        </Box>
+            <Button
+              component="a"
+              href="https://instagram.com/simplyeto"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                color: 'white',
+                '&:hover': {
+                  backgroundColor: 'rgba(255, 255, 255, 0.1)'
+                }
+              }}
+            >
+              <InstagramIcon sx={{ fontSize: 40 }} />
+            </Button>
+            <Button
+              component="a"
+              href="https://youtube.com/@simplyeto"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                color: 'white',
+                '&:hover': {
+                  backgroundColor: 'rgba(255, 255, 255, 0.1)'
+                }
+              }}
+            >
+              <YouTubeIcon sx={{ fontSize: 40 }} />
+            </Button>
+            <Button
+              component="a"
+              href="https://twitter.com/simplyeto"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                color: 'white',
+                '&:hover': {
+                  backgroundColor: 'rgba(255, 255, 255, 0.1)'
+                }
+              }}
+            >
+              <TwitterIcon sx={{ fontSize: 40 }} />
+            </Button>
+          </Box>
 
-        {/* Contact Form */}
-        <Box
-          component="form"
-          onSubmit={handleSubmit}
-          sx={{
-            maxWidth: '600px',
-            mx: 'auto',
-            p: 4,
-            borderRadius: 2,
-            backgroundColor: 'rgba(255, 255, 255, 0.05)',
-          }}
-        >
-          <Typography
-            variant="h4"
-            sx={{
-              mb: 4,
-              textAlign: 'center',
-              color: 'white',
-            }}
-          >
-            Contact Me
-          </Typography>
-          <Grid container spacing={3}>
-            <Grid item xs={12}>
-              <TextField
-                fullWidth
-                label="Name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                sx={{
-                  '& .MuiOutlinedInput-root': {
-                    color: 'white',
-                    '& fieldset': {
-                      borderColor: 'rgba(255, 255, 255, 0.23)',
-                    },
-                    '&:hover fieldset': {
-                      borderColor: 'rgba(255, 255, 255, 0.5)',
-                    },
-                    '&.Mui-focused fieldset': {
-                      borderColor: '#4ECDC4',
-                    },
-                  },
-                  '& .MuiInputLabel-root': {
-                    color: 'rgba(255, 255, 255, 0.7)',
-                  },
-                }}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                fullWidth
-                label="Email"
-                name="email"
-                type="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                sx={{
-                  '& .MuiOutlinedInput-root': {
-                    color: 'white',
-                    '& fieldset': {
-                      borderColor: 'rgba(255, 255, 255, 0.23)',
-                    },
-                    '&:hover fieldset': {
-                      borderColor: 'rgba(255, 255, 255, 0.5)',
-                    },
-                    '&.Mui-focused fieldset': {
-                      borderColor: '#4ECDC4',
-                    },
-                  },
-                  '& .MuiInputLabel-root': {
-                    color: 'rgba(255, 255, 255, 0.7)',
-                  },
-                }}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                fullWidth
-                label="Message"
-                name="message"
-                multiline
-                rows={4}
-                value={formData.message}
-                onChange={handleChange}
-                required
-                sx={{
-                  '& .MuiOutlinedInput-root': {
-                    color: 'white',
-                    '& fieldset': {
-                      borderColor: 'rgba(255, 255, 255, 0.23)',
-                    },
-                    '&:hover fieldset': {
-                      borderColor: 'rgba(255, 255, 255, 0.5)',
-                    },
-                    '&.Mui-focused fieldset': {
-                      borderColor: '#4ECDC4',
-                    },
-                  },
-                  '& .MuiInputLabel-root': {
-                    color: 'rgba(255, 255, 255, 0.7)',
-                  },
-                }}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <Button
-                type="submit"
-                variant="contained"
-                fullWidth
-                sx={{
-                  py: 1.5,
-                  backgroundColor: '#4ECDC4',
-                  '&:hover': {
-                    backgroundColor: '#45b7af',
-                  },
-                }}
-              >
-                Send Message
-              </Button>
-            </Grid>
-          </Grid>
-        </Box>
-      </Container>
+          {/* Photography Section */}
+          <Box sx={{ mb: 8 }}>
+            <Typography
+              variant="h3"
+              sx={{
+                color: 'white',
+                mb: 4,
+                fontSize: { xs: '2rem', md: '2.5rem' },
+                textAlign: 'center'
+              }}
+            >
+              Photography
+            </Typography>
+            <Gallery items={photographyItems} type="photography" />
+          </Box>
+        </Container>
+      </Box>
     </Box>
   );
 };

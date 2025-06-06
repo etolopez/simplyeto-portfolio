@@ -62,7 +62,7 @@ const Store = () => {
             zIndex: 0,
           }}
         >
-          <source src="images/art/Lamp Lofi2.mp4" type="video/mp4" />
+          <source src="/videos/Lamp Lofi2.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </Box>
         
