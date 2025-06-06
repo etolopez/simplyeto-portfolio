@@ -2,6 +2,7 @@ import React, { useMemo, useState } from 'react';
 import { Box, Container, Typography, Button, Modal, TextField, Grid } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 import Gallery from '../components/Gallery';
+import VideoGrid from '../components/VideoGrid';
 
 const Home = () => {
   const [contactOpen, setContactOpen] = useState(false);
@@ -198,29 +199,13 @@ const Home = () => {
                 },
               }}
             >
-              Contact Me
-            </Button>
-            <Button
-              component="a"
-              href="https://calendly.com/lightsaint/coffee-chat"
-              target="_blank"
-              rel="noopener noreferrer"
-              variant="contained"
-              size="large"
-              sx={{
-                backgroundColor: 'rgba(255, 255, 255, 0.2)',
-                backdropFilter: 'blur(8px)',
-                border: '1px solid rgba(255, 255, 255, 0.3)',
-                '&:hover': {
-                  backgroundColor: 'rgba(255, 255, 255, 0.3)',
-                },
-              }}
-            >
-              Book a Call
+              Contact
             </Button>
           </Box>
         </Container>
       </Box>
+
+      <VideoGrid />
 
       {/* Gallery Sections */}
       <Container maxWidth="lg" sx={{ py: 8 }}>
