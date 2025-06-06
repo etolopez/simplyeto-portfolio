@@ -1,24 +1,24 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# dependencies
+# Dependencies
 /node_modules
 /.pnp
 .pnp.js
 
-# testing
+# Testing
 /coverage
 
-# production
+# Production
 /build
 
-# misc
-.DS_Store
+# Environment variables
 .env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
@@ -38,22 +38,11 @@ yarn-error.log*
 ehthumbs.db
 Thumbs.db
 
-<<<<<<< HEAD
-# Large video files
-public/videos/*.mp4
-public/images/art/*.mp4
+# Google Cloud handled files
+public/videos/*
+public/images/*
 
-# Large image files
-public/images_backup/*.png
-public/images_backup/*.jpg
-public/images_backup/*.jpeg
-
-=======
->>>>>>> 1db8154e96ab550ce38feb89f6b88ff805732bf0
 # Large media files
-public/images/art/*.mp4
-public/videos/
-public/images_backup/
 *.mp4
 *.mov
 *.avi
@@ -62,20 +51,5 @@ public/images_backup/
 *.mkv
 *.webm
 
-<<<<<<< HEAD
-# Large video files
-public/videos/FromNaraNoMusic.mp4
-public/videos/render.mp4
-public/videos/Solana Block Zero FINAL.mp4
-public/videos/Wetiko Short.mp4
-public/videos/day5IG.mp4
-
+# Vercel
 .vercel
-
-# Google Cloud handled files
-public/videos/
-public/images/art/
-public/images_backup/
-=======
-.vercel
->>>>>>> 1db8154e96ab550ce38feb89f6b88ff805732bf0

@@ -1,157 +1,88 @@
-<<<<<<< HEAD
-import React, { useState, useMemo } from 'react';
-import { Box, Container, Typography, IconButton, Dialog, DialogContent } from '@mui/material';
-import ProfileImage from '../components/ProfileImage';
-import Gallery from '../components/Gallery';
-=======
 import React, { useState } from 'react';
-import { Box, Container, Typography, IconButton } from '@mui/material';
-import Gallery from '../components/Gallery';
+import { Box, Container, Typography, IconButton, Dialog, DialogContent } from '@mui/material';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import CloseIcon from '@mui/icons-material/Close';
 import ProfileImage from '../components/ProfileImage';
->>>>>>> 1db8154e96ab550ce38feb89f6b88ff805732bf0
-import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 const Videos = () => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
-<<<<<<< HEAD
-  const [selectedVideo, setSelectedVideo] = useState(null);
   const [isPlayerOpen, setIsPlayerOpen] = useState(false);
 
-  // Local video items with correct aspect ratios
-  const videoItems = useMemo(() => {
-    const mainVideos = [
-      { 
-        type: 'video', 
-        src: '/videos/Wetiko Short.mp4',
-        alt: 'Wetiko Short',
-        ratio: 16/9  // Landscape video
-      },
-      { 
-        type: 'video', 
-        src: '/videos/Solana Block Zero FINAL.mp4',
-        alt: 'Solana Block Zero',
-        ratio: 16/9  // Landscape video
-      },
-      { 
-        type: 'video', 
-        src: '/videos/day5IG.mp4',
-        alt: 'Day 5',
-        ratio: 9/16  // Vertical video
-      },
-      { 
-        type: 'video', 
-        src: '/videos/FromNaraNoMusic.mp4',
-        alt: 'From Nara',
-        ratio: 9/16  // Vertical video
-      },
-      { 
-        type: 'video', 
-        src: '/videos/render.mp4',
-        alt: 'Render',
-        ratio: 9/16  // Vertical video
-      },
-      { 
-        type: 'video', 
-        src: '/videos/xDgG4vXH26O7AAMw.mp4',
-        alt: 'Project X',
-        ratio: 16/9  // Landscape video
-      },
-      { 
-        type: 'video', 
-        src: '/videos/7ZWylAuSEnmkjdZD.mp4',
-        alt: 'Project 7Z',
-        ratio: 16/9  // Landscape video
-      }
-    ];
-    return mainVideos;
-  }, []);
-=======
-
-  const videoItems = [
-    {
-      type: 'video',
-      src: '/videos/Wetiko Short.mp4',
-      alt: 'Wetiko Short'
-    },
-    {
-      type: 'video',
-      src: '/videos/Solana Block Zero FINAL.mp4',
-      alt: 'Solana Block Zero'
-    },
-    {
-      type: 'video',
-      src: '/videos/day5IG.mp4',
-      alt: 'Day 5'
-    },
-    {
-      type: 'video',
-      src: '/videos/FromNaraNoMusic.mp4',
-      alt: 'From Nara'
-    },
-    {
-      type: 'video',
-      src: '/videos/render.mp4',
-      alt: 'Render'
-    },
-    {
-      type: 'video',
-      src: '/videos/xDgG4vXH26O7AAMw.mp4',
-      alt: 'Project X'
-    },
-    {
-      type: 'video',
-      src: '/videos/7ZWylAuSEnmkjdZD.mp4',
-      alt: 'Project 7Z'
-    }
-  ];
->>>>>>> 1db8154e96ab550ce38feb89f6b88ff805732bf0
-
-  const youtubeVideos = [
-    {
-      type: 'youtube',
-      id: 'ZaL2ejDOzys',
-      title: 'YouTube Video 1'
-    },
-    {
-      type: 'youtube',
-      id: 'NeIIBdjSJwU',
-      title: 'YouTube Video 2'
-    },
-    {
-      type: 'youtube',
-      id: 'mSu5ppXhlME',
-      title: 'YouTube Video 3'
-    }
-  ];
-
-  const handlePrevVideo = () => {
-    setCurrentVideoIndex((prevIndex) => 
-      prevIndex === 0 ? youtubeVideos.length - 1 : prevIndex - 1
-    );
-  };
-
-  const handleNextVideo = () => {
-    setCurrentVideoIndex((prevIndex) => 
-      prevIndex === youtubeVideos.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-<<<<<<< HEAD
-  const handleVideoClick = (item) => {
-    if (item.type === 'video') {
-      setSelectedVideo(item);
-      setIsPlayerOpen(true);
-    }
+  const handleVideoClick = (index) => {
+    setCurrentVideoIndex(index);
+    setIsPlayerOpen(true);
   };
 
   const handleClosePlayer = () => {
     setIsPlayerOpen(false);
-    setSelectedVideo(null);
   };
 
-=======
->>>>>>> 1db8154e96ab550ce38feb89f6b88ff805732bf0
+  const handleNextVideo = () => {
+    setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % videoItems.length);
+  };
+
+  const handlePrevVideo = () => {
+    setCurrentVideoIndex((prevIndex) => (prevIndex - 1 + videoItems.length) % videoItems.length);
+  };
+
+  const videoItems = [
+    { 
+      type: 'video', 
+      src: '/videos/Wetiko Short.mp4',
+      alt: 'Wetiko Short',
+      ratio: 16/9
+    },
+    { 
+      type: 'video', 
+      src: '/videos/Solana Block Zero FINAL.mp4',
+      alt: 'Solana Block Zero',
+      ratio: 16/9
+    },
+    { 
+      type: 'video', 
+      src: '/videos/day5IG.mp4',
+      alt: 'Day 5',
+      ratio: 16/9
+    },
+    { 
+      type: 'video', 
+      src: '/videos/FromNaraNoMusic.mp4',
+      alt: 'From Nara',
+      ratio: 16/9
+    },
+    { 
+      type: 'video', 
+      src: '/videos/render.mp4',
+      alt: 'Render',
+      ratio: 16/9
+    },
+    { 
+      type: 'video', 
+      src: '/videos/xDgG4vXH26O7AAMw.mp4',
+      alt: 'Project X',
+      ratio: 16/9
+    },
+    { 
+      type: 'video', 
+      src: '/videos/7ZWylAuSEnmkjdZD.mp4',
+      alt: 'Project 7Z',
+      ratio: 16/9
+    }
+  ];
+
+  const youtubeVideos = [
+    {
+      type: 'youtube',
+      id: 'dQw4w9WgXcQ',
+      alt: 'YouTube Video 1'
+    },
+    {
+      type: 'youtube',
+      id: 'dQw4w9WgXcQ',
+      alt: 'YouTube Video 2'
+    }
+  ];
+
   return (
     <Box
       sx={{
@@ -179,100 +110,148 @@ const Videos = () => {
             WebkitTextFillColor: 'transparent',
           }}
         >
-          Video Collection
+          Video Gallery
         </Typography>
-<<<<<<< HEAD
 
-        {/* Videos Section */}
+        {/* Local Videos */}
         <Box sx={{ mb: 8 }}>
-          <Gallery 
-            items={videoItems} 
-            type="videos" 
-            onItemClick={handleVideoClick}
-          />
-        </Box>
-=======
-        <Gallery items={videoItems} type="videos" />
->>>>>>> 1db8154e96ab550ce38feb89f6b88ff805732bf0
-        
-        {/* YouTube Videos Carousel */}
-        <Box sx={{ mt: 8, position: 'relative' }}>
           <Typography
-            variant="h4"
+            variant="h3"
             sx={{
-              textAlign: 'center',
+              color: 'white',
               mb: 4,
-              fontWeight: 'bold',
-              background: 'linear-gradient(45deg, #FF6B6B, #4ECDC4)',
-              backgroundClip: 'text',
-              textFillColor: 'transparent',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
+              fontSize: { xs: '2rem', md: '2.5rem' },
+            }}
+          >
+            Local Videos
+          </Typography>
+          <Box
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: {
+                xs: '1fr',
+                sm: 'repeat(2, 1fr)',
+                md: 'repeat(3, 1fr)',
+              },
+              gap: 2,
+            }}
+          >
+            {videoItems.map((item, index) => (
+              <Box
+                key={index}
+                onClick={() => handleVideoClick(index)}
+                sx={{
+                  position: 'relative',
+                  cursor: 'pointer',
+                  '&:hover .play-button': {
+                    opacity: 1,
+                  },
+                  '&:hover .video-preview': {
+                    transform: 'scale(1.02)',
+                  },
+                }}
+              >
+                <Box
+                  sx={{
+                    position: 'relative',
+                    width: '100%',
+                    paddingTop: '56.25%',
+                    overflow: 'hidden',
+                    borderRadius: '8px',
+                  }}
+                >
+                  <video
+                    className="video-preview"
+                    src={item.src}
+                    style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      transition: 'transform 0.3s ease',
+                    }}
+                    preload="metadata"
+                    controlsList="nodownload"
+                    disablePictureInPicture
+                    controls={false}
+                  />
+                  <Box
+                    className="play-button"
+                    sx={{
+                      position: 'absolute',
+                      top: '50%',
+                      left: '50%',
+                      transform: 'translate(-50%, -50%)',
+                      color: 'white',
+                      opacity: 0.7,
+                      transition: 'opacity 0.3s ease',
+                      '&:hover': {
+                        opacity: 1,
+                      },
+                    }}
+                  >
+                    <PlayArrowIcon sx={{ fontSize: 60 }} />
+                  </Box>
+                </Box>
+              </Box>
+            ))}
+          </Box>
+        </Box>
+
+        {/* YouTube Videos */}
+        <Box>
+          <Typography
+            variant="h3"
+            sx={{
+              color: 'white',
+              mb: 4,
+              fontSize: { xs: '2rem', md: '2.5rem' },
             }}
           >
             YouTube Videos
           </Typography>
-          <Box sx={{ position: 'relative', width: '100%', maxWidth: '800px', mx: 'auto' }}>
-            <Box
-              sx={{
-                position: 'relative',
-                paddingTop: '56.25%', // 16:9 aspect ratio
-                width: '100%',
-                overflow: 'hidden',
-                borderRadius: '8px',
-                boxShadow: '0 4px 20px rgba(0,0,0,0.2)',
-              }}
-            >
-              <iframe
-                src={`https://www.youtube.com/embed/${youtubeVideos[currentVideoIndex].id}`}
-                title={youtubeVideos[currentVideoIndex].title}
-                style={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
+          <Box
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: {
+                xs: '1fr',
+                sm: 'repeat(2, 1fr)',
+                md: 'repeat(3, 1fr)',
+              },
+              gap: 2,
+            }}
+          >
+            {youtubeVideos.map((item, index) => (
+              <Box
+                key={index}
+                sx={{
+                  position: 'relative',
                   width: '100%',
-                  height: '100%',
-                  border: 'none',
+                  paddingTop: '56.25%',
+                  overflow: 'hidden',
+                  borderRadius: '8px',
                 }}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            </Box>
-            <IconButton
-              onClick={handlePrevVideo}
-              sx={{
-                position: 'absolute',
-                left: -60,
-                top: '50%',
-                transform: 'translateY(-50%)',
-                color: 'white',
-                backgroundColor: 'rgba(0,0,0,0.5)',
-                '&:hover': {
-                  backgroundColor: 'rgba(0,0,0,0.7)',
-                },
-              }}
-            >
-              <ArrowBackIosNewIcon />
-            </IconButton>
-            <IconButton
-              onClick={handleNextVideo}
-              sx={{
-                position: 'absolute',
-                right: -60,
-                top: '50%',
-                transform: 'translateY(-50%)',
-                color: 'white',
-                backgroundColor: 'rgba(0,0,0,0.5)',
-                '&:hover': {
-                  backgroundColor: 'rgba(0,0,0,0.7)',
-                },
-              }}
-            >
-              <ArrowForwardIosIcon />
-            </IconButton>
+              >
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src={`https://www.youtube.com/embed/${item.id}`}
+                  title={item.alt}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                  }}
+                />
+              </Box>
+            ))}
           </Box>
         </Box>
-<<<<<<< HEAD
 
         {/* Video Player Dialog */}
         <Dialog
@@ -289,12 +268,14 @@ const Videos = () => {
           }}
         >
           <DialogContent sx={{ p: 0 }}>
-            {selectedVideo && (
-              <Box sx={{ width: '100%', aspectRatio: selectedVideo.ratio }}>
+            {videoItems[currentVideoIndex] && (
+              <Box sx={{ width: '100%', aspectRatio: videoItems[currentVideoIndex].ratio }}>
                 <video
                   controls
                   style={{ width: '100%', height: '100%', objectFit: 'contain' }}
-                  src={selectedVideo.src}
+                  src={videoItems[currentVideoIndex].src}
+                  controlsList="nodownload"
+                  disablePictureInPicture
                 >
                   Your browser does not support the video tag.
                 </video>
@@ -302,8 +283,6 @@ const Videos = () => {
             )}
           </DialogContent>
         </Dialog>
-=======
->>>>>>> 1db8154e96ab550ce38feb89f6b88ff805732bf0
       </Container>
     </Box>
   );
