@@ -24,15 +24,15 @@ const Videos = () => {
   const youtubeVideos = [
     {
       title: 'Lofi Hip Hop Mix - Beats to Relax/Study',
-      embedUrl: 'https://www.youtube.com/embed/jfKfPfyJRdk'
+      embedUrl: 'https://www.youtube.com/embed/ZaL2ejDOzys'
     },
     {
       title: 'Chillhop Radio - jazzy & lofi hip hop beats',
-      embedUrl: 'https://www.youtube.com/embed/5yx6BWlEVcY'
+      embedUrl: 'https://www.youtube.com/embed/mSu5ppXhlME'
     },
     {
       title: 'lofi hip hop radio - beats to relax/study to',
-      embedUrl: 'https://www.youtube.com/embed/rUxyA-vcutM'
+      embedUrl: 'https://www.youtube.com/embed/8SzF3NgDUWY'
     }
   ];
 

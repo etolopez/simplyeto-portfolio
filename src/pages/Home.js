@@ -38,6 +38,28 @@ const Home = () => {
     return newArray;
   };
 
+  // Get random hero image from art collection
+  const heroImage = useMemo(() => {
+    const artImages = [
+      '/images/art/FINAL.png',
+      '/images/art/HEGEEME.jpg',
+      '/images/art/DSC03300 (1).jpg',
+      '/images/art/Carne\'Gato.png',
+      '/images/art/Untitled_Artwork 92.png',
+      '/images/art/AZ.png',
+      '/images/art/A_Long_Way_Home.jpg',
+      '/images/art/Copos.png',
+      '/images/art/Fly.jpg',
+      '/images/art/IMG_2653.png',
+      '/images/art/Mugennight (1).png',
+      '/images/art/Sidewalk.png',
+      '/images/art/THe Power of Balance.jpg',
+      '/images/art/The_Wiz.png',
+      '/images/art/Traveler.png'
+    ];
+    return shuffleArray(artImages)[0];
+  }, []);
+
   // Photography items (6 items total)
   const photographyItems = useMemo(() => {
     const allPhotographyItems = [
@@ -163,7 +185,7 @@ const Home = () => {
         {/* Hero Image */}
         <Box
           component="img"
-          src="/images/hero.jpg"
+          src={heroImage}
           alt="Hero"
           sx={{
             position: 'absolute',
@@ -215,7 +237,7 @@ const Home = () => {
             </Button>
             <Button
               component="a"
-              href="https://calendly.com/simplyeto"
+              href="https://calendly.com/lightsaint/coffee-chat"
               target="_blank"
               rel="noopener noreferrer"
               variant="contained"
