@@ -292,6 +292,66 @@ const Home = () => {
         </Box>
       </Container>
 
+      {/* Social Links */}
+      <Box
+        sx={{
+          position: 'fixed',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          py: 2,
+          backgroundColor: 'rgba(0, 0, 0, 0.8)',
+          backdropFilter: 'blur(8px)',
+          display: 'flex',
+          justifyContent: 'center',
+          gap: 3,
+          zIndex: 1000,
+        }}
+      >
+        <Button
+          component="a"
+          href="https://www.instagram.com/simplyeto"
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{
+            color: 'white',
+            '&:hover': {
+              backgroundColor: 'rgba(255, 255, 255, 0.1)',
+            },
+          }}
+        >
+          Instagram
+        </Button>
+        <Button
+          component="a"
+          href="https://twitter.com/simplyeto"
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{
+            color: 'white',
+            '&:hover': {
+              backgroundColor: 'rgba(255, 255, 255, 0.1)',
+            },
+          }}
+        >
+          X
+        </Button>
+        <Button
+          component="a"
+          href="https://www.youtube.com/@simplyeto"
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{
+            color: 'white',
+            '&:hover': {
+              backgroundColor: 'rgba(255, 255, 255, 0.1)',
+            },
+          }}
+        >
+          YouTube
+        </Button>
+      </Box>
+
       {/* Contact Modal */}
       <Modal
         open={contactOpen}

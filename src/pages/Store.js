@@ -38,33 +38,28 @@ const Store = () => {
       {/* Hero Section */}
       <Box
         sx={{
+          position: 'relative',
+          width: '100%',
           height: '100vh',
+          overflow: 'hidden',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          position: 'relative',
-          overflow: 'hidden',
-          backgroundColor: '#000',
         }}
       >
+        {/* Static Background Image */}
         <Box
-          component="video"
-          autoPlay
-          muted
-          loop
-          playsInline
+          component="img"
+          src="/images/art/FINAL.png"
+          alt="Background"
           sx={{
             position: 'absolute',
             width: '100%',
             height: '100%',
             objectFit: 'cover',
-            filter: 'brightness(0.7)',
-            zIndex: 0,
+            filter: 'brightness(0.3)',
           }}
-        >
-          <source src="/videos/Lamp Lofi2.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </Box>
+        />
         
         <Container maxWidth="md" sx={{ position: 'relative', zIndex: 1 }}>
           <Typography
