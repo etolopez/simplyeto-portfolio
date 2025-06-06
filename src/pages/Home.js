@@ -32,6 +32,16 @@ const Home = () => {
     console.log('Form submitted:', formData);
   };
 
+  // Helper function to shuffle array
+  const shuffleArray = (array) => {
+    const newArray = [...array];
+    for (let i = newArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    }
+    return newArray;
+  };
+
   // Photography items (6 items total)
   const photographyItems = useMemo(() => {
     const allPhotographyItems = [
@@ -134,16 +144,6 @@ const Home = () => {
     ];
     return shuffleArray([...allImages, ...allVideos]).slice(0, 6);
   }, []);
-
-  // Helper function to shuffle array
-  const shuffleArray = (array) => {
-    const newArray = [...array];
-    for (let i = newArray.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
-    }
-    return newArray;
-  };
 
   return (
     <Box
