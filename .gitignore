@@ -50,4 +50,11 @@ public/images_backup/
 *.mkv
 *.webm
 
+# Large video files
+public/videos/FromNaraNoMusic.mp4
+public/videos/render.mp4
+public/videos/Solana Block Zero FINAL.mp4
+public/videos/Wetiko Short.mp4
+public/videos/day5IG.mp4
+
 .vercel
