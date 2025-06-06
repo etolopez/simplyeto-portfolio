@@ -38,6 +38,15 @@ yarn-error.log*
 ehthumbs.db
 Thumbs.db
 
+# Large video files
+public/videos/*.mp4
+public/images/art/*.mp4
+
+# Large image files
+public/images_backup/*.png
+public/images_backup/*.jpg
+public/images_backup/*.jpeg
+
 # Large media files
 public/images/art/*.mp4
 public/videos/
@@ -58,3 +67,8 @@ public/videos/Wetiko Short.mp4
 public/videos/day5IG.mp4
 
 .vercel
+
+# Google Cloud handled files
+public/videos/
+public/images/art/
+public/images_backup/
