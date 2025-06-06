@@ -1,9 +1,15 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import { Box, Container, Typography, Dialog, DialogContent } from '@mui/material';
+=======
+import React from 'react';
+import { Box, Container, Typography } from '@mui/material';
+>>>>>>> 1db8154e96ab550ce38feb89f6b88ff805732bf0
 import Gallery from '../components/Gallery';
 import ProfileImage from '../components/ProfileImage';
 
 const Art = () => {
+<<<<<<< HEAD
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [isPlayerOpen, setIsPlayerOpen] = useState(false);
 
@@ -19,6 +25,8 @@ const Art = () => {
     setSelectedVideo(null);
   };
 
+=======
+>>>>>>> 1db8154e96ab550ce38feb89f6b88ff805732bf0
   const artItems = [
     // Images
     {
@@ -38,6 +46,14 @@ const Art = () => {
     },
     {
       type: 'image',
+<<<<<<< HEAD
+=======
+      src: '/images/art/DSC06360.png',
+      alt: 'Art 4'
+    },
+    {
+      type: 'image',
+>>>>>>> 1db8154e96ab550ce38feb89f6b88ff805732bf0
       src: '/images/art/Carne\'Gato.png',
       alt: 'Art 5'
     },
@@ -156,56 +172,92 @@ const Art = () => {
     {
       type: 'video',
       src: '/images/art/Staccino\'s (1).mp4',
+<<<<<<< HEAD
       alt: 'Staccino\'s',
       ratio: 1  // Square video
+=======
+      alt: 'Staccino\'s'
+>>>>>>> 1db8154e96ab550ce38feb89f6b88ff805732bf0
     },
     {
       type: 'video',
       src: '/images/art/Balloon2.mp4',
+<<<<<<< HEAD
       alt: 'Balloon',
       ratio: 1  // Square video
+=======
+      alt: 'Balloon'
+>>>>>>> 1db8154e96ab550ce38feb89f6b88ff805732bf0
     },
     {
       type: 'video',
       src: '/images/art/LoFront8 (1).mp4',
+<<<<<<< HEAD
       alt: 'LoFront',
       ratio: 1  // Square video
+=======
+      alt: 'LoFront'
+>>>>>>> 1db8154e96ab550ce38feb89f6b88ff805732bf0
     },
     {
       type: 'video',
       src: '/images/art/LofiSamu.mp4',
+<<<<<<< HEAD
       alt: 'Lofi Samu',
       ratio: 1  // Square video
+=======
+      alt: 'Lofi Samu'
+>>>>>>> 1db8154e96ab550ce38feb89f6b88ff805732bf0
     },
     {
       type: 'video',
       src: '/images/art/Lofi Desert.mp4',
+<<<<<<< HEAD
       alt: 'Lofi Desert',
       ratio: 1  // Square video
+=======
+      alt: 'Lofi Desert'
+>>>>>>> 1db8154e96ab550ce38feb89f6b88ff805732bf0
     },
     {
       type: 'video',
       src: '/images/art/Lofi Games2.mp4',
+<<<<<<< HEAD
       alt: 'Lofi Games',
       ratio: 1  // Square video
+=======
+      alt: 'Lofi Games'
+>>>>>>> 1db8154e96ab550ce38feb89f6b88ff805732bf0
     },
     {
       type: 'video',
       src: '/images/art/Lamp Lofi2.mp4',
+<<<<<<< HEAD
       alt: 'Lamp Lofi',
       ratio: 1  // Square video
+=======
+      alt: 'Lamp Lofi'
+>>>>>>> 1db8154e96ab550ce38feb89f6b88ff805732bf0
     },
     {
       type: 'video',
       src: '/images/art/LoSwamp.mp4',
+<<<<<<< HEAD
       alt: 'LoSwamp',
       ratio: 1  // Square video
+=======
+      alt: 'LoSwamp'
+>>>>>>> 1db8154e96ab550ce38feb89f6b88ff805732bf0
     },
     {
       type: 'video',
       src: '/images/art/TotoroFinal2.mp4',
+<<<<<<< HEAD
       alt: 'Totoro',
       ratio: 1  // Square video
+=======
+      alt: 'Totoro'
+>>>>>>> 1db8154e96ab550ce38feb89f6b88ff805732bf0
     }
   ];
 
@@ -236,6 +288,7 @@ const Art = () => {
             WebkitTextFillColor: 'transparent',
           }}
         >
+<<<<<<< HEAD
           Art Gallery
         </Typography>
 
@@ -273,6 +326,11 @@ const Art = () => {
             )}
           </DialogContent>
         </Dialog>
+=======
+          Art Collection
+        </Typography>
+        <Gallery items={artItems} type="art" />
+>>>>>>> 1db8154e96ab550ce38feb89f6b88ff805732bf0
       </Container>
     </Box>
   );

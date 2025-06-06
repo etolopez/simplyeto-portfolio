@@ -1,12 +1,20 @@
+<<<<<<< HEAD
 import React, { useState, useMemo } from 'react';
 import { Box, Container, Typography, IconButton, Dialog, DialogContent } from '@mui/material';
 import ProfileImage from '../components/ProfileImage';
 import Gallery from '../components/Gallery';
+=======
+import React, { useState } from 'react';
+import { Box, Container, Typography, IconButton } from '@mui/material';
+import Gallery from '../components/Gallery';
+import ProfileImage from '../components/ProfileImage';
+>>>>>>> 1db8154e96ab550ce38feb89f6b88ff805732bf0
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 const Videos = () => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+<<<<<<< HEAD
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [isPlayerOpen, setIsPlayerOpen] = useState(false);
 
@@ -58,6 +66,46 @@ const Videos = () => {
     ];
     return mainVideos;
   }, []);
+=======
+
+  const videoItems = [
+    {
+      type: 'video',
+      src: '/videos/Wetiko Short.mp4',
+      alt: 'Wetiko Short'
+    },
+    {
+      type: 'video',
+      src: '/videos/Solana Block Zero FINAL.mp4',
+      alt: 'Solana Block Zero'
+    },
+    {
+      type: 'video',
+      src: '/videos/day5IG.mp4',
+      alt: 'Day 5'
+    },
+    {
+      type: 'video',
+      src: '/videos/FromNaraNoMusic.mp4',
+      alt: 'From Nara'
+    },
+    {
+      type: 'video',
+      src: '/videos/render.mp4',
+      alt: 'Render'
+    },
+    {
+      type: 'video',
+      src: '/videos/xDgG4vXH26O7AAMw.mp4',
+      alt: 'Project X'
+    },
+    {
+      type: 'video',
+      src: '/videos/7ZWylAuSEnmkjdZD.mp4',
+      alt: 'Project 7Z'
+    }
+  ];
+>>>>>>> 1db8154e96ab550ce38feb89f6b88ff805732bf0
 
   const youtubeVideos = [
     {
@@ -89,6 +137,7 @@ const Videos = () => {
     );
   };
 
+<<<<<<< HEAD
   const handleVideoClick = (item) => {
     if (item.type === 'video') {
       setSelectedVideo(item);
@@ -101,6 +150,8 @@ const Videos = () => {
     setSelectedVideo(null);
   };
 
+=======
+>>>>>>> 1db8154e96ab550ce38feb89f6b88ff805732bf0
   return (
     <Box
       sx={{
@@ -130,6 +181,7 @@ const Videos = () => {
         >
           Video Collection
         </Typography>
+<<<<<<< HEAD
 
         {/* Videos Section */}
         <Box sx={{ mb: 8 }}>
@@ -139,6 +191,9 @@ const Videos = () => {
             onItemClick={handleVideoClick}
           />
         </Box>
+=======
+        <Gallery items={videoItems} type="videos" />
+>>>>>>> 1db8154e96ab550ce38feb89f6b88ff805732bf0
         
         {/* YouTube Videos Carousel */}
         <Box sx={{ mt: 8, position: 'relative' }}>
@@ -217,6 +272,7 @@ const Videos = () => {
             </IconButton>
           </Box>
         </Box>
+<<<<<<< HEAD
 
         {/* Video Player Dialog */}
         <Dialog
@@ -246,6 +302,8 @@ const Videos = () => {
             )}
           </DialogContent>
         </Dialog>
+=======
+>>>>>>> 1db8154e96ab550ce38feb89f6b88ff805732bf0
       </Container>
     </Box>
   );

@@ -203,6 +203,10 @@ const Home = () => {
       { type: 'image', src: '/images/art/FINAL.png', ratio: 1 },
       { type: 'image', src: '/images/art/HEGEEME.jpg', ratio: 1 },
       { type: 'image', src: '/images/art/DSC03300 (1).jpg', ratio: 1 },
+<<<<<<< HEAD
+=======
+      { type: 'image', src: '/images/art/DSC06360.png', ratio: 1 },
+>>>>>>> 1db8154e96ab550ce38feb89f6b88ff805732bf0
       { type: 'image', src: '/images/art/Carne\'Gato.png', ratio: 1 },
       { type: 'image', src: '/images/art/Untitled_Artwork 92.png', ratio: 1 },
       { type: 'image', src: '/images/art/AZ.png', ratio: 1 },
@@ -467,6 +471,7 @@ const Home = () => {
       </Modal>
 
       {/* Photography Gallery */}
+<<<<<<< HEAD
       <Box sx={{ position: 'relative', mt: 8, mb: 8 }}>
         <Typography
           variant="h2"
@@ -489,6 +494,13 @@ const Home = () => {
           title="Photography Collection" 
           items={photographyItems} 
           type="photography"
+=======
+      <Box sx={{ position: 'relative' }}>
+        <Gallery 
+          title="Photography Collection" 
+          items={photographyItems} 
+          type="photography" 
+>>>>>>> 1db8154e96ab550ce38feb89f6b88ff805732bf0
         />
         <Box sx={{ textAlign: 'center', mt: 2, mb: 4 }}>
           <Button
@@ -505,6 +517,7 @@ const Home = () => {
 
       {/* Art Gallery */}
       <Box sx={{ position: 'relative' }}>
+<<<<<<< HEAD
         <Typography
           variant="h2"
           component="h1"
@@ -526,6 +539,12 @@ const Home = () => {
           title="Art Gallery" 
           items={artItems} 
           type="art"
+=======
+        <Gallery 
+          title="Art Gallery" 
+          items={artItems} 
+          type="art" 
+>>>>>>> 1db8154e96ab550ce38feb89f6b88ff805732bf0
         />
         <Box sx={{ textAlign: 'center', mt: 2, mb: 4 }}>
           <Button
@@ -542,6 +561,7 @@ const Home = () => {
 
       {/* Video Gallery */}
       <Box sx={{ position: 'relative' }}>
+<<<<<<< HEAD
         <Typography
           variant="h2"
           component="h1"
@@ -563,6 +583,12 @@ const Home = () => {
           title="Video Showcase" 
           items={videoItems} 
           type="videos"
+=======
+        <Gallery 
+          title="Video Showcase" 
+          items={videoItems} 
+          type="videos" 
+>>>>>>> 1db8154e96ab550ce38feb89f6b88ff805732bf0
         />
         <Box sx={{ textAlign: 'center', mt: 2, mb: 4 }}>
           <Button
@@ -578,6 +604,7 @@ const Home = () => {
       </Box>
 
       {/* Social Media Links */}
+<<<<<<< HEAD
       <Box sx={{ textAlign: 'center', mt: 4, mb: 4 }}>
         <IconButton
           href="https://www.instagram.com/simplyeto/"
@@ -602,6 +629,59 @@ const Home = () => {
           sx={{ color: 'primary.main', fontSize: '2rem', mx: 1 }}
         >
           <TwitterIcon />
+=======
+      <Box sx={{ 
+        py: 4, 
+        display: 'flex', 
+        justifyContent: 'center', 
+        gap: 3,
+        borderTop: '1px solid rgba(0, 0, 0, 0.1)'
+      }}>
+        <IconButton
+          href="https://instagram.com/simplyeto"
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{ 
+            color: 'black',
+            '&:hover': {
+              color: '#E1306C',
+              transform: 'scale(1.1)',
+            },
+            transition: 'all 0.3s ease'
+          }}
+        >
+          <InstagramIcon sx={{ fontSize: 32 }} />
+        </IconButton>
+        <IconButton
+          href="https://youtube.com/@simplyeto"
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{ 
+            color: 'black',
+            '&:hover': {
+              color: '#FF0000',
+              transform: 'scale(1.1)',
+            },
+            transition: 'all 0.3s ease'
+          }}
+        >
+          <YouTubeIcon sx={{ fontSize: 32 }} />
+        </IconButton>
+        <IconButton
+          href="https://x.com/simplyeto"
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{ 
+            color: 'black',
+            '&:hover': {
+              color: '#000000',
+              transform: 'scale(1.1)',
+            },
+            transition: 'all 0.3s ease'
+          }}
+        >
+          <TwitterIcon sx={{ fontSize: 32 }} />
+>>>>>>> 1db8154e96ab550ce38feb89f6b88ff805732bf0
         </IconButton>
       </Box>
     </Box>
