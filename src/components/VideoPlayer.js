@@ -1,52 +1,40 @@
-import React, { useState, useEffect } from 'react';
-import { Box, CircularProgress } from '@mui/material';
+import React from 'react';
+import { Box } from '@mui/material';
 
-const VideoPlayer = ({ filename }) => {
-  const [videoUrl, setVideoUrl] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const fetchVideoUrl = async () => {
-      try {
-        const response = await fetch(`/api/video/${filename}`);
-        if (!response.ok) {
-          throw new Error('Failed to fetch video URL');
-        }
-        const data = await response.json();
-        setVideoUrl(data.url);
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchVideoUrl();
-  }, [filename]);
-
-  if (loading) {
-    return (
-      <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
-        <CircularProgress />
-      </Box>
-    );
-  }
-
-  if (error) {
-    return <Box>Error loading video: {error}</Box>;
-  }
-
+const VideoPlayer = ({ src, thumbnail }) => {
   return (
-    <video
-      controls
-      style={{ width: '100%', height: 'auto' }}
-      src={videoUrl}
-      controlsList="nodownload"
-      disablePictureInPicture
+    <Box
+      sx={{
+        position: 'relative',
+        width: '100%',
+        paddingTop: '56.25%', // 16:9 Aspect Ratio
+        borderRadius: 2,
+        overflow: 'hidden',
+        boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
+        '&:hover': {
+          transform: 'scale(1.02)',
+          transition: 'transform 0.3s ease-in-out'
+        }
+      }}
     >
-      Your browser does not support the video tag.
-    </video>
+      <video
+        controls
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover'
+        }}
+        src={src}
+        poster={thumbnail}
+        controlsList="nodownload"
+        disablePictureInPicture
+      >
+        Your browser does not support the video tag.
+      </video>
+    </Box>
   );
 };
 

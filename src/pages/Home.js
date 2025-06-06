@@ -262,12 +262,18 @@ const Home = () => {
         {/* Photography Section */}
         <Box sx={{ mb: 8 }}>
           <Typography
-            variant="h3"
+            variant="h2"
+            component="h1"
             sx={{
-              color: 'white',
-              mb: 4,
-              fontSize: { xs: '2rem', md: '2.5rem' },
-              textAlign: 'center'
+              textAlign: 'center',
+              mb: 6,
+              fontSize: { xs: '2.5rem', md: '3.5rem' },
+              fontWeight: 'bold',
+              background: 'linear-gradient(45deg, #FF6B6B, #4ECDC4)',
+              backgroundClip: 'text',
+              textFillColor: 'transparent',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
             }}
           >
             Photography
@@ -278,79 +284,78 @@ const Home = () => {
         {/* Art Section */}
         <Box sx={{ mb: 8 }}>
           <Typography
-            variant="h3"
+            variant="h2"
+            component="h1"
             sx={{
-              color: 'white',
-              mb: 4,
-              fontSize: { xs: '2rem', md: '2.5rem' },
-              textAlign: 'center'
+              textAlign: 'center',
+              mb: 6,
+              fontSize: { xs: '2.5rem', md: '3.5rem' },
+              fontWeight: 'bold',
+              background: 'linear-gradient(45deg, #FF6B6B, #4ECDC4)',
+              backgroundClip: 'text',
+              textFillColor: 'transparent',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
             }}
           >
             Art
           </Typography>
           <Gallery items={artItems} type="art" />
         </Box>
-      </Container>
 
-      {/* Social Links */}
-      <Box
-        sx={{
-          position: 'fixed',
-          bottom: 0,
-          left: 0,
-          right: 0,
-          py: 2,
-          backgroundColor: 'rgba(0, 0, 0, 0.8)',
-          backdropFilter: 'blur(8px)',
-          display: 'flex',
-          justifyContent: 'center',
-          gap: 3,
-          zIndex: 1000,
-        }}
-      >
-        <Button
-          component="a"
-          href="https://www.instagram.com/simplyeto"
-          target="_blank"
-          rel="noopener noreferrer"
+        {/* Social Links */}
+        <Box
           sx={{
-            color: 'white',
-            '&:hover': {
-              backgroundColor: 'rgba(255, 255, 255, 0.1)',
-            },
+            py: 4,
+            display: 'flex',
+            justifyContent: 'center',
+            gap: 3,
           }}
         >
-          Instagram
-        </Button>
-        <Button
-          component="a"
-          href="https://twitter.com/simplyeto"
-          target="_blank"
-          rel="noopener noreferrer"
-          sx={{
-            color: 'white',
-            '&:hover': {
-              backgroundColor: 'rgba(255, 255, 255, 0.1)',
-            },
-          }}
-        >
-          X
-        </Button>
-        <Button
-          component="a"
-          href="https://www.youtube.com/@simplyeto"
-          target="_blank"
-          rel="noopener noreferrer"
-          sx={{
-            color: 'white',
-            '&:hover': {
-              backgroundColor: 'rgba(255, 255, 255, 0.1)',
-            },
-          }}
-        >
-          YouTube
-        </Button>
-      </Box>
+          <Button
+            component="a"
+            href="https://www.instagram.com/simplyeto"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{
+              color: 'white',
+              '&:hover': {
+                backgroundColor: 'rgba(255, 255, 255, 0.1)',
+              },
+            }}
+          >
+            Instagram
+          </Button>
+          <Button
+            component="a"
+            href="https://twitter.com/simplyeto"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{
+              color: 'white',
+              '&:hover': {
+                backgroundColor: 'rgba(255, 255, 255, 0.1)',
+              },
+            }}
+          >
+            X
+          </Button>
+          <Button
+            component="a"
+            href="https://www.youtube.com/@simplyeto"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{
+              color: 'white',
+              '&:hover': {
+                backgroundColor: 'rgba(255, 255, 255, 0.1)',
+              },
+            }}
+          >
+            YouTube
+          </Button>
+        </Box>
+      </Container>
 
       {/* Contact Modal */}
       <Modal
