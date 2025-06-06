@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import { Box, Dialog, DialogContent, IconButton } from '@mui/material';
-import CloseIcon from '@mui/icons-material/Close';
-import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-import VideoPlayer from './VideoPlayer';
+import { Box, Dialog, DialogContent } from '@mui/material';
+import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 
 const Gallery = ({ items, type }) => {
   const [selectedItem, setSelectedItem] = useState(null);
@@ -96,7 +94,7 @@ const Gallery = ({ items, type }) => {
                     },
                   }}
                 >
-                  <PlayArrowIcon sx={{ fontSize: 60 }} />
+                  <PlayCircleOutlineIcon sx={{ fontSize: 60 }} />
                 </Box>
               </Box>
             ) : null}
