@@ -2,6 +2,7 @@ import React, { useMemo, useState } from 'react';
 import { Box, Container, Typography, Button, Modal, TextField, Grid } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 import Gallery from '../components/Gallery';
+import VideoGrid from '../components/VideoGrid';
 
 const Home = () => {
   const [contactOpen, setContactOpen] = useState(false);
@@ -97,41 +98,6 @@ const Home = () => {
         type: 'image',
         src: '/images/photography/DSC08097.jpg',
         alt: 'Photography 7'
-      },
-      {
-        type: 'image',
-        src: '/images/photography/DSC01641.jpg',
-        alt: 'Photography 8'
-      },
-      {
-        type: 'image',
-        src: '/images/photography/DSC03282.jpg',
-        alt: 'Photography 9'
-      },
-      {
-        type: 'image',
-        src: '/images/photography/DSC03185-HDR.jpg',
-        alt: 'Photography 10'
-      },
-      {
-        type: 'image',
-        src: '/images/photography/DSCF4194.jpg',
-        alt: 'Photography 11'
-      },
-      {
-        type: 'image',
-        src: '/images/photography/DSC03323.jpg',
-        alt: 'Photography 12'
-      },
-      {
-        type: 'image',
-        src: '/images/photography/DSC00437.jpg',
-        alt: 'Photography 13'
-      },
-      {
-        type: 'image',
-        src: '/images/photography/DSC08097.jpg',
-        alt: 'Photography 14'
       }
     ];
     return shuffleArray(allPhotographyItems).slice(0, 6);
@@ -217,7 +183,7 @@ const Home = () => {
               textShadow: '2px 2px 4px rgba(0,0,0,0.5)',
             }}
           >
-            Photography & Digital Art
+            Art & Media Production
           </Typography>
           <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center' }}>
             <Button
@@ -279,6 +245,24 @@ const Home = () => {
             Photography
           </Typography>
           <Gallery items={photographyItems} type="photography" />
+          <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
+            <Button
+              component={RouterLink}
+              to="/photography"
+              variant="contained"
+              size="large"
+              sx={{
+                background: 'linear-gradient(45deg, #FF6B6B, #4ECDC4)',
+                color: 'white',
+                '&:hover': {
+                  background: 'linear-gradient(45deg, #FF6B6B, #4ECDC4)',
+                  opacity: 0.9
+                }
+              }}
+            >
+              See More Photos
+            </Button>
+          </Box>
         </Box>
 
         {/* Art Section */}
@@ -301,15 +285,37 @@ const Home = () => {
             Art
           </Typography>
           <Gallery items={artItems} type="art" />
+          <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
+            <Button
+              component={RouterLink}
+              to="/art"
+              variant="contained"
+              size="large"
+              sx={{
+                background: 'linear-gradient(45deg, #FF6B6B, #4ECDC4)',
+                color: 'white',
+                '&:hover': {
+                  background: 'linear-gradient(45deg, #FF6B6B, #4ECDC4)',
+                  opacity: 0.9
+                }
+              }}
+            >
+              See More Art
+            </Button>
+          </Box>
         </Box>
 
-        {/* Social Links */}
+        <VideoGrid />
+
+        {/* Social Links - Moved to bottom */}
         <Box
           sx={{
             py: 4,
             display: 'flex',
             justifyContent: 'center',
             gap: 3,
+            mt: 4,
+            backgroundColor: 'rgba(0, 0, 0, 0.9)',
           }}
         >
           <Button
