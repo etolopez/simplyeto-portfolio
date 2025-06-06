@@ -2,7 +2,6 @@ import React, { useMemo, useState } from 'react';
 import { Box, Container, Typography, Button, Modal, TextField, Grid } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 import Gallery from '../components/Gallery';
-import VideoGrid from '../components/VideoGrid';
 
 const Home = () => {
   const [contactOpen, setContactOpen] = useState(false);
@@ -304,8 +303,6 @@ const Home = () => {
             </Button>
           </Box>
         </Box>
-
-        <VideoGrid />
 
         {/* Social Links - Moved to bottom */}
         <Box
