@@ -201,59 +201,35 @@ const Home = () => {
             >
               Contact
             </Button>
+            <Button
+              component="a"
+              href="https://calendly.com/lightsaint/coffee-chat"
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="contained"
+              size="large"
+              sx={{
+                backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                backdropFilter: 'blur(8px)',
+                border: '1px solid rgba(255, 255, 255, 0.3)',
+                '&:hover': {
+                  backgroundColor: 'rgba(255, 255, 255, 0.3)',
+                },
+              }}
+            >
+              Book a Call
+            </Button>
           </Box>
         </Container>
       </Box>
 
-      <VideoGrid />
-
       {/* Gallery Sections */}
-      <Container maxWidth="lg" sx={{ py: 8 }}>
-        {/* Photography Section */}
-        <Box sx={{ mb: 8 }}>
-          <Typography
-            variant="h2"
-            component="h1"
-            sx={{
-              textAlign: 'center',
-              mb: 6,
-              fontSize: { xs: '2.5rem', md: '3.5rem' },
-              fontWeight: 'bold',
-              background: 'linear-gradient(45deg, #FF6B6B, #4ECDC4)',
-              backgroundClip: 'text',
-              textFillColor: 'transparent',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-            }}
-          >
-            Photography
-          </Typography>
-          <Gallery items={photographyItems} type="photography" />
-          <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
-            <Button
-              component={RouterLink}
-              to="/photography"
-              variant="contained"
-              size="large"
-              sx={{
-                background: 'linear-gradient(45deg, #FF6B6B, #4ECDC4)',
-                color: 'white',
-                '&:hover': {
-                  background: 'linear-gradient(45deg, #FF6B6B, #4ECDC4)',
-                  opacity: 0.9
-                }
-              }}
-            >
-              See More Photos
-            </Button>
-          </Box>
-        </Box>
-
+      <Box sx={{ py: 8, px: { xs: 2, md: 4 } }}>
         {/* Art Section */}
         <Box sx={{ mb: 8 }}>
           <Typography
             variant="h2"
-            component="h1"
+            component="h2"
             sx={{
               textAlign: 'center',
               mb: 6,
@@ -269,81 +245,125 @@ const Home = () => {
             Art
           </Typography>
           <Gallery items={artItems} type="art" />
-          <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
+          <Box sx={{ textAlign: 'center', mt: 4 }}>
             <Button
               component={RouterLink}
               to="/art"
               variant="contained"
               size="large"
               sx={{
-                background: 'linear-gradient(45deg, #FF6B6B, #4ECDC4)',
-                color: 'white',
+                backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                backdropFilter: 'blur(8px)',
+                border: '1px solid rgba(255, 255, 255, 0.3)',
                 '&:hover': {
-                  background: 'linear-gradient(45deg, #FF6B6B, #4ECDC4)',
-                  opacity: 0.9
-                }
+                  backgroundColor: 'rgba(255, 255, 255, 0.3)',
+                },
               }}
             >
-              See More Art
+              See More
             </Button>
           </Box>
         </Box>
 
-        {/* Social Links - Moved to bottom */}
-        <Box
+        {/* Photography Section */}
+        <Box sx={{ mb: 8 }}>
+          <Typography
+            variant="h2"
+            component="h2"
+            sx={{
+              textAlign: 'center',
+              mb: 6,
+              fontSize: { xs: '2.5rem', md: '3.5rem' },
+              fontWeight: 'bold',
+              background: 'linear-gradient(45deg, #FF6B6B, #4ECDC4)',
+              backgroundClip: 'text',
+              textFillColor: 'transparent',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+            }}
+          >
+            Photography
+          </Typography>
+          <Gallery items={photographyItems} type="photography" />
+          <Box sx={{ textAlign: 'center', mt: 4 }}>
+            <Button
+              component={RouterLink}
+              to="/photography"
+              variant="contained"
+              size="large"
+              sx={{
+                backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                backdropFilter: 'blur(8px)',
+                border: '1px solid rgba(255, 255, 255, 0.3)',
+                '&:hover': {
+                  backgroundColor: 'rgba(255, 255, 255, 0.3)',
+                },
+              }}
+            >
+              See More
+            </Button>
+          </Box>
+        </Box>
+
+        {/* Video Section */}
+        <Box sx={{ mb: 8 }}>
+          <VideoGrid />
+        </Box>
+      </Box>
+
+      {/* Social Links */}
+      <Box
+        sx={{
+          py: 4,
+          display: 'flex',
+          justifyContent: 'center',
+          gap: 2,
+          flexWrap: 'wrap',
+        }}
+      >
+        <Button
+          component="a"
+          href="https://www.instagram.com/simplyeto"
+          target="_blank"
+          rel="noopener noreferrer"
           sx={{
-            py: 4,
-            display: 'flex',
-            justifyContent: 'center',
-            gap: 3,
-            mt: 4,
-            backgroundColor: 'rgba(0, 0, 0, 0.9)',
+            color: 'white',
+            '&:hover': {
+              backgroundColor: 'rgba(255, 255, 255, 0.1)',
+            },
           }}
         >
-          <Button
-            component="a"
-            href="https://www.instagram.com/simplyeto"
-            target="_blank"
-            rel="noopener noreferrer"
-            sx={{
-              color: 'white',
-              '&:hover': {
-                backgroundColor: 'rgba(255, 255, 255, 0.1)',
-              },
-            }}
-          >
-            Instagram
-          </Button>
-          <Button
-            component="a"
-            href="https://twitter.com/simplyeto"
-            target="_blank"
-            rel="noopener noreferrer"
-            sx={{
-              color: 'white',
-              '&:hover': {
-                backgroundColor: 'rgba(255, 255, 255, 0.1)',
-              },
-            }}
-          >
-            X
-          </Button>
-          <Button
-            component="a"
-            href="https://www.youtube.com/@simplyeto"
-            target="_blank"
-            rel="noopener noreferrer"
-            sx={{
-              color: 'white',
-              '&:hover': {
-                backgroundColor: 'rgba(255, 255, 255, 0.1)',
-              },
-            }}
-          >
-            YouTube
-          </Button>
-        </Box>
-      </Container>
+          Instagram
+        </Button>
+        <Button
+          component="a"
+          href="https://twitter.com/simplyeto"
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{
+            color: 'white',
+            '&:hover': {
+              backgroundColor: 'rgba(255, 255, 255, 0.1)',
+            },
+          }}
+        >
+          X
+        </Button>
+        <Button
+          component="a"
+          href="https://www.youtube.com/@simplyeto"
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{
+            color: 'white',
+            '&:hover': {
+              backgroundColor: 'rgba(255, 255, 255, 0.1)',
+            },
+          }}
+        >
+          YouTube
+        </Button>
+      </Box>
 
       {/* Contact Modal */}
       <Modal
