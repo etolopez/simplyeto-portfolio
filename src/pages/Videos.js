@@ -1,40 +1,127 @@
 import React from 'react';
-import { Box, Container, Typography, Grid } from '@mui/material';
-import VideoPlayer from '../components/VideoPlayer';
+import { Box, Container, Typography } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import Masonry from '@mui/lab/Masonry';
+import { motion } from 'framer-motion';
+import ProfileImage from '../components/ProfileImage';
+
+const VideoContainer = styled(Box)(({ theme, aspectRatio }) => ({
+  position: 'relative',
+  width: '100%',
+  paddingTop: aspectRatio === '9/16' ? '177.78%' : '56.25%', // 9:16 for Shorts, 16:9 for regular videos
+  borderRadius: theme.spacing(2),
+  overflow: 'hidden',
+  transition: 'transform 0.3s ease-in-out',
+  '&:hover': {
+    transform: 'scale(1.02)'
+  }
+}));
+
+const videos = [
+  {
+    id: 'Ys8ZxsT7Fic',
+    aspectRatio: '16/9',
+    type: 'youtube'
+  },
+  {
+    id: 'NH5H5tpIzfY',
+    aspectRatio: '16/9',
+    type: 'youtube'
+  },
+  {
+    id: 'FujqTaVz7rA',
+    aspectRatio: '16/9',
+    type: 'youtube'
+  },
+  {
+    id: 'ZaL2ejDOzys',
+    aspectRatio: '16/9',
+    type: 'youtube'
+  },
+  {
+    id: 'odXCQsG8YJE',
+    aspectRatio: '16/9',
+    type: 'youtube'
+  },
+  {
+    id: 'eolRa5vjxYo',
+    aspectRatio: '16/9',
+    type: 'youtube'
+  },
+  {
+    id: 'fYyLxqRHsyo',
+    aspectRatio: '9/16',
+    type: 'youtube'
+  },
+  {
+    id: 'lu240fb6FIQ',
+    aspectRatio: '9/16',
+    type: 'youtube'
+  },
+  {
+    id: 'qYoOukSkwvs',
+    aspectRatio: '9/16',
+    type: 'youtube'
+  },
+  {
+    id: 'w4IA4mQ17aI',
+    aspectRatio: '16/9',
+    type: 'youtube'
+  },
+  {
+    id: 'https://videos.files.wordpress.com/PTllwc8x/shiroles-facebook_dvd.mp4',
+    aspectRatio: '16/9',
+    type: 'direct'
+  },
+  {
+    id: 'https://videos.files.wordpress.com/xvrIUpPF/pozo-azul-final_mp4_dvd.mp4',
+    aspectRatio: '16/9',
+    type: 'direct'
+  },
+  {
+    id: 'https://videos.files.wordpress.com/jDSVAGLU/canada-roberto-1_dvd.mp4',
+    aspectRatio: '16/9',
+    type: 'direct'
+  },
+  {
+    id: 'https://videos.files.wordpress.com/UCdbXq40/artist-to-artist-final_dvd.mp4',
+    aspectRatio: '16/9',
+    type: 'direct'
+  },
+  {
+    id: 'https://videos.files.wordpress.com/Ev8ypXvl/ayudanos-a-ayudar-fabook_dvd.mp4',
+    aspectRatio: '16/9',
+    type: 'direct'
+  },
+  {
+    id: 'https://videos.files.wordpress.com/2rzr4JSt/youtube-costa_mp4_dvd.mp4',
+    aspectRatio: '16/9',
+    type: 'direct'
+  },
+  {
+    id: 'https://videos.files.wordpress.com/AHW7Rek0/hd_mp4_dvd.mp4',
+    aspectRatio: '16/9',
+    type: 'direct'
+  },
+  {
+    id: 'https://videos.files.wordpress.com/1kuBnJzM/completo-redes_dvd.mp4',
+    aspectRatio: '16/9',
+    type: 'direct'
+  }
+];
+
+// Function to shuffle array
+const shuffleArray = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+};
 
 const Videos = () => {
-  const videos = [
-    {
-      title: 'Lamp Lofi',
-      src: 'https://storage.googleapis.com/simplyeto-videos/Lamp%20Lofi2.mp4',
-      thumbnail: '/images/thumbnails/lamp-lofi.jpg'
-    },
-    {
-      title: 'Staccino\'s',
-      src: 'https://storage.googleapis.com/simplyeto-videos/Staccino\'s%20(1).mp4',
-      thumbnail: '/images/thumbnails/staccinos.jpg'
-    },
-    {
-      title: 'Balloon',
-      src: 'https://storage.googleapis.com/simplyeto-videos/Balloon2.mp4',
-      thumbnail: '/images/thumbnails/balloon.jpg'
-    }
-  ];
-
-  const youtubeVideos = [
-    {
-      title: 'Lofi Hip Hop Mix - Beats to Relax/Study',
-      embedUrl: 'https://www.youtube.com/embed/ZaL2ejDOzys'
-    },
-    {
-      title: 'Chillhop Radio - jazzy & lofi hip hop beats',
-      embedUrl: 'https://www.youtube.com/embed/mSu5ppXhlME'
-    },
-    {
-      title: 'lofi hip hop radio - beats to relax/study to',
-      embedUrl: 'https://www.youtube.com/embed/8SzF3NgDUWY'
-    }
-  ];
+  // Shuffle videos on component mount
+  const shuffledVideos = React.useMemo(() => shuffleArray([...videos]), []);
 
   return (
     <Box
@@ -42,93 +129,79 @@ const Videos = () => {
         minHeight: '100vh',
         backgroundColor: 'black',
         color: 'white',
-        py: 8
+        pt: { xs: 8, md: 10 },
+        pb: 8,
       }}
     >
+      <ProfileImage />
       <Container maxWidth="lg">
-        {/* Local Videos Section */}
-        <Grid container spacing={4}>
-          {videos.map((video, index) => (
-            <Grid item xs={12} md={6} key={index}>
-              <Box sx={{ mb: 4 }}>
-                <Typography
-                  variant="h6"
-                  sx={{
-                    mb: 2,
-                    color: 'white',
-                    fontSize: { xs: '1.2rem', md: '1.5rem' }
-                  }}
-                >
-                  {video.title}
-                </Typography>
-                <VideoPlayer
-                  src={video.src}
-                  thumbnail={video.thumbnail}
-                />
-              </Box>
-            </Grid>
-          ))}
-        </Grid>
+        <Typography
+          variant="h2"
+          component="h1"
+          sx={{
+            textAlign: 'center',
+            mb: 6,
+            fontSize: { xs: '2.5rem', md: '3.5rem' },
+            fontWeight: 'bold',
+            background: 'linear-gradient(45deg, #FF6B6B, #4ECDC4)',
+            backgroundClip: 'text',
+            textFillColor: 'transparent',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+          }}
+        >
+          Video Collections
+        </Typography>
 
-        {/* YouTube Videos Section */}
-        <Box sx={{ mt: 8 }}>
-          <Typography
-            variant="h4"
-            sx={{
-              mb: 4,
-              color: 'white',
-              fontSize: { xs: '1.8rem', md: '2.2rem' },
-              textAlign: 'center'
-            }}
-          >
-            YouTube Videos
-          </Typography>
-          <Grid container spacing={4}>
-            {youtubeVideos.map((video, index) => (
-              <Grid item xs={12} md={4} key={index}>
-                <Box
-                  sx={{
-                    position: 'relative',
-                    paddingTop: '56.25%', // 16:9 Aspect Ratio
-                    borderRadius: 2,
-                    overflow: 'hidden',
-                    boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
-                    '&:hover': {
-                      transform: 'scale(1.02)',
-                      transition: 'transform 0.3s ease-in-out'
-                    }
-                  }}
-                >
+        <Masonry
+          columns={{ xs: 1, sm: 2, md: 3 }}
+          spacing={3}
+        >
+          {shuffledVideos.map((video, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <VideoContainer aspectRatio={video.aspectRatio}>
+                {video.type === 'youtube' ? (
                   <iframe
-                    src={video.embedUrl}
-                    title={video.title}
+                    src={`https://www.youtube.com/embed/${video.id}`}
+                    title={`Video ${index + 1}`}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
                     style={{
                       position: 'absolute',
                       top: 0,
                       left: 0,
                       width: '100%',
                       height: '100%',
-                      border: 'none'
+                      borderRadius: '8px'
                     }}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
                   />
-                </Box>
-                <Typography
-                  variant="h6"
-                  sx={{
-                    mt: 2,
-                    color: 'white',
-                    fontSize: { xs: '1rem', md: '1.2rem' },
-                    textAlign: 'center'
-                  }}
-                >
-                  {video.title}
-                </Typography>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
+                ) : (
+                  <video
+                    controls
+                    style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      width: '100%',
+                      height: '100%',
+                      borderRadius: '8px',
+                      objectFit: 'cover'
+                    }}
+                    src={video.id}
+                  >
+                    Your browser does not support the video tag.
+                  </video>
+                )}
+              </VideoContainer>
+            </motion.div>
+          ))}
+        </Masonry>
       </Container>
     </Box>
   );
