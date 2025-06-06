@@ -203,7 +203,10 @@ const Home = () => {
       { type: 'image', src: '/images/art/FINAL.png', ratio: 1 },
       { type: 'image', src: '/images/art/HEGEEME.jpg', ratio: 1 },
       { type: 'image', src: '/images/art/DSC03300 (1).jpg', ratio: 1 },
+<<<<<<< HEAD
+=======
       { type: 'image', src: '/images/art/DSC06360.png', ratio: 1 },
+>>>>>>> 1db8154e96ab550ce38feb89f6b88ff805732bf0
       { type: 'image', src: '/images/art/Carne\'Gato.png', ratio: 1 },
       { type: 'image', src: '/images/art/Untitled_Artwork 92.png', ratio: 1 },
       { type: 'image', src: '/images/art/AZ.png', ratio: 1 },
@@ -468,11 +471,36 @@ const Home = () => {
       </Modal>
 
       {/* Photography Gallery */}
+<<<<<<< HEAD
+      <Box sx={{ position: 'relative', mt: 8, mb: 8 }}>
+        <Typography
+          variant="h2"
+          component="h1"
+          sx={{
+            textAlign: 'center',
+            mb: 6,
+            fontSize: { xs: '2.5rem', md: '3.5rem' },
+            fontWeight: 'bold',
+            background: 'linear-gradient(45deg, #FF6B6B, #4ECDC4)',
+            backgroundClip: 'text',
+            textFillColor: 'transparent',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+          }}
+        >
+          Photography Portfolio
+        </Typography>
+        <Gallery 
+          title="Photography Collection" 
+          items={photographyItems} 
+          type="photography"
+=======
       <Box sx={{ position: 'relative' }}>
         <Gallery 
           title="Photography Collection" 
           items={photographyItems} 
           type="photography" 
+>>>>>>> 1db8154e96ab550ce38feb89f6b88ff805732bf0
         />
         <Box sx={{ textAlign: 'center', mt: 2, mb: 4 }}>
           <Button
@@ -489,10 +517,34 @@ const Home = () => {
 
       {/* Art Gallery */}
       <Box sx={{ position: 'relative' }}>
+<<<<<<< HEAD
+        <Typography
+          variant="h2"
+          component="h1"
+          sx={{
+            textAlign: 'center',
+            mb: 6,
+            fontSize: { xs: '2.5rem', md: '3.5rem' },
+            fontWeight: 'bold',
+            background: 'linear-gradient(45deg, #FF6B6B, #4ECDC4)',
+            backgroundClip: 'text',
+            textFillColor: 'transparent',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+          }}
+        >
+          Art Portfolio
+        </Typography>
+        <Gallery 
+          title="Art Gallery" 
+          items={artItems} 
+          type="art"
+=======
         <Gallery 
           title="Art Gallery" 
           items={artItems} 
           type="art" 
+>>>>>>> 1db8154e96ab550ce38feb89f6b88ff805732bf0
         />
         <Box sx={{ textAlign: 'center', mt: 2, mb: 4 }}>
           <Button
@@ -509,10 +561,34 @@ const Home = () => {
 
       {/* Video Gallery */}
       <Box sx={{ position: 'relative' }}>
+<<<<<<< HEAD
+        <Typography
+          variant="h2"
+          component="h1"
+          sx={{
+            textAlign: 'center',
+            mb: 6,
+            fontSize: { xs: '2.5rem', md: '3.5rem' },
+            fontWeight: 'bold',
+            background: 'linear-gradient(45deg, #FF6B6B, #4ECDC4)',
+            backgroundClip: 'text',
+            textFillColor: 'transparent',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+          }}
+        >
+          Video Portfolio
+        </Typography>
+        <Gallery 
+          title="Video Showcase" 
+          items={videoItems} 
+          type="videos"
+=======
         <Gallery 
           title="Video Showcase" 
           items={videoItems} 
           type="videos" 
+>>>>>>> 1db8154e96ab550ce38feb89f6b88ff805732bf0
         />
         <Box sx={{ textAlign: 'center', mt: 2, mb: 4 }}>
           <Button
@@ -528,6 +604,32 @@ const Home = () => {
       </Box>
 
       {/* Social Media Links */}
+<<<<<<< HEAD
+      <Box sx={{ textAlign: 'center', mt: 4, mb: 4 }}>
+        <IconButton
+          href="https://www.instagram.com/simplyeto/"
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{ color: 'primary.main', fontSize: '2rem', mx: 1 }}
+        >
+          <InstagramIcon />
+        </IconButton>
+        <IconButton
+          href="https://www.youtube.com/@simplyeto"
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{ color: 'primary.main', fontSize: '2rem', mx: 1 }}
+        >
+          <YouTubeIcon />
+        </IconButton>
+        <IconButton
+          href="https://twitter.com/simplyeto"
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{ color: 'primary.main', fontSize: '2rem', mx: 1 }}
+        >
+          <TwitterIcon />
+=======
       <Box sx={{ 
         py: 4, 
         display: 'flex', 
@@ -579,6 +681,7 @@ const Home = () => {
           }}
         >
           <TwitterIcon sx={{ fontSize: 32 }} />
+>>>>>>> 1db8154e96ab550ce38feb89f6b88ff805732bf0
         </IconButton>
       </Box>
     </Box>

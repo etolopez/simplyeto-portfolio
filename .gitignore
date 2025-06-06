@@ -38,6 +38,18 @@ yarn-error.log*
 ehthumbs.db
 Thumbs.db
 
+<<<<<<< HEAD
+# Large video files
+public/videos/*.mp4
+public/images/art/*.mp4
+
+# Large image files
+public/images_backup/*.png
+public/images_backup/*.jpg
+public/images_backup/*.jpeg
+
+=======
+>>>>>>> 1db8154e96ab550ce38feb89f6b88ff805732bf0
 # Large media files
 public/images/art/*.mp4
 public/videos/
@@ -50,4 +62,20 @@ public/images_backup/
 *.mkv
 *.webm
 
+<<<<<<< HEAD
+# Large video files
+public/videos/FromNaraNoMusic.mp4
+public/videos/render.mp4
+public/videos/Solana Block Zero FINAL.mp4
+public/videos/Wetiko Short.mp4
+public/videos/day5IG.mp4
+
 .vercel
+
+# Google Cloud handled files
+public/videos/
+public/images/art/
+public/images_backup/
+=======
+.vercel
+>>>>>>> 1db8154e96ab550ce38feb89f6b88ff805732bf0
