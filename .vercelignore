@@ -1,0 +1,16 @@
+# Backup files
+public/images_backup
+build/images_backup
+
+# Large video files
+public/images/art/*.mp4
+build/images/art/*.mp4
+public/videos
+build/videos
+
+# Node modules and other unnecessary files
+node_modules
+.git
+.env
+.env.local
+.DS_Store 
