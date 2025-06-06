@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Box, Container, Typography, Dialog, DialogContent } from '@mui/material';
 import Gallery from '../components/Gallery';
 import ProfileImage from '../components/ProfileImage';
@@ -19,194 +19,206 @@ const Art = () => {
     setSelectedVideo(null);
   };
 
-  const artItems = [
-    {
-      type: 'image',
-      src: '/images/art/FINAL.png',
-      alt: 'Art 1'
-    },
-    {
-      type: 'image',
-      src: '/images/art/HEGEEME.jpg',
-      alt: 'Art 2'
-    },
-    {
-      type: 'image',
-      src: '/images/art/DSC03300 (1).jpg',
-      alt: 'Art 3'
-    },
-    {
-      type: 'image',
-      src: '/images/art/Carne\'Gato.png',
-      alt: 'Art 4'
-    },
-    {
-      type: 'image',
-      src: '/images/art/Untitled_Artwork 92.png',
-      alt: 'Art 5'
-    },
-    {
-      type: 'image',
-      src: '/images/art/AZ.png',
-      alt: 'Art 6'
-    },
-    {
-      type: 'image',
-      src: '/images/art/A_Long_Way_Home.jpg',
-      alt: 'Art 7'
-    },
-    {
-      type: 'image',
-      src: '/images/art/Copos.png',
-      alt: 'Art 8'
-    },
-    {
-      type: 'image',
-      src: '/images/art/Fly.jpg',
-      alt: 'Art 9'
-    },
-    {
-      type: 'image',
-      src: '/images/art/IMG_2653.png',
-      alt: 'Art 10'
-    },
-    {
-      type: 'image',
-      src: '/images/art/Mugennight (1).png',
-      alt: 'Art 11'
-    },
-    {
-      type: 'image',
-      src: '/images/art/Sidewalk.png',
-      alt: 'Art 12'
-    },
-    {
-      type: 'image',
-      src: '/images/art/THe Power of Balance.jpg',
-      alt: 'Art 13'
-    },
-    {
-      type: 'image',
-      src: '/images/art/The_Wiz.png',
-      alt: 'Art 14'
-    },
-    {
-      type: 'image',
-      src: '/images/art/Traveler.png',
-      alt: 'Art 15'
-    },
-    // Additional Images
-    {
-      type: 'image',
-      src: '/images/art/DSC03115.jpg',
-      alt: 'Art 16'
-    },
-    {
-      type: 'image',
-      src: '/images/art/DSC03108.jpg',
-      alt: 'Art 17'
-    },
-    {
-      type: 'image',
-      src: '/images/art/Untitled_Artwork 12.jpg',
-      alt: 'Art 18'
-    },
-    {
-      type: 'image',
-      src: '/images/art/Untitled_Artwork 64.png',
-      alt: 'Art 19'
-    },
-    {
-      type: 'image',
-      src: '/images/art/Untitled_Artwork 66.png',
-      alt: 'Art 20'
-    },
-    {
-      type: 'image',
-      src: '/images/art/Untitled_Artwork 67.png',
-      alt: 'Art 21'
-    },
-    {
-      type: 'image',
-      src: '/images/art/Untitled_Artwork 68.png',
-      alt: 'Art 22'
-    },
-    {
-      type: 'image',
-      src: '/images/art/Untitled_Artwork 69.png',
-      alt: 'Art 23'
-    },
-    {
-      type: 'image',
-      src: '/images/art/Untitled_Artwork 8.jpg',
-      alt: 'Art 24'
-    },
-    {
-      type: 'image',
-      src: '/images/art/Untitled_Artwork 82.png',
-      alt: 'Art 25'
-    },
-    {
-      type: 'image',
-      src: '/images/art/We have to start SOMEWHERE. Comment_dirty_ below and I_ll send you the limk to my short course!.png',
-      alt: 'Art 26'
-    },
-    // Videos
-    {
-      type: 'video',
-      src: '/images/art/Staccino\'s (1).mp4',
-      alt: 'Staccino\'s',
-      ratio: 1  // Square video
-    },
-    {
-      type: 'video',
-      src: '/images/art/Balloon2.mp4',
-      alt: 'Balloon',
-      ratio: 1  // Square video
-    },
-    {
-      type: 'video',
-      src: '/images/art/LoFront8 (1).mp4',
-      alt: 'LoFront',
-      ratio: 1  // Square video
-    },
-    {
-      type: 'video',
-      src: '/images/art/LofiSamu.mp4',
-      alt: 'Lofi Samu',
-      ratio: 1  // Square video
-    },
-    {
-      type: 'video',
-      src: '/images/art/Lofi Desert.mp4',
-      alt: 'Lofi Desert',
-      ratio: 1  // Square video
-    },
-    {
-      type: 'video',
-      src: '/images/art/Lofi Games2.mp4',
-      alt: 'Lofi Games',
-      ratio: 1  // Square video
-    },
-    {
-      type: 'video',
-      src: '/images/art/Lamp Lofi2.mp4',
-      alt: 'Lamp Lofi',
-      ratio: 1  // Square video
-    },
-    {
-      type: 'video',
-      src: '/images/art/LoSwamp.mp4',
-      alt: 'LoSwamp',
-      ratio: 1  // Square video
-    },
-    {
-      type: 'video',
-      src: '/images/art/TotoroFinal2.mp4',
-      alt: 'Totoro',
-      ratio: 1  // Square video
+  // Helper function to shuffle array
+  const shuffleArray = (array) => {
+    const newArray = [...array];
+    for (let i = newArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
     }
-  ];
+    return newArray;
+  };
+
+  const artItems = useMemo(() => {
+    const allItems = [
+      {
+        type: 'image',
+        src: '/images/art/FINAL.png',
+        alt: 'Art 1'
+      },
+      {
+        type: 'image',
+        src: '/images/art/HEGEEME.jpg',
+        alt: 'Art 2'
+      },
+      {
+        type: 'image',
+        src: '/images/art/DSC03300 (1).jpg',
+        alt: 'Art 3'
+      },
+      {
+        type: 'image',
+        src: '/images/art/Carne\'Gato.png',
+        alt: 'Art 4'
+      },
+      {
+        type: 'image',
+        src: '/images/art/Untitled_Artwork 92.png',
+        alt: 'Art 5'
+      },
+      {
+        type: 'image',
+        src: '/images/art/AZ.png',
+        alt: 'Art 6'
+      },
+      {
+        type: 'image',
+        src: '/images/art/A_Long_Way_Home.jpg',
+        alt: 'Art 7'
+      },
+      {
+        type: 'image',
+        src: '/images/art/Copos.png',
+        alt: 'Art 8'
+      },
+      {
+        type: 'image',
+        src: '/images/art/Fly.jpg',
+        alt: 'Art 9'
+      },
+      {
+        type: 'image',
+        src: '/images/art/IMG_2653.png',
+        alt: 'Art 10'
+      },
+      {
+        type: 'image',
+        src: '/images/art/Mugennight (1).png',
+        alt: 'Art 11'
+      },
+      {
+        type: 'image',
+        src: '/images/art/Sidewalk.png',
+        alt: 'Art 12'
+      },
+      {
+        type: 'image',
+        src: '/images/art/THe Power of Balance.jpg',
+        alt: 'Art 13'
+      },
+      {
+        type: 'image',
+        src: '/images/art/The_Wiz.png',
+        alt: 'Art 14'
+      },
+      {
+        type: 'image',
+        src: '/images/art/Traveler.png',
+        alt: 'Art 15'
+      },
+      {
+        type: 'image',
+        src: '/images/art/DSC03115.jpg',
+        alt: 'Art 16'
+      },
+      {
+        type: 'image',
+        src: '/images/art/DSC03108.jpg',
+        alt: 'Art 17'
+      },
+      {
+        type: 'image',
+        src: '/images/art/Untitled_Artwork 12.jpg',
+        alt: 'Art 18'
+      },
+      {
+        type: 'image',
+        src: '/images/art/Untitled_Artwork 64.png',
+        alt: 'Art 19'
+      },
+      {
+        type: 'image',
+        src: '/images/art/Untitled_Artwork 66.png',
+        alt: 'Art 20'
+      },
+      {
+        type: 'image',
+        src: '/images/art/Untitled_Artwork 67.png',
+        alt: 'Art 21'
+      },
+      {
+        type: 'image',
+        src: '/images/art/Untitled_Artwork 68.png',
+        alt: 'Art 22'
+      },
+      {
+        type: 'image',
+        src: '/images/art/Untitled_Artwork 69.png',
+        alt: 'Art 23'
+      },
+      {
+        type: 'image',
+        src: '/images/art/Untitled_Artwork 8.jpg',
+        alt: 'Art 24'
+      },
+      {
+        type: 'image',
+        src: '/images/art/Untitled_Artwork 82.png',
+        alt: 'Art 25'
+      },
+      {
+        type: 'image',
+        src: '/images/art/We have to start SOMEWHERE. Comment_dirty_ below and I_ll send you the limk to my short course!.png',
+        alt: 'Art 26'
+      },
+      // Videos
+      {
+        type: 'video',
+        src: '/images/art/Staccino\'s (1).mp4',
+        alt: 'Staccino\'s',
+        ratio: 1
+      },
+      {
+        type: 'video',
+        src: '/images/art/Balloon2.mp4',
+        alt: 'Balloon',
+        ratio: 1
+      },
+      {
+        type: 'video',
+        src: '/images/art/LoFront8 (1).mp4',
+        alt: 'LoFront',
+        ratio: 1
+      },
+      {
+        type: 'video',
+        src: '/images/art/LofiSamu.mp4',
+        alt: 'Lofi Samu',
+        ratio: 1
+      },
+      {
+        type: 'video',
+        src: '/images/art/Lofi Desert.mp4',
+        alt: 'Lofi Desert',
+        ratio: 1
+      },
+      {
+        type: 'video',
+        src: '/images/art/Lofi Games2.mp4',
+        alt: 'Lofi Games',
+        ratio: 1
+      },
+      {
+        type: 'video',
+        src: '/images/art/Lamp Lofi2.mp4',
+        alt: 'Lamp Lofi',
+        ratio: 1
+      },
+      {
+        type: 'video',
+        src: '/images/art/LoSwamp.mp4',
+        alt: 'LoSwamp',
+        ratio: 1
+      },
+      {
+        type: 'video',
+        src: '/images/art/TotoroFinal2.mp4',
+        alt: 'Totoro',
+        ratio: 1
+      }
+    ];
+    return shuffleArray(allItems);
+  }, []);
 
   return (
     <Box
