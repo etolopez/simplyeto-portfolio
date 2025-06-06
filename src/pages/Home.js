@@ -1,9 +1,33 @@
-import React, { useMemo } from 'react';
-import { Box, Container, Typography, Button } from '@mui/material';
+import React, { useMemo, useState } from 'react';
+import { Box, Container, Typography, Button, Modal, TextField, Grid } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 import Gallery from '../components/Gallery';
 
 const Home = () => {
+  const [contactOpen, setContactOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleContactOpen = () => setContactOpen(true);
+  const handleContactClose = () => setContactOpen(false);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission here
+    console.log('Form submitted:', formData);
+    handleContactClose();
+  };
+
   // Helper function to shuffle array
   const shuffleArray = (array) => {
     const newArray = [...array];
@@ -175,8 +199,7 @@ const Home = () => {
           </Typography>
           <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center' }}>
             <Button
-              component={RouterLink}
-              to="/photography"
+              onClick={handleContactOpen}
               variant="contained"
               size="large"
               sx={{
@@ -188,11 +211,13 @@ const Home = () => {
                 },
               }}
             >
-              Photography
+              Contact Me
             </Button>
             <Button
-              component={RouterLink}
-              to="/art"
+              component="a"
+              href="https://calendly.com/simplyeto"
+              target="_blank"
+              rel="noopener noreferrer"
               variant="contained"
               size="large"
               sx={{
@@ -204,7 +229,7 @@ const Home = () => {
                 },
               }}
             >
-              Art
+              Book a Call
             </Button>
           </Box>
         </Container>
@@ -244,6 +269,137 @@ const Home = () => {
           <Gallery items={artItems} type="art" />
         </Box>
       </Container>
+
+      {/* Contact Modal */}
+      <Modal
+        open={contactOpen}
+        onClose={handleContactClose}
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <Box
+          component="form"
+          onSubmit={handleSubmit}
+          sx={{
+            backgroundColor: 'rgba(0, 0, 0, 0.9)',
+            borderRadius: 2,
+            p: 4,
+            width: '100%',
+            maxWidth: 600,
+            mx: 2,
+            border: '1px solid rgba(255, 255, 255, 0.2)',
+          }}
+        >
+          <Typography variant="h4" sx={{ mb: 4, color: 'white', textAlign: 'center' }}>
+            Contact Me
+          </Typography>
+          <Grid container spacing={3}>
+            <Grid item xs={12}>
+              <TextField
+                fullWidth
+                label="Name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                sx={{
+                  '& .MuiOutlinedInput-root': {
+                    color: 'white',
+                    '& fieldset': {
+                      borderColor: 'rgba(255, 255, 255, 0.23)',
+                    },
+                    '&:hover fieldset': {
+                      borderColor: 'rgba(255, 255, 255, 0.5)',
+                    },
+                    '&.Mui-focused fieldset': {
+                      borderColor: '#4ECDC4',
+                    },
+                  },
+                  '& .MuiInputLabel-root': {
+                    color: 'rgba(255, 255, 255, 0.7)',
+                  },
+                }}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                fullWidth
+                label="Email"
+                name="email"
+                type="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                sx={{
+                  '& .MuiOutlinedInput-root': {
+                    color: 'white',
+                    '& fieldset': {
+                      borderColor: 'rgba(255, 255, 255, 0.23)',
+                    },
+                    '&:hover fieldset': {
+                      borderColor: 'rgba(255, 255, 255, 0.5)',
+                    },
+                    '&.Mui-focused fieldset': {
+                      borderColor: '#4ECDC4',
+                    },
+                  },
+                  '& .MuiInputLabel-root': {
+                    color: 'rgba(255, 255, 255, 0.7)',
+                  },
+                }}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                fullWidth
+                label="Message"
+                name="message"
+                multiline
+                rows={4}
+                value={formData.message}
+                onChange={handleChange}
+                required
+                sx={{
+                  '& .MuiOutlinedInput-root': {
+                    color: 'white',
+                    '& fieldset': {
+                      borderColor: 'rgba(255, 255, 255, 0.23)',
+                    },
+                    '&:hover fieldset': {
+                      borderColor: 'rgba(255, 255, 255, 0.5)',
+                    },
+                    '&.Mui-focused fieldset': {
+                      borderColor: '#4ECDC4',
+                    },
+                  },
+                  '& .MuiInputLabel-root': {
+                    color: 'rgba(255, 255, 255, 0.7)',
+                  },
+                }}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <Button
+                type="submit"
+                variant="contained"
+                fullWidth
+                sx={{
+                  py: 1.5,
+                  backgroundColor: '#4ECDC4',
+                  '&:hover': {
+                    backgroundColor: '#45b7af',
+                  },
+                }}
+              >
+                Send Message
+              </Button>
+            </Grid>
+          </Grid>
+        </Box>
+      </Modal>
     </Box>
   );
 };
