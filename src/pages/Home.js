@@ -203,7 +203,6 @@ const Home = () => {
       { type: 'image', src: '/images/art/FINAL.png', ratio: 1 },
       { type: 'image', src: '/images/art/HEGEEME.jpg', ratio: 1 },
       { type: 'image', src: '/images/art/DSC03300 (1).jpg', ratio: 1 },
-      { type: 'image', src: '/images/art/DSC06360.png', ratio: 1 },
       { type: 'image', src: '/images/art/Carne\'Gato.png', ratio: 1 },
       { type: 'image', src: '/images/art/Untitled_Artwork 92.png', ratio: 1 },
       { type: 'image', src: '/images/art/AZ.png', ratio: 1 },
@@ -468,11 +467,28 @@ const Home = () => {
       </Modal>
 
       {/* Photography Gallery */}
-      <Box sx={{ position: 'relative' }}>
+      <Box sx={{ position: 'relative', mt: 8, mb: 8 }}>
+        <Typography
+          variant="h2"
+          component="h1"
+          sx={{
+            textAlign: 'center',
+            mb: 6,
+            fontSize: { xs: '2.5rem', md: '3.5rem' },
+            fontWeight: 'bold',
+            background: 'linear-gradient(45deg, #FF6B6B, #4ECDC4)',
+            backgroundClip: 'text',
+            textFillColor: 'transparent',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+          }}
+        >
+          Photography Portfolio
+        </Typography>
         <Gallery 
           title="Photography Collection" 
           items={photographyItems} 
-          type="photography" 
+          type="photography"
         />
         <Box sx={{ textAlign: 'center', mt: 2, mb: 4 }}>
           <Button
@@ -489,10 +505,27 @@ const Home = () => {
 
       {/* Art Gallery */}
       <Box sx={{ position: 'relative' }}>
+        <Typography
+          variant="h2"
+          component="h1"
+          sx={{
+            textAlign: 'center',
+            mb: 6,
+            fontSize: { xs: '2.5rem', md: '3.5rem' },
+            fontWeight: 'bold',
+            background: 'linear-gradient(45deg, #FF6B6B, #4ECDC4)',
+            backgroundClip: 'text',
+            textFillColor: 'transparent',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+          }}
+        >
+          Art Portfolio
+        </Typography>
         <Gallery 
           title="Art Gallery" 
           items={artItems} 
-          type="art" 
+          type="art"
         />
         <Box sx={{ textAlign: 'center', mt: 2, mb: 4 }}>
           <Button
@@ -509,10 +542,27 @@ const Home = () => {
 
       {/* Video Gallery */}
       <Box sx={{ position: 'relative' }}>
+        <Typography
+          variant="h2"
+          component="h1"
+          sx={{
+            textAlign: 'center',
+            mb: 6,
+            fontSize: { xs: '2.5rem', md: '3.5rem' },
+            fontWeight: 'bold',
+            background: 'linear-gradient(45deg, #FF6B6B, #4ECDC4)',
+            backgroundClip: 'text',
+            textFillColor: 'transparent',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+          }}
+        >
+          Video Portfolio
+        </Typography>
         <Gallery 
           title="Video Showcase" 
           items={videoItems} 
-          type="videos" 
+          type="videos"
         />
         <Box sx={{ textAlign: 'center', mt: 2, mb: 4 }}>
           <Button
@@ -528,57 +578,30 @@ const Home = () => {
       </Box>
 
       {/* Social Media Links */}
-      <Box sx={{ 
-        py: 4, 
-        display: 'flex', 
-        justifyContent: 'center', 
-        gap: 3,
-        borderTop: '1px solid rgba(0, 0, 0, 0.1)'
-      }}>
+      <Box sx={{ textAlign: 'center', mt: 4, mb: 4 }}>
         <IconButton
-          href="https://instagram.com/simplyeto"
+          href="https://www.instagram.com/simplyeto/"
           target="_blank"
           rel="noopener noreferrer"
-          sx={{ 
-            color: 'black',
-            '&:hover': {
-              color: '#E1306C',
-              transform: 'scale(1.1)',
-            },
-            transition: 'all 0.3s ease'
-          }}
+          sx={{ color: 'primary.main', fontSize: '2rem', mx: 1 }}
         >
-          <InstagramIcon sx={{ fontSize: 32 }} />
+          <InstagramIcon />
         </IconButton>
         <IconButton
-          href="https://youtube.com/@simplyeto"
+          href="https://www.youtube.com/@simplyeto"
           target="_blank"
           rel="noopener noreferrer"
-          sx={{ 
-            color: 'black',
-            '&:hover': {
-              color: '#FF0000',
-              transform: 'scale(1.1)',
-            },
-            transition: 'all 0.3s ease'
-          }}
+          sx={{ color: 'primary.main', fontSize: '2rem', mx: 1 }}
         >
-          <YouTubeIcon sx={{ fontSize: 32 }} />
+          <YouTubeIcon />
         </IconButton>
         <IconButton
-          href="https://x.com/simplyeto"
+          href="https://twitter.com/simplyeto"
           target="_blank"
           rel="noopener noreferrer"
-          sx={{ 
-            color: 'black',
-            '&:hover': {
-              color: '#000000',
-              transform: 'scale(1.1)',
-            },
-            transition: 'all 0.3s ease'
-          }}
+          sx={{ color: 'primary.main', fontSize: '2rem', mx: 1 }}
         >
-          <TwitterIcon sx={{ fontSize: 32 }} />
+          <TwitterIcon />
         </IconButton>
       </Box>
     </Box>

@@ -1,50 +1,63 @@
-import React, { useState } from 'react';
-import { Box, Container, Typography, IconButton } from '@mui/material';
-import Gallery from '../components/Gallery';
+import React, { useState, useMemo } from 'react';
+import { Box, Container, Typography, IconButton, Dialog, DialogContent } from '@mui/material';
 import ProfileImage from '../components/ProfileImage';
+import Gallery from '../components/Gallery';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 const Videos = () => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  const [selectedVideo, setSelectedVideo] = useState(null);
+  const [isPlayerOpen, setIsPlayerOpen] = useState(false);
 
-  const videoItems = [
-    {
-      type: 'video',
-      src: '/videos/Wetiko Short.mp4',
-      alt: 'Wetiko Short'
-    },
-    {
-      type: 'video',
-      src: '/videos/Solana Block Zero FINAL.mp4',
-      alt: 'Solana Block Zero'
-    },
-    {
-      type: 'video',
-      src: '/videos/day5IG.mp4',
-      alt: 'Day 5'
-    },
-    {
-      type: 'video',
-      src: '/videos/FromNaraNoMusic.mp4',
-      alt: 'From Nara'
-    },
-    {
-      type: 'video',
-      src: '/videos/render.mp4',
-      alt: 'Render'
-    },
-    {
-      type: 'video',
-      src: '/videos/xDgG4vXH26O7AAMw.mp4',
-      alt: 'Project X'
-    },
-    {
-      type: 'video',
-      src: '/videos/7ZWylAuSEnmkjdZD.mp4',
-      alt: 'Project 7Z'
-    }
-  ];
+  // Local video items with correct aspect ratios
+  const videoItems = useMemo(() => {
+    const mainVideos = [
+      { 
+        type: 'video', 
+        src: '/videos/Wetiko Short.mp4',
+        alt: 'Wetiko Short',
+        ratio: 16/9  // Landscape video
+      },
+      { 
+        type: 'video', 
+        src: '/videos/Solana Block Zero FINAL.mp4',
+        alt: 'Solana Block Zero',
+        ratio: 16/9  // Landscape video
+      },
+      { 
+        type: 'video', 
+        src: '/videos/day5IG.mp4',
+        alt: 'Day 5',
+        ratio: 9/16  // Vertical video
+      },
+      { 
+        type: 'video', 
+        src: '/videos/FromNaraNoMusic.mp4',
+        alt: 'From Nara',
+        ratio: 9/16  // Vertical video
+      },
+      { 
+        type: 'video', 
+        src: '/videos/render.mp4',
+        alt: 'Render',
+        ratio: 9/16  // Vertical video
+      },
+      { 
+        type: 'video', 
+        src: '/videos/xDgG4vXH26O7AAMw.mp4',
+        alt: 'Project X',
+        ratio: 16/9  // Landscape video
+      },
+      { 
+        type: 'video', 
+        src: '/videos/7ZWylAuSEnmkjdZD.mp4',
+        alt: 'Project 7Z',
+        ratio: 16/9  // Landscape video
+      }
+    ];
+    return mainVideos;
+  }, []);
 
   const youtubeVideos = [
     {
@@ -76,6 +89,18 @@ const Videos = () => {
     );
   };
 
+  const handleVideoClick = (item) => {
+    if (item.type === 'video') {
+      setSelectedVideo(item);
+      setIsPlayerOpen(true);
+    }
+  };
+
+  const handleClosePlayer = () => {
+    setIsPlayerOpen(false);
+    setSelectedVideo(null);
+  };
+
   return (
     <Box
       sx={{
@@ -105,7 +130,15 @@ const Videos = () => {
         >
           Video Collection
         </Typography>
-        <Gallery items={videoItems} type="videos" />
+
+        {/* Videos Section */}
+        <Box sx={{ mb: 8 }}>
+          <Gallery 
+            items={videoItems} 
+            type="videos" 
+            onItemClick={handleVideoClick}
+          />
+        </Box>
         
         {/* YouTube Videos Carousel */}
         <Box sx={{ mt: 8, position: 'relative' }}>
@@ -184,6 +217,35 @@ const Videos = () => {
             </IconButton>
           </Box>
         </Box>
+
+        {/* Video Player Dialog */}
+        <Dialog
+          open={isPlayerOpen}
+          onClose={handleClosePlayer}
+          maxWidth="lg"
+          fullWidth
+          PaperProps={{
+            sx: {
+              bgcolor: 'black',
+              color: 'white',
+              borderRadius: 2,
+            }
+          }}
+        >
+          <DialogContent sx={{ p: 0 }}>
+            {selectedVideo && (
+              <Box sx={{ width: '100%', aspectRatio: selectedVideo.ratio }}>
+                <video
+                  controls
+                  style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                  src={selectedVideo.src}
+                >
+                  Your browser does not support the video tag.
+                </video>
+              </Box>
+            )}
+          </DialogContent>
+        </Dialog>
       </Container>
     </Box>
   );

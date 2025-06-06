@@ -38,4 +38,16 @@ yarn-error.log*
 ehthumbs.db
 Thumbs.db
 
+# Large media files
+public/images/art/*.mp4
+public/videos/
+public/images_backup/
+*.mp4
+*.mov
+*.avi
+*.wmv
+*.flv
+*.mkv
+*.webm
+
 .vercel
