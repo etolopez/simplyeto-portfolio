@@ -38,252 +38,252 @@ const Art = () => {
       {
         id: 'art1',
         type: 'image',
-        src: '/images/art/optimized/FINAL.jpg',
+        src: `${process.env.PUBLIC_URL}/images/art/optimized/FINAL.jpg`,
         aspectRatio: '1/1',
         title: 'Artwork 1'
       },
       {
         id: 'art2',
         type: 'image',
-        src: '/images/art/HEGEEME.jpg',
+        src: `${process.env.PUBLIC_URL}/images/art/HEGEEME.jpg`,
         aspectRatio: '1/1',
         title: 'Artwork 2'
       },
       {
         id: 'art3',
         type: 'image',
-        src: '/images/art/DSC03300 (1).jpg',
+        src: `${process.env.PUBLIC_URL}/images/art/DSC03300 (1).jpg`,
         aspectRatio: '1/1',
         title: 'Artwork 3'
       },
       {
         id: 'art4',
         type: 'image',
-        src: '/images/art/optimized/Carne\'Gato.jpg',
+        src: `${process.env.PUBLIC_URL}/images/art/optimized/Carne\'Gato.jpg`,
         aspectRatio: '1/1',
         title: 'Artwork 4'
       },
       {
         id: 'art5',
         type: 'image',
-        src: '/images/art/Untitled_Artwork 92.png',
+        src: `${process.env.PUBLIC_URL}/images/art/Untitled_Artwork 92.png`,
         aspectRatio: '1/1',
         title: 'Artwork 5'
       },
       {
         id: 'art6',
         type: 'image',
-        src: '/images/art/AZ.png',
+        src: `${process.env.PUBLIC_URL}/images/art/AZ.png`,
         aspectRatio: '1/1',
         title: 'Artwork 6'
       },
       {
         id: 'art7',
         type: 'image',
-        src: '/images/art/A_Long_Way_Home.jpg',
+        src: `${process.env.PUBLIC_URL}/images/art/A_Long_Way_Home.jpg`,
         aspectRatio: '1/1',
         title: 'Artwork 7'
       },
       {
         id: 'art8',
         type: 'image',
-        src: '/images/art/optimized/Copos.jpg',
+        src: `${process.env.PUBLIC_URL}/images/art/optimized/Copos.jpg`,
         aspectRatio: '1/1',
         title: 'Artwork 8'
       },
       {
         id: 'art9',
         type: 'image',
-        src: '/images/art/Fly.jpg',
+        src: `${process.env.PUBLIC_URL}/images/art/Fly.jpg`,
         aspectRatio: '1/1',
         title: 'Artwork 9'
       },
       {
         id: 'art10',
         type: 'image',
-        src: '/images/art/IMG_2653.png',
+        src: `${process.env.PUBLIC_URL}/images/art/IMG_2653.png`,
         aspectRatio: '1/1',
         title: 'Artwork 10'
       },
       {
         id: 'art11',
         type: 'image',
-        src: '/images/art/Mugennight (1).png',
+        src: `${process.env.PUBLIC_URL}/images/art/Mugennight (1).png`,
         aspectRatio: '1/1',
         title: 'Artwork 11'
       },
       {
         id: 'art12',
         type: 'image',
-        src: '/images/art/optimized/Sidewalk.jpg',
+        src: `${process.env.PUBLIC_URL}/images/art/optimized/Sidewalk.jpg`,
         aspectRatio: '1/1',
         title: 'Artwork 12'
       },
       {
         id: 'art13',
         type: 'image',
-        src: '/images/art/Untitled_Artwork 8.jpg',
+        src: `${process.env.PUBLIC_URL}/images/art/Untitled_Artwork 8.jpg`,
         aspectRatio: '1/1',
         title: 'Artwork 13'
       },
       {
         id: 'art14',
         type: 'image',
-        src: '/images/art/Untitled_Artwork 12.jpg',
+        src: `${process.env.PUBLIC_URL}/images/art/Untitled_Artwork 12.jpg`,
         aspectRatio: '1/1',
         title: 'Artwork 14'
       },
       {
         id: 'art15',
         type: 'image',
-        src: '/images/art/optimized/Untitled_Artwork 64.jpg',
+        src: `${process.env.PUBLIC_URL}/images/art/optimized/Untitled_Artwork 64.jpg`,
         aspectRatio: '1/1',
         title: 'Artwork 15'
       },
       {
         id: 'art16',
         type: 'image',
-        src: '/images/art/Untitled_Artwork 66.png',
+        src: `${process.env.PUBLIC_URL}/images/art/Untitled_Artwork 66.png`,
         aspectRatio: '1/1',
         title: 'Artwork 16'
       },
       {
         id: 'art17',
         type: 'image',
-        src: '/images/art/Untitled_Artwork 67.png',
+        src: `${process.env.PUBLIC_URL}/images/art/Untitled_Artwork 67.png`,
         aspectRatio: '1/1',
         title: 'Artwork 17'
       },
       {
         id: 'art18',
         type: 'image',
-        src: '/images/art/optimized/Untitled_Artwork 68.jpg',
+        src: `${process.env.PUBLIC_URL}/images/art/optimized/Untitled_Artwork 68.jpg`,
         aspectRatio: '1/1',
         title: 'Artwork 18'
       },
       {
         id: 'art19',
         type: 'image',
-        src: '/images/art/Untitled_Artwork 69.png',
+        src: `${process.env.PUBLIC_URL}/images/art/Untitled_Artwork 69.png`,
         aspectRatio: '1/1',
         title: 'Artwork 19'
       },
       {
         id: 'art20',
         type: 'image',
-        src: '/images/art/optimized/Untitled_Artwork 82.jpg',
+        src: `${process.env.PUBLIC_URL}/images/art/optimized/Untitled_Artwork 82.jpg`,
         aspectRatio: '1/1',
         title: 'Artwork 20'
       },
       {
         id: 'art21',
         type: 'image',
-        src: '/images/art/The_Wiz.png',
+        src: `${process.env.PUBLIC_URL}/images/art/The_Wiz.png`,
         aspectRatio: '1/1',
         title: 'Artwork 21'
       },
       {
         id: 'art22',
         type: 'image',
-        src: '/images/art/THe Power of Balance.jpg',
+        src: `${process.env.PUBLIC_URL}/images/art/THe Power of Balance.jpg`,
         aspectRatio: '1/1',
         title: 'Artwork 22'
       },
       {
         id: 'art23',
         type: 'image',
-        src: '/images/art/optimized/Traveler.jpg',
+        src: `${process.env.PUBLIC_URL}/images/art/optimized/Traveler.jpg`,
         aspectRatio: '1/1',
         title: 'Artwork 23'
       },
       {
         id: 'art24',
         type: 'image',
-        src: '/images/art/photo_2023-12-29_15-20-59-2.jpg',
+        src: `${process.env.PUBLIC_URL}/images/art/photo_2023-12-29_15-20-59-2.jpg`,
         aspectRatio: '1/1',
         title: 'Artwork 24'
       },
       {
         id: 'art25',
         type: 'image',
-        src: '/images/art/photo_2023-12-29_15-20-54.jpg',
+        src: `${process.env.PUBLIC_URL}/images/art/photo_2023-12-29_15-20-54.jpg`,
         aspectRatio: '1/1',
         title: 'Artwork 25'
       },
       {
         id: 'art26',
         type: 'image',
-        src: '/images/art/optimized/img_2136-2 (1).jpg',
+        src: `${process.env.PUBLIC_URL}/images/art/optimized/img_2136-2 (1).jpg`,
         aspectRatio: '1/1',
         title: 'Artwork 26'
       },
       {
         id: 'art27',
         type: 'image',
-        src: '/images/art/img_2133.jpg',
+        src: `${process.env.PUBLIC_URL}/images/art/img_2133.jpg`,
         aspectRatio: '1/1',
         title: 'Artwork 27'
       },
       {
         id: 'art28',
         type: 'image',
-        src: '/images/art/optimized/hand.jpg',
+        src: `${process.env.PUBLIC_URL}/images/art/optimized/hand.jpg`,
         aspectRatio: '1/1',
         title: 'Artwork 28'
       },
       {
         id: 'art29',
         type: 'image',
-        src: '/images/art/optimized/spider-pig.jpg',
+        src: `${process.env.PUBLIC_URL}/images/art/optimized/spider-pig.jpg`,
         aspectRatio: '1/1',
         title: 'Artwork 29'
       },
       {
         id: 'art30',
         type: 'image',
-        src: '/images/art/optimized/eto08628-hdr (1) (1).jpg',
+        src: `${process.env.PUBLIC_URL}/images/art/optimized/eto08628-hdr (1) (1).jpg`,
         aspectRatio: '1/1',
         title: 'Artwork 30'
       },
       {
         id: 'art31',
         type: 'image',
-        src: '/images/art/optimized/DSC06677 (1).jpg',
+        src: `${process.env.PUBLIC_URL}/images/art/optimized/DSC06677 (1).jpg`,
         aspectRatio: '1/1',
         title: 'Artwork 31'
       },
       {
         id: 'art32',
         type: 'image',
-        src: '/images/art/optimized/DSC00437 (1) (1) (1).jpg',
+        src: `${process.env.PUBLIC_URL}/images/art/optimized/DSC00437 (1) (1) (1).jpg`,
         aspectRatio: '1/1',
         title: 'Artwork 32'
       },
       {
         id: 'art33',
         type: 'image',
-        src: '/images/art/optimized/Hero (1) (1).jpg',
+        src: `${process.env.PUBLIC_URL}/images/art/optimized/Hero (1) (1).jpg`,
         aspectRatio: '1/1',
         title: 'Artwork 33'
       },
       {
         id: 'art34',
         type: 'image',
-        src: '/images/art/optimized/IMG_2656 (1).jpg',
+        src: `${process.env.PUBLIC_URL}/images/art/optimized/IMG_2656 (1).jpg`,
         aspectRatio: '1/1',
         title: 'Artwork 34'
       },
       {
         id: 'art35',
         type: 'image',
-        src: '/images/art/optimized/Hero2 (1).jpg',
+        src: `${process.env.PUBLIC_URL}/images/art/optimized/Hero2 (1).jpg`,
         aspectRatio: '1/1',
         title: 'Artwork 35'
       },
       {
         id: 'art36',
         type: 'image',
-        src: '/images/art/optimized/We have to start SOMEWHERE. Comment_dirty_ below and I_ll send you the limk to my short course!.jpg',
+        src: `${process.env.PUBLIC_URL}/images/art/optimized/We have to start SOMEWHERE. Comment_dirty_ below and I_ll send you the limk to my short course!.jpg`,
         aspectRatio: '1/1',
         title: 'Artwork 36'
       },
