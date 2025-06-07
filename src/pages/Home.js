@@ -40,26 +40,16 @@ const Home = () => {
   };
 
   // Get random hero image from art collection
-  // const heroImage = useMemo(() => {
-  //   const artImages = [
-  //     '/images/art/FINAL.png',
-  //     '/images/art/HEGEEME.jpg',
-  //     '/images/art/DSC03300 (1).jpg',
-  //     '/images/art/Carne\'Gato.png',
-  //     '/images/art/Untitled_Artwork 92.png',
-  //     '/images/art/AZ.png',
-  //     '/images/art/A_Long_Way_Home.jpg',
-  //     '/images/art/Copos.png',
-  //     '/images/art/Fly.jpg',
-  //     '/images/art/IMG_2653.png',
-  //     '/images/art/Mugennight (1).png',
-  //     '/images/art/Sidewalk.png',
-  //     '/images/art/THe Power of Balance.jpg',
-  //     '/images/art/The_Wiz.png',
-  //     '/images/art/Traveler.png'
-  //   ];
-  //   return shuffleArray(artImages)[0];
-  // }, []);
+  const heroImage = useMemo(() => {
+    const artImages = [
+      '/images/art/optimized/Hero (1) (1).jpg',
+      '/images/art/optimized/Hero2 (1).jpg',
+      '/images/art/optimized/DSC06677 (1).jpg',
+      '/images/art/optimized/DSC00437 (1) (1).jpg',
+      '/images/art/optimized/IMG_2656 (1).jpg'
+    ];
+    return artImages[0]; // Use the first image consistently
+  }, []);
 
   // Art items (6 items total)
   const artItems = useMemo(() => {
@@ -184,7 +174,7 @@ const Home = () => {
           justifyContent: 'center',
         }}
       >
-        {/* Video Background */}
+        {/* Background Image */}
         <Box
           sx={{
             position: 'absolute',
@@ -193,7 +183,6 @@ const Home = () => {
             width: '100%',
             height: '100%',
             zIndex: 0,
-            pointerEvents: 'none',
             '&::after': {
               content: '""',
               position: 'absolute',
@@ -201,20 +190,16 @@ const Home = () => {
               left: 0,
               width: '100%',
               height: '100%',
-              backgroundColor: 'rgba(0, 0, 0, 0.7)',
+              backgroundColor: 'rgba(0, 0, 0, 0.6)',
               zIndex: 1
             }
           }}
         >
-          <iframe
-            width="100%"
-            height="100%"
-            src="https://www.youtube.com/embed/XwODLdBJbuU?autoplay=1&mute=1&loop=1&playlist=XwODLdBJbuU&controls=0&showinfo=0&rel=0"
-            title="Home Background Video"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            style={{
+          <Box
+            component="img"
+            src={heroImage}
+            alt="Background"
+            sx={{
               position: 'absolute',
               top: '50%',
               left: '50%',
@@ -223,24 +208,10 @@ const Home = () => {
               minHeight: '100vh',
               minWidth: '177.77vh',
               transform: 'translate(-50%, -50%)',
-              pointerEvents: 'none',
+              objectFit: 'cover',
             }}
           />
         </Box>
-
-        {/* Static Background Image - Remove this */}
-        {/* <Box
-          component="img"
-          src="/images/art/FINAL.png"
-          alt="Background"
-          sx={{
-            position: 'absolute',
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            filter: 'brightness(0.3)',
-          }}
-        /> */}
         
         <Container maxWidth="md" sx={{ position: 'relative', zIndex: 1 }}>
           <Typography
@@ -385,8 +356,31 @@ const Home = () => {
         </Box>
 
         {/* Video Section */}
-        <Box sx={{ mb: 8 }}>
+        <Box sx={{ py: 8 }}>
           <VideoGrid videos={videoItems} />
+          <Box sx={{ textAlign: 'center', mt: 4 }}>
+            <Button
+              component={RouterLink}
+              to="/videos"
+              variant="contained"
+              sx={{
+                backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                color: 'white',
+                fontSize: '1.2rem',
+                textTransform: 'none',
+                backdropFilter: 'blur(10px)',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                transition: 'all 0.3s ease',
+                '&:hover': {
+                  backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                  transform: 'translateY(-2px)',
+                  boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
+                },
+              }}
+            >
+              See More
+            </Button>
+          </Box>
         </Box>
       </Box>
 
