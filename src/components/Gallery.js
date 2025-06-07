@@ -74,23 +74,20 @@ const Gallery = ({ items, onItemClick }) => {
           >
             <img
               src={item.type === 'youtube' 
-                ? `https://img.youtube.com/vi/${item.id}/maxresdefault.jpg`
+                ? `https://img.youtube.com/vi/${item.id}/hqdefault.jpg`
                 : item.src}
               alt={item.title || "Media thumbnail"}
               className="thumbnail"
+              loading="lazy"
               style={{
                 width: '100%',
                 height: '100%',
                 objectFit: 'cover',
-                transition: 'filter 0.3s ease',
+                transition: 'filter 0.3s ease-in-out, opacity 0.3s ease-in-out',
                 opacity: loadedThumbnails[item.id || item.src] ? 1 : 0,
+                filter: loadedThumbnails[item.id || item.src] ? 'none' : 'blur(10px)',
               }}
               onLoad={() => handleThumbnailLoad(item.id || item.src)}
-              onError={(e) => {
-                if (item.type === 'youtube') {
-                  e.target.src = `https://img.youtube.com/vi/${item.id}/hqdefault.jpg`;
-                }
-              }}
             />
             {item.type === 'youtube' && (
               <IconButton

@@ -154,7 +154,14 @@ const Photography = () => {
       {
         type: 'image',
         src: '/images/photography/10.jpg',
-        alt: 'Photography 28'
+        alt: 'Photography 28',
+        loading: 'lazy',
+        style: {
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          transition: 'filter 0.3s ease-in-out',
+        }
       }
     ];
     return shuffleArray(allItems);
