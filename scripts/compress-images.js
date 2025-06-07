@@ -127,4 +127,4 @@ async function main() {
     console.log('Original images have been backed up to:', backupDir);
 }
 
-main().catch(console.error); 
+main().catch(console.error);

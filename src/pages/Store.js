@@ -32,35 +32,62 @@ const Store = () => {
   ];
 
   return (
-    <Box>
+    <Box sx={{ position: 'relative', minHeight: '100vh', overflow: 'hidden' }}>
+      {/* Video Background */}
+      <Box
+        sx={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          zIndex: -1,
+          pointerEvents: 'none',
+          '&::after': {
+            content: '""',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            backgroundColor: 'rgba(0, 0, 0, 0.7)',
+            zIndex: 1
+          }
+        }}
+      >
+        <iframe
+          src="https://www.youtube.com/embed/PqoTROxmTPw?autoplay=1&mute=1&loop=1&playlist=PqoTROxmTPw&controls=0&showinfo=0&rel=0&modestbranding=1"
+          style={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            width: '100vw',
+            height: '56.25vw', // 16:9 aspect ratio
+            minHeight: '100vh',
+            minWidth: '177.77vh', // 16:9 aspect ratio
+            transform: 'translate(-50%, -50%)',
+            border: 'none',
+            pointerEvents: 'none'
+          }}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      </Box>
+
       <ProfileImage />
       
-      {/* Hero Section */}
+      {/* Content Section */}
       <Box
         sx={{
           position: 'relative',
           width: '100%',
-          height: '100vh',
-          overflow: 'hidden',
+          minHeight: '100vh',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
+          pt: { xs: 8, md: 0 }
         }}
       >
-        {/* Static Background Image */}
-        <Box
-          component="img"
-          src="/images/art/FINAL.png"
-          alt="Background"
-          sx={{
-            position: 'absolute',
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            filter: 'brightness(0.3)',
-          }}
-        />
-        
         <Container maxWidth="md" sx={{ position: 'relative', zIndex: 1 }}>
           <Typography
             variant="h1"

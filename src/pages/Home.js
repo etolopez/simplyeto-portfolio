@@ -61,48 +61,6 @@ const Home = () => {
     return shuffleArray(artImages)[0];
   }, []);
 
-  // Photography items (6 items total)
-  const photographyItems = useMemo(() => {
-    const allPhotographyItems = [
-      {
-        type: 'image',
-        src: '/images/photography/DSC01641.jpg',
-        alt: 'Photography 1'
-      },
-      {
-        type: 'image',
-        src: '/images/photography/DSC03282.jpg',
-        alt: 'Photography 2'
-      },
-      {
-        type: 'image',
-        src: '/images/photography/DSC03185-HDR.jpg',
-        alt: 'Photography 3'
-      },
-      {
-        type: 'image',
-        src: '/images/photography/DSCF4194.jpg',
-        alt: 'Photography 4'
-      },
-      {
-        type: 'image',
-        src: '/images/photography/DSC03323.jpg',
-        alt: 'Photography 5'
-      },
-      {
-        type: 'image',
-        src: '/images/photography/DSC00437.jpg',
-        alt: 'Photography 6'
-      },
-      {
-        type: 'image',
-        src: '/images/photography/DSC08097.jpg',
-        alt: 'Photography 7'
-      }
-    ];
-    return shuffleArray(allPhotographyItems).slice(0, 6);
-  }, []);
-
   // Art items (6 items total)
   const artItems = useMemo(() => {
     const allImages = [
@@ -122,11 +80,79 @@ const Home = () => {
       { type: 'image', src: '/images/art/The_Wiz.png', ratio: 1 },
       { type: 'image', src: '/images/art/Traveler.png', ratio: 1 }
     ];
-    const allVideos = [
-      { type: 'video', src: '/images/art/Staccino\'s (1).mp4', ratio: 1 },
-      { type: 'video', src: '/images/art/Balloon2.mp4', ratio: 1 }
+
+    // Add YouTube videos from Art page
+    const youtubeVideos = [
+      { type: 'youtube', id: 'YNwuTP5-eU4', aspectRatio: '16/9', title: 'YouTube Video' },
+      { type: 'youtube', id: 'U1e3UmJ8no8', aspectRatio: '16/9', title: 'YouTube Video' },
+      { type: 'youtube', id: 'BAFEvDJg_s0', aspectRatio: '16/9', title: 'YouTube Video' },
+      { type: 'youtube', id: 'WX4Ya-aSRpE', aspectRatio: '16/9', title: 'YouTube Video' },
+      { type: 'youtube', id: 'XwODLdBJbuU', aspectRatio: '16/9', title: 'YouTube Video' },
+      { type: 'youtube', id: 'uf-6sJVi8_A', aspectRatio: '16/9', title: 'YouTube Video' },
+      { type: 'youtube', id: 'HRJ1UPsyAxI', aspectRatio: '16/9', title: 'YouTube Video' },
+      { type: 'youtube', id: 'Ly_e-KyL4Ac', aspectRatio: '16/9', title: 'YouTube Video' },
+      { type: 'youtube', id: 'TtpyQQYx70s', aspectRatio: '16/9', title: 'YouTube Video' },
+      { type: 'youtube', id: 'sYdZhY-llvI', aspectRatio: '16/9', title: 'YouTube Video' },
+      { type: 'youtube', id: 'PqoTROxmTPw', aspectRatio: '16/9', title: 'YouTube Video' },
+      { type: 'youtube', id: 'O3G0TjjKJpY', aspectRatio: '16/9', title: 'YouTube Video' },
+      { type: 'youtube', id: 'pl-sUNzsk6o', aspectRatio: '16/9', title: 'YouTube Video' },
+      { type: 'youtube', id: 'XQ_Eq8Tjcvo', aspectRatio: '16/9', title: 'YouTube Video' },
+      { type: 'youtube', id: 'dZ-ijFqjMHY', aspectRatio: '16/9', title: 'YouTube Video' },
+      { type: 'youtube', id: 'Tztq-rC0Jrc', aspectRatio: '16/9', title: 'YouTube Video' },
+      { type: 'youtube', id: 'AMq044tk4HY', aspectRatio: '16/9', title: 'YouTube Video' },
+      // Shorts
+      { type: 'youtube', id: 'PFiT7hlH76A', aspectRatio: '9/16', title: 'YouTube Short' },
+      { type: 'youtube', id: 'gguVCd-S_Zw', aspectRatio: '9/16', title: 'YouTube Short' },
+      { type: 'youtube', id: 'rsLQybn7Za0', aspectRatio: '9/16', title: 'YouTube Short' },
+      { type: 'youtube', id: '2lX_9pgshIU', aspectRatio: '9/16', title: 'YouTube Short' },
+      { type: 'youtube', id: 'DIniHWCOiRg', aspectRatio: '9/16', title: 'YouTube Short' },
+      { type: 'youtube', id: 'M0lnVo1Dkj4', aspectRatio: '9/16', title: 'YouTube Short' },
+      { type: 'youtube', id: 'f4TJBuOBQtY', aspectRatio: '9/16', title: 'YouTube Short' },
+      { type: 'youtube', id: '2pKQByYyk9s', aspectRatio: '9/16', title: 'YouTube Short' },
+      { type: 'youtube', id: 'dH88fLhi7KY', aspectRatio: '9/16', title: 'YouTube Short' },
+      { type: 'youtube', id: 'CUiGoa0hksg', aspectRatio: '9/16', title: 'YouTube Short' },
+      { type: 'youtube', id: 'nzgkoB4pvIY', aspectRatio: '9/16', title: 'YouTube Short' },
+      { type: 'youtube', id: 'DBJErEmQmiw', aspectRatio: '9/16', title: 'YouTube Short' }
     ];
-    return shuffleArray([...allImages, ...allVideos]).slice(0, 6);
+
+    return shuffleArray([...allImages, ...youtubeVideos]).slice(0, 6);
+  }, []);
+
+  // Photography items (6 items total)
+  const photographyItems = useMemo(() => {
+    const allImages = [
+      { type: 'image', src: '/images/photography/Epic7.jpg', ratio: '3/4' },
+      { type: 'image', src: '/images/photography/Epic (1).jpg', ratio: '4/3' },
+      { type: 'image', src: '/images/photography/DSCF4194.jpg', ratio: '1/1' },
+      { type: 'image', src: '/images/photography/DSC08097.jpg', ratio: '3/4' },
+      { type: 'image', src: '/images/photography/DSC07504.png', ratio: '4/3' },
+      { type: 'image', src: '/images/photography/DSC06589.png', ratio: '1/1' },
+      { type: 'image', src: '/images/photography/DSC06496.JPG', ratio: '3/4' },
+      { type: 'image', src: '/images/photography/DSC06451.png', ratio: '4/3' },
+      { type: 'image', src: '/images/photography/DSC06367.JPG', ratio: '1/1' },
+      { type: 'image', src: '/images/photography/DSC05666-Edit.JPG', ratio: '3/4' },
+      { type: 'image', src: '/images/photography/DSC05306.JPG', ratio: '4/3' },
+      { type: 'image', src: '/images/photography/DSC04385-Editar.jpg', ratio: '1/1' },
+      { type: 'image', src: '/images/photography/DSC04310.JPG', ratio: '3/4' },
+      { type: 'image', src: '/images/photography/DSC04041.jpg', ratio: '4/3' },
+      { type: 'image', src: '/images/photography/DSC03936.JPG', ratio: '1/1' }
+    ];
+    return shuffleArray([...allImages]).slice(0, 6);
+  }, []);
+
+  // Video items (6 items total)
+  const videoItems = useMemo(() => {
+    const allVideos = [
+      { type: 'youtube', id: 'QDJ55h7Br2g', aspectRatio: '16/9', title: 'Artist to Artist - Roberto Lopez' },
+      { type: 'youtube', id: 'O5hGzr5LY-s', aspectRatio: '16/9', title: 'Pozo Azul - Roberto Lopez' },
+      { type: 'youtube', id: 'hBatHVlh42Q', aspectRatio: '16/9', title: 'Canada - Roberto Lopez' },
+      { type: 'youtube', id: 'gUD5Pt8eKm0', aspectRatio: '16/9', title: 'Artist to Artist Final' },
+      { type: 'youtube', id: 'MiqvZby8pAY', aspectRatio: '16/9', title: 'Ayudanos a Ayudar' },
+      { type: 'youtube', id: '4T76gU-AGAg', aspectRatio: '9/16', title: 'Costa Rica Vertical' },
+      { type: 'youtube', id: 'ITQX2L_bRoc', aspectRatio: '9/16', title: 'Vertical Video 2' },
+      { type: 'youtube', id: '_CbGzcWEBiY', aspectRatio: '9/16', title: 'Vertical Video 3' }
+    ];
+    return shuffleArray([...allVideos]).slice(0, 6);
   }, []);
 
   return (
@@ -140,30 +166,71 @@ const Home = () => {
       {/* Hero Section */}
       <Box
         sx={{
-          height: '100vh',
           position: 'relative',
+          width: '100%',
+          height: '100vh',
+          overflow: 'hidden',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          overflow: 'hidden',
         }}
       >
-        {/* Hero Image */}
+        {/* Video Background */}
         <Box
+          sx={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            zIndex: 0,
+            pointerEvents: 'none',
+            '&::after': {
+              content: '""',
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              backgroundColor: 'rgba(0, 0, 0, 0.7)',
+              zIndex: 1
+            }
+          }}
+        >
+          <iframe
+            src="https://www.youtube.com/embed/BAFEvDJg_s0?autoplay=1&mute=1&loop=1&playlist=BAFEvDJg_s0&controls=0&showinfo=0&rel=0&modestbranding=1"
+            style={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              width: '100vw',
+              height: '56.25vw', // 16:9 aspect ratio
+              minHeight: '100vh',
+              minWidth: '177.77vh', // 16:9 aspect ratio
+              transform: 'translate(-50%, -50%)',
+              border: 'none',
+              pointerEvents: 'none'
+            }}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </Box>
+
+        {/* Static Background Image - Remove this */}
+        {/* <Box
           component="img"
-          src={heroImage}
-          alt="Hero"
+          src="/images/art/FINAL.png"
+          alt="Background"
           sx={{
             position: 'absolute',
             width: '100%',
             height: '100%',
             objectFit: 'cover',
-            filter: 'brightness(0.7)',
+            filter: 'brightness(0.3)',
           }}
-        />
-
-        {/* Content Overlay */}
-        <Container maxWidth="md" sx={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
+        /> */}
+        
+        <Container maxWidth="md" sx={{ position: 'relative', zIndex: 1 }}>
           <Typography
             variant="h1"
             sx={{
@@ -284,7 +351,7 @@ const Home = () => {
           >
             Photography
           </Typography>
-          <Gallery items={photographyItems} type="photography" />
+          <Gallery items={photographyItems} />
           <Box sx={{ textAlign: 'center', mt: 4 }}>
             <Button
               component={RouterLink}
@@ -307,7 +374,7 @@ const Home = () => {
 
         {/* Video Section */}
         <Box sx={{ mb: 8 }}>
-          <VideoGrid />
+          <VideoGrid videos={videoItems} />
         </Box>
       </Box>
 

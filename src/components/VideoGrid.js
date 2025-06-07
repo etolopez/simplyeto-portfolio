@@ -1,128 +1,26 @@
-import React, { useMemo } from 'react';
-import { Box, Typography, Button } from '@mui/material';
-import { motion } from 'framer-motion';
-import { Link as RouterLink } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Box, Typography, IconButton, Dialog, DialogContent } from '@mui/material';
 import Masonry from '@mui/lab/Masonry';
-import styled from '@emotion/styled';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 
-const VideoContainer = styled(Box)(({ theme, aspectRatio }) => ({
-  position: 'relative',
-  width: '100%',
-  paddingTop: aspectRatio === '9/16' ? '177.78%' : '56.25%',
-  borderRadius: theme.spacing(2),
-  overflow: 'hidden',
-  transition: 'transform 0.3s ease-in-out',
-  '&:hover': {
-    transform: 'scale(1.02)'
-  }
-}));
+const VideoGrid = ({ videos }) => {
+  const [selectedVideo, setSelectedVideo] = useState(null);
+  const [isPlayerOpen, setIsPlayerOpen] = useState(false);
+  const [loadedThumbnails, setLoadedThumbnails] = useState({});
 
-// Function to shuffle array
-const shuffleArray = (array) => {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
-};
+  const handleVideoClick = (video) => {
+    setSelectedVideo(video);
+    setIsPlayerOpen(true);
+  };
 
-const VideoGrid = () => {
-  // Get 6 random videos
-  const randomVideos = useMemo(() => {
-    const allVideos = [
-      {
-        id: 'Ys8ZxsT7Fic',
-        aspectRatio: '16/9',
-        type: 'youtube'
-      },
-      {
-        id: 'NH5H5tpIzfY',
-        aspectRatio: '16/9',
-        type: 'youtube'
-      },
-      {
-        id: 'FujqTaVz7rA',
-        aspectRatio: '16/9',
-        type: 'youtube'
-      },
-      {
-        id: 'ZaL2ejDOzys',
-        aspectRatio: '16/9',
-        type: 'youtube'
-      },
-      {
-        id: 'odXCQsG8YJE',
-        aspectRatio: '16/9',
-        type: 'youtube'
-      },
-      {
-        id: 'eolRa5vjxYo',
-        aspectRatio: '16/9',
-        type: 'youtube'
-      },
-      {
-        id: 'fYyLxqRHsyo',
-        aspectRatio: '9/16',
-        type: 'youtube'
-      },
-      {
-        id: 'lu240fb6FIQ',
-        aspectRatio: '9/16',
-        type: 'youtube'
-      },
-      {
-        id: 'qYoOukSkwvs',
-        aspectRatio: '9/16',
-        type: 'youtube'
-      },
-      {
-        id: 'w4IA4mQ17aI',
-        aspectRatio: '16/9',
-        type: 'youtube'
-      },
-      {
-        id: 'https://videos.files.wordpress.com/PTllwc8x/shiroles-facebook_dvd.mp4',
-        aspectRatio: '16/9',
-        type: 'direct'
-      },
-      {
-        id: 'https://videos.files.wordpress.com/xvrIUpPF/pozo-azul-final_mp4_dvd.mp4',
-        aspectRatio: '16/9',
-        type: 'direct'
-      },
-      {
-        id: 'https://videos.files.wordpress.com/jDSVAGLU/canada-roberto-1_dvd.mp4',
-        aspectRatio: '16/9',
-        type: 'direct'
-      },
-      {
-        id: 'https://videos.files.wordpress.com/UCdbXq40/artist-to-artist-final_dvd.mp4',
-        aspectRatio: '16/9',
-        type: 'direct'
-      },
-      {
-        id: 'https://videos.files.wordpress.com/Ev8ypXvl/ayudanos-a-ayudar-fabook_dvd.mp4',
-        aspectRatio: '16/9',
-        type: 'direct'
-      },
-      {
-        id: 'https://videos.files.wordpress.com/2rzr4JSt/youtube-costa_mp4_dvd.mp4',
-        aspectRatio: '16/9',
-        type: 'direct'
-      },
-      {
-        id: 'https://videos.files.wordpress.com/AHW7Rek0/hd_mp4_dvd.mp4',
-        aspectRatio: '16/9',
-        type: 'direct'
-      },
-      {
-        id: 'https://videos.files.wordpress.com/1kuBnJzM/completo-redes_dvd.mp4',
-        aspectRatio: '16/9',
-        type: 'direct'
-      }
-    ];
-    return shuffleArray([...allVideos]).slice(0, 6);
-  }, []);
+  const handleClosePlayer = () => {
+    setIsPlayerOpen(false);
+    setSelectedVideo(null);
+  };
+
+  const handleThumbnailLoad = (id) => {
+    setLoadedThumbnails(prev => ({ ...prev, [id]: true }));
+  };
 
   return (
     <Box sx={{ mb: 8 }}>
@@ -141,78 +39,135 @@ const VideoGrid = () => {
           WebkitTextFillColor: 'transparent',
         }}
       >
-        Video Portfolio
+        Videos
       </Typography>
 
       <Masonry
         columns={{ xs: 1, sm: 2, md: 3 }}
         spacing={2}
-        sx={{ width: 'auto' }}
+        sx={{
+          width: '100%',
+          maxWidth: '1200px',
+          margin: '0 auto',
+          '& .MuiMasonry-root': {
+            display: 'flex',
+            marginLeft: '-16px',
+            width: 'auto',
+          },
+          '& .MuiMasonry-item': {
+            paddingLeft: '16px',
+            backgroundClip: 'padding-box',
+            width: '100% !important',
+          },
+        }}
       >
-        {randomVideos.map((video, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
+        {videos.map((video) => (
+          <Box
+            key={video.id}
+            sx={{
+              position: 'relative',
+              width: '100%',
+              aspectRatio: video.aspectRatio,
+              cursor: 'pointer',
+              borderRadius: 2,
+              overflow: 'hidden',
+              boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
+              backgroundColor: 'black',
+              '&:hover .play-button': {
+                opacity: 1,
+              },
+              '&:hover .thumbnail': {
+                filter: 'brightness(0.7)',
+              },
+              '&:hover': {
+                transform: 'scale(1.02)',
+                transition: 'transform 0.3s ease-in-out'
+              }
+            }}
+            onClick={() => handleVideoClick(video)}
           >
-            <VideoContainer aspectRatio={video.aspectRatio}>
-              {video.type === 'youtube' ? (
-                <iframe
-                  src={`https://www.youtube.com/embed/${video.id}`}
-                  title={`Video ${index + 1}`}
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    height: '100%',
-                    borderRadius: '8px'
-                  }}
-                />
-              ) : (
-                <video
-                  controls
-                  style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    height: '100%',
-                    borderRadius: '8px',
-                    objectFit: 'cover'
-                  }}
-                  src={video.id}
-                >
-                  Your browser does not support the video tag.
-                </video>
-              )}
-            </VideoContainer>
-          </motion.div>
+            <img
+              src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`}
+              alt={video.title}
+              className="thumbnail"
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                transition: 'filter 0.3s ease',
+                opacity: loadedThumbnails[video.id] ? 1 : 0,
+              }}
+              onLoad={() => handleThumbnailLoad(video.id)}
+              onError={(e) => {
+                e.target.src = `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`;
+              }}
+            />
+            <IconButton
+              className="play-button"
+              sx={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                color: 'white',
+                opacity: 0.8,
+                transition: 'opacity 0.3s ease',
+                '&:hover': {
+                  opacity: 1,
+                },
+              }}
+            >
+              <PlayArrowIcon sx={{ fontSize: 48 }} />
+            </IconButton>
+          </Box>
         ))}
       </Masonry>
 
-      <Box sx={{ textAlign: 'center', mt: 4 }}>
-        <Button
-          component={RouterLink}
-          to="/videos"
-          variant="contained"
-          size="large"
-          sx={{
-            background: 'linear-gradient(45deg, #FF6B6B, #4ECDC4)',
+      {/* Video Player Dialog */}
+      <Dialog
+        open={isPlayerOpen}
+        onClose={handleClosePlayer}
+        maxWidth="lg"
+        fullWidth
+        PaperProps={{
+          sx: {
+            bgcolor: 'black',
             color: 'white',
-            '&:hover': {
-              background: 'linear-gradient(45deg, #FF6B6B, #4ECDC4)',
-              opacity: 0.9
-            }
-          }}
-        >
-          See More Videos
-        </Button>
-      </Box>
+            borderRadius: 2,
+            maxWidth: '90vw',
+            maxHeight: '90vh',
+            margin: 'auto',
+          }
+        }}
+      >
+        <DialogContent sx={{ p: 0, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          {selectedVideo && (
+            <Box 
+              sx={{ 
+                width: '100%',
+                maxWidth: selectedVideo.aspectRatio === '9/16' ? '400px' : '800px',
+                aspectRatio: selectedVideo.aspectRatio,
+                margin: 'auto',
+                position: 'relative',
+              }}
+            >
+              <iframe
+                src={`https://www.youtube.com/embed/${selectedVideo.id}?autoplay=1&modestbranding=1&rel=0&showinfo=0&controls=1`}
+                title={selectedVideo.title}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  border: 'none',
+                  backgroundColor: 'black'
+                }}
+              />
+            </Box>
+          )}
+        </DialogContent>
+      </Dialog>
     </Box>
   );
 };

@@ -1,7 +1,23 @@
-import React from 'react';
-import { Box } from '@mui/material';
+import React, { useState } from 'react';
+import { Box, CircularProgress } from '@mui/material';
 
 const VideoPlayer = ({ src, thumbnail }) => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(false);
+
+  const handleLoadStart = () => {
+    setIsLoading(true);
+  };
+
+  const handleCanPlay = () => {
+    setIsLoading(false);
+  };
+
+  const handleError = () => {
+    setIsLoading(false);
+    setError(true);
+  };
+
   return (
     <Box
       sx={{
@@ -17,23 +33,66 @@ const VideoPlayer = ({ src, thumbnail }) => {
         }
       }}
     >
-      <video
-        controls
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover'
-        }}
-        src={src}
-        poster={thumbnail}
-        controlsList="nodownload"
-        disablePictureInPicture
-      >
-        Your browser does not support the video tag.
-      </video>
+      {isLoading && (
+        <Box
+          sx={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: 'rgba(0,0,0,0.5)',
+            zIndex: 1
+          }}
+        >
+          <CircularProgress color="primary" />
+        </Box>
+      )}
+      {error ? (
+        <Box
+          sx={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: 'rgba(0,0,0,0.8)',
+            color: 'white',
+            textAlign: 'center',
+            padding: 2
+          }}
+        >
+          Error loading video. Please try again later.
+        </Box>
+      ) : (
+        <video
+          controls
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover'
+          }}
+          src={src}
+          poster={thumbnail}
+          controlsList="nodownload"
+          disablePictureInPicture
+          onLoadStart={handleLoadStart}
+          onCanPlay={handleCanPlay}
+          onError={handleError}
+          preload="metadata"
+        >
+          Your browser does not support the video tag.
+        </video>
+      )}
     </Box>
   );
 };
