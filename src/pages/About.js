@@ -53,7 +53,7 @@ const About = () => {
       >
         <Box
           component="img"
-          src="/images/art/optimized/Untitled_Artwork 64.jpg"
+          src={process.env.PUBLIC_URL + "/images/art/optimized/Untitled_Artwork 64.jpg"}
           alt="Background"
           sx={{
             position: 'absolute',
@@ -70,7 +70,7 @@ const About = () => {
       <Box sx={{ position: 'fixed', top: 20, left: 20, zIndex: 9999 }}>
         <RouterLink to="/" style={{ textDecoration: 'none' }}>
           <ProfileImage
-            src="/images/art/Mugennight (1).png"
+            src={process.env.PUBLIC_URL + "/images/art/Mugennight (1).png"}
             alt="Eto"
             sx={{
               width: { xs: 40, sm: 50 },
@@ -105,7 +105,7 @@ const About = () => {
               <Grid item xs={12} md={4} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <Box
                   component="img"
-                  src="/images/profile/face.jpg"
+                  src={process.env.PUBLIC_URL + "/images/profile/face.jpg"}
                   alt="Profile"
                   sx={{
                     width: 250,

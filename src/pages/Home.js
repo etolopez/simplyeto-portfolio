@@ -41,27 +41,27 @@ const Home = () => {
 
   // Get hero image
   const heroImage = useMemo(() => {
-    return '/images/art/optimized/Hero2 (1).jpg';
+    return process.env.PUBLIC_URL + '/images/art/optimized/Hero2 (1).jpg';
   }, []);
 
   // Art items (6 items total)
   const artItems = useMemo(() => {
     const allImages = [
-      { type: 'image', src: '/images/art/FINAL.png', ratio: 1 },
-      { type: 'image', src: '/images/art/HEGEEME.jpg', ratio: 1 },
-      { type: 'image', src: '/images/art/DSC03300 (1).jpg', ratio: 1 },
-      { type: 'image', src: '/images/art/Carne\'Gato.png', ratio: 1 },
-      { type: 'image', src: '/images/art/Untitled_Artwork 92.png', ratio: 1 },
-      { type: 'image', src: '/images/art/AZ.png', ratio: 1 },
-      { type: 'image', src: '/images/art/A_Long_Way_Home.jpg', ratio: 1 },
-      { type: 'image', src: '/images/art/Copos.png', ratio: 1 },
-      { type: 'image', src: '/images/art/Fly.jpg', ratio: 1 },
-      { type: 'image', src: '/images/art/IMG_2653.png', ratio: 1 },
-      { type: 'image', src: '/images/art/Mugennight (1).png', ratio: 1 },
-      { type: 'image', src: '/images/art/Sidewalk.png', ratio: 1 },
-      { type: 'image', src: '/images/art/THe Power of Balance.jpg', ratio: 1 },
-      { type: 'image', src: '/images/art/The_Wiz.png', ratio: 1 },
-      { type: 'image', src: '/images/art/Traveler.png', ratio: 1 }
+      { type: 'image', src: process.env.PUBLIC_URL + '/images/art/FINAL.png', ratio: 1 },
+      { type: 'image', src: process.env.PUBLIC_URL + '/images/art/HEGEEME.jpg', ratio: 1 },
+      { type: 'image', src: process.env.PUBLIC_URL + '/images/art/DSC03300 (1).jpg', ratio: 1 },
+      { type: 'image', src: process.env.PUBLIC_URL + '/images/art/Carne\'Gato.png', ratio: 1 },
+      { type: 'image', src: process.env.PUBLIC_URL + '/images/art/Untitled_Artwork 92.png', ratio: 1 },
+      { type: 'image', src: process.env.PUBLIC_URL + '/images/art/AZ.png', ratio: 1 },
+      { type: 'image', src: process.env.PUBLIC_URL + '/images/art/A_Long_Way_Home.jpg', ratio: 1 },
+      { type: 'image', src: process.env.PUBLIC_URL + '/images/art/Copos.png', ratio: 1 },
+      { type: 'image', src: process.env.PUBLIC_URL + '/images/art/Fly.jpg', ratio: 1 },
+      { type: 'image', src: process.env.PUBLIC_URL + '/images/art/IMG_2653.png', ratio: 1 },
+      { type: 'image', src: process.env.PUBLIC_URL + '/images/art/Mugennight (1).png', ratio: 1 },
+      { type: 'image', src: process.env.PUBLIC_URL + '/images/art/Sidewalk.png', ratio: 1 },
+      { type: 'image', src: process.env.PUBLIC_URL + '/images/art/THe Power of Balance.jpg', ratio: 1 },
+      { type: 'image', src: process.env.PUBLIC_URL + '/images/art/The_Wiz.png', ratio: 1 },
+      { type: 'image', src: process.env.PUBLIC_URL + '/images/art/Traveler.png', ratio: 1 }
     ];
 
     // Add YouTube videos from Art page
@@ -104,21 +104,21 @@ const Home = () => {
   // Photography items (6 items total)
   const photographyItems = useMemo(() => {
     const allImages = [
-      { type: 'image', src: '/images/photography/Epic7.jpg', ratio: '3/4' },
-      { type: 'image', src: '/images/photography/Epic (1).jpg', ratio: '4/3' },
-      { type: 'image', src: '/images/photography/DSCF4194.jpg', ratio: '1/1' },
-      { type: 'image', src: '/images/photography/DSC08097.jpg', ratio: '3/4' },
-      { type: 'image', src: '/images/photography/DSC07504.png', ratio: '4/3' },
-      { type: 'image', src: '/images/photography/DSC06589.png', ratio: '1/1' },
-      { type: 'image', src: '/images/photography/DSC06496.JPG', ratio: '3/4' },
-      { type: 'image', src: '/images/photography/DSC06451.png', ratio: '4/3' },
-      { type: 'image', src: '/images/photography/DSC06367.JPG', ratio: '1/1' },
-      { type: 'image', src: '/images/photography/DSC05666-Edit.JPG', ratio: '3/4' },
-      { type: 'image', src: '/images/photography/DSC05306.JPG', ratio: '4/3' },
-      { type: 'image', src: '/images/photography/DSC04385-Editar.jpg', ratio: '1/1' },
-      { type: 'image', src: '/images/photography/DSC04310.JPG', ratio: '3/4' },
-      { type: 'image', src: '/images/photography/DSC04041.jpg', ratio: '4/3' },
-      { type: 'image', src: '/images/photography/DSC03936.JPG', ratio: '1/1' }
+      { type: 'image', src: process.env.PUBLIC_URL + '/images/photography/Epic7.jpg', ratio: '3/4' },
+      { type: 'image', src: process.env.PUBLIC_URL + '/images/photography/Epic (1).jpg', ratio: '4/3' },
+      { type: 'image', src: process.env.PUBLIC_URL + '/images/photography/DSCF4194.jpg', ratio: '1/1' },
+      { type: 'image', src: process.env.PUBLIC_URL + '/images/photography/DSC08097.jpg', ratio: '3/4' },
+      { type: 'image', src: process.env.PUBLIC_URL + '/images/photography/DSC07504.png', ratio: '4/3' },
+      { type: 'image', src: process.env.PUBLIC_URL + '/images/photography/DSC06589.png', ratio: '1/1' },
+      { type: 'image', src: process.env.PUBLIC_URL + '/images/photography/DSC06496.JPG', ratio: '3/4' },
+      { type: 'image', src: process.env.PUBLIC_URL + '/images/photography/DSC06451.png', ratio: '4/3' },
+      { type: 'image', src: process.env.PUBLIC_URL + '/images/photography/DSC06367.JPG', ratio: '1/1' },
+      { type: 'image', src: process.env.PUBLIC_URL + '/images/photography/DSC05666-Edit.JPG', ratio: '3/4' },
+      { type: 'image', src: process.env.PUBLIC_URL + '/images/photography/DSC05306.JPG', ratio: '4/3' },
+      { type: 'image', src: process.env.PUBLIC_URL + '/images/photography/DSC04385-Editar.jpg', ratio: '1/1' },
+      { type: 'image', src: process.env.PUBLIC_URL + '/images/photography/DSC04310.JPG', ratio: '3/4' },
+      { type: 'image', src: process.env.PUBLIC_URL + '/images/photography/DSC04041.jpg', ratio: '4/3' },
+      { type: 'image', src: process.env.PUBLIC_URL + '/images/photography/DSC03936.JPG', ratio: '1/1' }
     ];
     return shuffleArray([...allImages]).slice(0, 6);
   }, []);

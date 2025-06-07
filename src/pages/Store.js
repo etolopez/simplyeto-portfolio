@@ -29,7 +29,7 @@ const Store = () => {
       >
         <Box
           component="img"
-          src="/images/art/optimized/IMG_2656 (1).jpg"
+          src={process.env.PUBLIC_URL + "/images/art/optimized/IMG_2656 (1).jpg"}
           alt="Background"
           sx={{
             position: 'absolute',
@@ -46,7 +46,7 @@ const Store = () => {
       <Box sx={{ position: 'fixed', top: 20, left: 20, zIndex: 9999 }}>
         <RouterLink to="/" style={{ textDecoration: 'none' }}>
           <ProfileImage
-            src="/images/art/Mugennight (1).png"
+            src={process.env.PUBLIC_URL + "/images/art/Mugennight (1).png"}
             alt="Eto"
             sx={{
               width: { xs: 40, sm: 50 },
