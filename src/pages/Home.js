@@ -39,16 +39,9 @@ const Home = () => {
     return newArray;
   };
 
-  // Get random hero image from art collection
+  // Get hero image
   const heroImage = useMemo(() => {
-    const artImages = [
-      '/images/art/optimized/Hero (1) (1).jpg',
-      '/images/art/optimized/Hero2 (1).jpg',
-      '/images/art/optimized/DSC06677 (1).jpg',
-      '/images/art/optimized/DSC00437 (1) (1).jpg',
-      '/images/art/optimized/IMG_2656 (1).jpg'
-    ];
-    return artImages[0]; // Use the first image consistently
+    return '/images/art/optimized/Hero2 (1).jpg';
   }, []);
 
   // Art items (6 items total)
