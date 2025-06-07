@@ -59,7 +59,7 @@ const Art = () => {
       {
         id: 'art4',
         type: 'image',
-        src: '/images/art/Carne\'Gato.png',
+        src: '/images/art/optimized/Carne\'Gato.jpg',
         aspectRatio: '1/1',
         title: 'Artwork 4'
       },
@@ -87,7 +87,7 @@ const Art = () => {
       {
         id: 'art8',
         type: 'image',
-        src: '/images/art/Copos.png',
+        src: '/images/art/optimized/Copos.jpg',
         aspectRatio: '1/1',
         title: 'Artwork 8'
       },
@@ -171,7 +171,7 @@ const Art = () => {
       {
         id: 'art20',
         type: 'image',
-        src: '/images/art/Untitled_Artwork 82.png',
+        src: '/images/art/optimized/Untitled_Artwork 82.jpg',
         aspectRatio: '1/1',
         title: 'Artwork 20'
       },
@@ -213,7 +213,7 @@ const Art = () => {
       {
         id: 'art26',
         type: 'image',
-        src: '/images/art/img_2136-2.jpg',
+        src: '/images/art/optimized/img_2136-2 (1).jpg',
         aspectRatio: '1/1',
         title: 'Artwork 26'
       },
@@ -241,7 +241,7 @@ const Art = () => {
       {
         id: 'art30',
         type: 'image',
-        src: '/images/art/eto08628-hdr (1).jpg',
+        src: '/images/art/optimized/eto08628-hdr (1) (1).jpg',
         aspectRatio: '1/1',
         title: 'Artwork 30'
       },
@@ -420,6 +420,13 @@ const Art = () => {
         type: 'youtube',
         aspectRatio: '9/16',
         title: 'YouTube Short'
+      },
+      {
+        id: 'art31',
+        type: 'image',
+        src: '/images/art/optimized/img_1690-2.jpg',
+        aspectRatio: '1/1',
+        title: 'Artwork 31'
       }
     ];
     return shuffleArray([...items]);

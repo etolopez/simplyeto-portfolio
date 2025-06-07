@@ -79,6 +79,7 @@ const Gallery = ({ items, onItemClick }) => {
               alt={item.title || "Media thumbnail"}
               className="thumbnail"
               loading="lazy"
+              decoding="async"
               style={{
                 width: '100%',
                 height: '100%',
@@ -88,10 +89,19 @@ const Gallery = ({ items, onItemClick }) => {
                 filter: loadedThumbnails[item.id || item.src] ? 'none' : 'blur(10px)',
                 backgroundColor: 'black'
               }}
-              onLoad={() => handleThumbnailLoad(item.id || item.src)}
+              onLoad={(e) => {
+                console.log(`Successfully loaded image: ${item.src}`);
+                handleThumbnailLoad(item.id || item.src);
+              }}
               onError={(e) => {
                 console.error(`Failed to load image: ${item.src}`);
                 e.target.style.opacity = 0;
+                // Try to load a lower quality version if available
+                if (item.src.includes('.png')) {
+                  const jpgVersion = item.src.replace('.png', '.jpg');
+                  console.log(`Attempting to load JPG version: ${jpgVersion}`);
+                  e.target.src = jpgVersion;
+                }
               }}
             />
             {item.type === 'youtube' && (
