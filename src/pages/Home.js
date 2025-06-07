@@ -165,9 +165,10 @@ const Home = () => {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
+          backgroundColor: 'black',
         }}
       >
-        {/* Background Image */}
+        {/* Video Background */}
         <Box
           sx={{
             position: 'absolute',
@@ -176,23 +177,19 @@ const Home = () => {
             width: '100%',
             height: '100%',
             zIndex: 0,
-            '&::after': {
-              content: '""',
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%',
-              backgroundColor: 'rgba(0, 0, 0, 0.6)',
-              zIndex: 1
-            }
+            overflow: 'hidden',
+            backgroundColor: 'black',
           }}
         >
-          <Box
-            component="img"
-            src={heroImage}
-            alt="Background"
-            sx={{
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/TtpyQQYx70s?autoplay=1&mute=1&loop=1&playlist=TtpyQQYx70s&controls=0&showinfo=0&rel=0"
+            title="Hero Background Video"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            style={{
               position: 'absolute',
               top: '50%',
               left: '50%',
@@ -201,7 +198,18 @@ const Home = () => {
               minHeight: '100vh',
               minWidth: '177.77vh',
               transform: 'translate(-50%, -50%)',
-              objectFit: 'cover',
+              pointerEvents: 'none',
+            }}
+          />
+          <Box
+            sx={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              backgroundColor: 'rgba(0, 0, 0, 0.6)',
+              zIndex: 1
             }}
           />
         </Box>
