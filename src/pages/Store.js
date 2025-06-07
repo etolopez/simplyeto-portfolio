@@ -6,7 +6,7 @@ import ProfileImage from '../components/ProfileImage';
 const Store = () => {
   return (
     <Box sx={{ minHeight: '100vh', position: 'relative' }}>
-      {/* Video Background */}
+      {/* Background Image */}
       <Box
         sx={{
           position: 'absolute',
@@ -15,27 +15,29 @@ const Store = () => {
           width: '100%',
           height: '100%',
           zIndex: -1,
-          overflow: 'hidden',
+          '&::after': {
+            content: '""',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            backgroundColor: 'rgba(0, 0, 0, 0.3)',
+            zIndex: 1
+          }
         }}
       >
-        <iframe
-          width="100%"
-          height="100%"
-          src="https://www.youtube.com/embed/AMq044tk4HY?autoplay=1&mute=1&loop=1&playlist=AMq044tk4HY&controls=0&showinfo=0&rel=0"
-          title="Store Background Video"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          style={{
+        <Box
+          component="img"
+          src="/images/art/optimized/IMG_2656 (1).jpg"
+          alt="Background"
+          sx={{
             position: 'absolute',
-            top: '50%',
-            left: '50%',
-            width: '100vw',
-            height: '56.25vw',
-            minHeight: '100vh',
-            minWidth: '177.77vh',
-            transform: 'translate(-50%, -50%)',
-            pointerEvents: 'none',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
           }}
         />
       </Box>

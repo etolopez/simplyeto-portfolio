@@ -151,7 +151,7 @@ const About = () => {
               sx={{
                 mr: 2,
                 mb: { xs: 2, sm: 0 },
-                backgroundColor: 'rgba(0, 0, 0, 0.7)',
+                backgroundColor: 'rgba(0, 0, 0, 0.4)',
                 color: 'white',
                 fontSize: '1.2rem',
                 textTransform: 'none',
@@ -159,7 +159,7 @@ const About = () => {
                 border: '1px solid rgba(255, 255, 255, 0.2)',
                 transition: 'all 0.3s ease',
                 '&:hover': {
-                  backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                  backgroundColor: 'rgba(0, 0, 0, 0.5)',
                   transform: 'translateY(-2px)',
                   boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
                 },
@@ -173,7 +173,7 @@ const About = () => {
               target="_blank"
               rel="noopener noreferrer"
               sx={{
-                backgroundColor: 'rgba(0, 0, 0, 0.7)',
+                backgroundColor: 'rgba(0, 0, 0, 0.4)',
                 color: 'white',
                 fontSize: '1.2rem',
                 textTransform: 'none',
@@ -181,7 +181,7 @@ const About = () => {
                 border: '1px solid rgba(255, 255, 255, 0.2)',
                 transition: 'all 0.3s ease',
                 '&:hover': {
-                  backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                  backgroundColor: 'rgba(0, 0, 0, 0.5)',
                   transform: 'translateY(-2px)',
                   boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
                 },
