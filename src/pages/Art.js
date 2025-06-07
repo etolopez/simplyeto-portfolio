@@ -199,7 +199,7 @@ const Art = () => {
       {
         id: 'art24',
         type: 'image',
-        src: '/images/art/We have to start SOMEWHERE. Comment_dirty_ below and I_ll send you the limk to my short course!.png',
+        src: '/images/art/photo_2023-12-29_15-20-59-2.jpg',
         aspectRatio: '1/1',
         title: 'Artwork 24'
       },
@@ -213,7 +213,7 @@ const Art = () => {
       {
         id: 'art26',
         type: 'image',
-        src: '/images/art/photo_2023-12-29_15-20-59-2.jpg',
+        src: '/images/art/img_2136-2.jpg',
         aspectRatio: '1/1',
         title: 'Artwork 26'
       },
@@ -227,37 +227,23 @@ const Art = () => {
       {
         id: 'art28',
         type: 'image',
-        src: '/images/art/img_2136-2.jpg',
+        src: '/images/art/hand.png',
         aspectRatio: '1/1',
         title: 'Artwork 28'
       },
       {
         id: 'art29',
         type: 'image',
-        src: '/images/art/img_1690-2.png',
+        src: '/images/art/spider-pig.png',
         aspectRatio: '1/1',
         title: 'Artwork 29'
       },
       {
         id: 'art30',
         type: 'image',
-        src: '/images/art/spider-pig.png',
-        aspectRatio: '1/1',
-        title: 'Artwork 30'
-      },
-      {
-        id: 'art31',
-        type: 'image',
-        src: '/images/art/hand.png',
-        aspectRatio: '1/1',
-        title: 'Artwork 31'
-      },
-      {
-        id: 'art32',
-        type: 'image',
         src: '/images/art/eto08628-hdr (1).jpg',
         aspectRatio: '1/1',
-        title: 'Artwork 32'
+        title: 'Artwork 30'
       },
       // Regular YouTube videos (16:9)
       {

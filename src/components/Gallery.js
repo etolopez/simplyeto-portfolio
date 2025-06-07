@@ -86,8 +86,13 @@ const Gallery = ({ items, onItemClick }) => {
                 transition: 'filter 0.3s ease-in-out, opacity 0.3s ease-in-out',
                 opacity: loadedThumbnails[item.id || item.src] ? 1 : 0,
                 filter: loadedThumbnails[item.id || item.src] ? 'none' : 'blur(10px)',
+                backgroundColor: 'black'
               }}
               onLoad={() => handleThumbnailLoad(item.id || item.src)}
+              onError={(e) => {
+                console.error(`Failed to load image: ${item.src}`);
+                e.target.style.opacity = 0;
+              }}
             />
             {item.type === 'youtube' && (
               <IconButton
