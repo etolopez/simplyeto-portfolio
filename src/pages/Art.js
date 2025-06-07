@@ -45,14 +45,14 @@ const Art = () => {
       {
         id: 'art2',
         type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/HEGEEME.jpg`,
+        src: `${process.env.PUBLIC_URL}/images/art/optimized/img_1690-2.jpg`,
         aspectRatio: '1/1',
         title: 'Artwork 2'
       },
       {
         id: 'art3',
         type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/DSC03300 (1).jpg`,
+        src: `${process.env.PUBLIC_URL}/images/art/optimized/DSC00437 (1) (1) (1).jpg`,
         aspectRatio: '1/1',
         title: 'Artwork 3'
       },
@@ -66,21 +66,21 @@ const Art = () => {
       {
         id: 'art5',
         type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/Untitled_Artwork 92.png`,
+        src: `${process.env.PUBLIC_URL}/images/art/optimized/Hero (1) (1).jpg`,
         aspectRatio: '1/1',
         title: 'Artwork 5'
       },
       {
         id: 'art6',
         type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/AZ.png`,
+        src: `${process.env.PUBLIC_URL}/images/art/optimized/IMG_2656 (1).jpg`,
         aspectRatio: '1/1',
         title: 'Artwork 6'
       },
       {
         id: 'art7',
         type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/A_Long_Way_Home.jpg`,
+        src: `${process.env.PUBLIC_URL}/images/art/optimized/Hero2 (1).jpg`,
         aspectRatio: '1/1',
         title: 'Artwork 7'
       },
@@ -94,21 +94,21 @@ const Art = () => {
       {
         id: 'art9',
         type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/Fly.jpg`,
+        src: `${process.env.PUBLIC_URL}/images/art/optimized/DSC06677 (1).jpg`,
         aspectRatio: '1/1',
         title: 'Artwork 9'
       },
       {
         id: 'art10',
         type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/IMG_2653.png`,
+        src: `${process.env.PUBLIC_URL}/images/art/optimized/img_2136-2 (1).jpg`,
         aspectRatio: '1/1',
         title: 'Artwork 10'
       },
       {
         id: 'art11',
         type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/Mugennight (1).png`,
+        src: `${process.env.PUBLIC_URL}/images/art/optimized/Untitled_Artwork 82.jpg`,
         aspectRatio: '1/1',
         title: 'Artwork 11'
       },
@@ -122,14 +122,14 @@ const Art = () => {
       {
         id: 'art13',
         type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/Untitled_Artwork 8.jpg`,
+        src: `${process.env.PUBLIC_URL}/images/art/optimized/eto08628-hdr (1) (1).jpg`,
         aspectRatio: '1/1',
         title: 'Artwork 13'
       },
       {
         id: 'art14',
         type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/Untitled_Artwork 12.jpg`,
+        src: `${process.env.PUBLIC_URL}/images/art/optimized/hand.jpg`,
         aspectRatio: '1/1',
         title: 'Artwork 14'
       },
@@ -143,14 +143,14 @@ const Art = () => {
       {
         id: 'art16',
         type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/Untitled_Artwork 66.png`,
+        src: `${process.env.PUBLIC_URL}/images/art/optimized/spider-pig.jpg`,
         aspectRatio: '1/1',
         title: 'Artwork 16'
       },
       {
         id: 'art17',
         type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/Untitled_Artwork 67.png`,
+        src: `${process.env.PUBLIC_URL}/images/art/optimized/Traveler.jpg`,
         aspectRatio: '1/1',
         title: 'Artwork 17'
       },
@@ -164,7 +164,7 @@ const Art = () => {
       {
         id: 'art19',
         type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/Untitled_Artwork 69.png`,
+        src: `${process.env.PUBLIC_URL}/images/art/optimized/We have to start SOMEWHERE. Comment_dirty_ below and I_ll send you the limk to my short course!.jpg`,
         aspectRatio: '1/1',
         title: 'Artwork 19'
       },
