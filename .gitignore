@@ -40,7 +40,6 @@ Thumbs.db
 
 # Google Cloud handled files
 public/videos/*
-public/images/*
 
 # Large media files
 *.mp4
