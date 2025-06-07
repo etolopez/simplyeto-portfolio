@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Container, Typography, Button, Dialog, DialogContent, TextField, Grid } from '@mui/material';
+import { Box, Container, Typography, Button, TextField, Grid, Dialog, DialogContent } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 import ProfileImage from '../components/ProfileImage';
 
@@ -30,36 +30,38 @@ const About = () => {
 
   return (
     <Box sx={{ minHeight: '100vh', position: 'relative' }}>
-      {/* Video Background */}
+      {/* Background Image */}
       <Box
         sx={{
-          position: 'absolute',
+          position: 'fixed',
           top: 0,
           left: 0,
           width: '100%',
           height: '100%',
           zIndex: -1,
-          overflow: 'hidden',
+          '&::after': {
+            content: '""',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            backgroundColor: 'rgba(0, 0, 0, 0.3)',
+            zIndex: 1
+          }
         }}
       >
-        <iframe
-          width="100%"
-          height="100%"
-          src="https://www.youtube.com/embed/sYdZhY-llvI?autoplay=1&mute=1&loop=1&playlist=sYdZhY-llvI&controls=0&showinfo=0&rel=0"
-          title="About Background Video"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          style={{
+        <Box
+          component="img"
+          src="/images/art/optimized/Untitled_Artwork 64.jpg"
+          alt="Background"
+          sx={{
             position: 'absolute',
-            top: '50%',
-            left: '50%',
-            width: '100vw',
-            height: '56.25vw',
-            minHeight: '100vh',
-            minWidth: '177.77vh',
-            transform: 'translate(-50%, -50%)',
-            pointerEvents: 'none',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
           }}
         />
       </Box>
@@ -90,7 +92,7 @@ const About = () => {
           {/* Profile Section */}
           <Box
             sx={{
-              backgroundColor: 'rgba(0, 0, 0, 0.4)',
+              backgroundColor: 'rgba(0, 0, 0, 0.7)',
               backdropFilter: 'blur(20px)',
               border: '1px solid rgba(255, 255, 255, 0.2)',
               borderRadius: 4,
@@ -149,7 +151,7 @@ const About = () => {
               sx={{
                 mr: 2,
                 mb: { xs: 2, sm: 0 },
-                backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                backgroundColor: 'rgba(0, 0, 0, 0.7)',
                 color: 'white',
                 fontSize: '1.2rem',
                 textTransform: 'none',
@@ -157,7 +159,7 @@ const About = () => {
                 border: '1px solid rgba(255, 255, 255, 0.2)',
                 transition: 'all 0.3s ease',
                 '&:hover': {
-                  backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                  backgroundColor: 'rgba(0, 0, 0, 0.8)',
                   transform: 'translateY(-2px)',
                   boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
                 },
@@ -171,7 +173,7 @@ const About = () => {
               target="_blank"
               rel="noopener noreferrer"
               sx={{
-                backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                backgroundColor: 'rgba(0, 0, 0, 0.7)',
                 color: 'white',
                 fontSize: '1.2rem',
                 textTransform: 'none',
@@ -179,7 +181,7 @@ const About = () => {
                 border: '1px solid rgba(255, 255, 255, 0.2)',
                 transition: 'all 0.3s ease',
                 '&:hover': {
-                  backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                  backgroundColor: 'rgba(0, 0, 0, 0.8)',
                   transform: 'translateY(-2px)',
                   boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
                 },

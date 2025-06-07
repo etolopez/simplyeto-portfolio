@@ -133,7 +133,7 @@ const Videos = () => {
   ];
 
   // Randomize videos on each render
-  const shuffledVideos = useMemo(() => shuffleArray(videos), []);
+  const shuffledVideos = useMemo(() => shuffleArray(videos), [videos]);
 
   return (
     <Box
