@@ -24,24 +24,6 @@ const VideoGrid = ({ videos }) => {
 
   return (
     <Box sx={{ mb: 8 }}>
-      <Typography
-        variant="h2"
-        component="h2"
-        sx={{
-          textAlign: 'center',
-          mb: 6,
-          fontSize: { xs: '2.5rem', md: '3.5rem' },
-          fontWeight: 'bold',
-          background: 'linear-gradient(45deg, #FF6B6B, #4ECDC4)',
-          backgroundClip: 'text',
-          textFillColor: 'transparent',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
-        }}
-      >
-        Videos
-      </Typography>
-
       <Masonry
         columns={{ xs: 1, sm: 2, md: 3 }}
         spacing={2}

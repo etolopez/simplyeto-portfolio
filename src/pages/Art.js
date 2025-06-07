@@ -23,6 +23,13 @@ const Art = () => {
     setLoadedThumbnails(prev => ({ ...prev, [id]: true }));
   };
 
+  // Function to get the correct image path
+  const getImagePath = (path) => {
+    // Remove any leading slashes
+    const cleanPath = path.replace(/^\/+/, '');
+    return `${window.location.origin}/${cleanPath}`;
+  };
+
   // Function to shuffle array
   const shuffleArray = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
@@ -38,254 +45,163 @@ const Art = () => {
       {
         id: 'art1',
         type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/optimized/FINAL.jpg`,
+        src: getImagePath('images/art/optimized/FINAL.jpg'),
         aspectRatio: '1/1',
         title: 'Artwork 1'
       },
       {
         id: 'art2',
         type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/optimized/img_1690-2.jpg`,
+        src: getImagePath('images/art/optimized/img_1690-2.jpg'),
         aspectRatio: '1/1',
         title: 'Artwork 2'
       },
       {
         id: 'art3',
         type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/optimized/DSC00437 (1) (1) (1).jpg`,
+        src: getImagePath('images/art/optimized/DSC00437 (1) (1) (1).jpg'),
         aspectRatio: '1/1',
         title: 'Artwork 3'
       },
       {
         id: 'art4',
         type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/optimized/Carne\'Gato.jpg`,
+        src: getImagePath('images/art/optimized/Carne\'Gato.jpg'),
         aspectRatio: '1/1',
         title: 'Artwork 4'
       },
       {
         id: 'art5',
         type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/optimized/Hero (1) (1).jpg`,
+        src: getImagePath('images/art/optimized/Hero (1) (1).jpg'),
         aspectRatio: '1/1',
         title: 'Artwork 5'
       },
       {
         id: 'art6',
         type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/optimized/IMG_2656 (1).jpg`,
+        src: getImagePath('images/art/optimized/IMG_2656 (1).jpg'),
         aspectRatio: '1/1',
         title: 'Artwork 6'
       },
       {
         id: 'art7',
         type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/optimized/Hero2 (1).jpg`,
+        src: getImagePath('images/art/optimized/Hero2 (1).jpg'),
         aspectRatio: '1/1',
         title: 'Artwork 7'
       },
       {
         id: 'art8',
         type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/optimized/Copos.jpg`,
+        src: getImagePath('images/art/optimized/Copos.jpg'),
         aspectRatio: '1/1',
         title: 'Artwork 8'
       },
       {
         id: 'art9',
         type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/optimized/DSC06677 (1).jpg`,
+        src: getImagePath('images/art/optimized/DSC06677 (1).jpg'),
         aspectRatio: '1/1',
         title: 'Artwork 9'
       },
       {
         id: 'art10',
         type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/optimized/img_2136-2 (1).jpg`,
+        src: getImagePath('images/art/optimized/img_2136-2 (1).jpg'),
         aspectRatio: '1/1',
         title: 'Artwork 10'
       },
       {
         id: 'art11',
         type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/optimized/Untitled_Artwork 82.jpg`,
+        src: getImagePath('images/art/optimized/Untitled_Artwork 82.jpg'),
         aspectRatio: '1/1',
         title: 'Artwork 11'
       },
       {
         id: 'art12',
         type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/optimized/Sidewalk.jpg`,
+        src: getImagePath('images/art/optimized/Sidewalk.jpg'),
         aspectRatio: '1/1',
         title: 'Artwork 12'
       },
       {
-        id: 'art13',
-        type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/optimized/eto08628-hdr (1) (1).jpg`,
-        aspectRatio: '1/1',
-        title: 'Artwork 13'
-      },
-      {
         id: 'art14',
         type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/optimized/hand.jpg`,
+        src: getImagePath('images/art/optimized/hand.jpg'),
         aspectRatio: '1/1',
         title: 'Artwork 14'
       },
       {
         id: 'art15',
         type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/optimized/Untitled_Artwork 64.jpg`,
+        src: getImagePath('images/art/optimized/Untitled_Artwork 64.jpg'),
         aspectRatio: '1/1',
         title: 'Artwork 15'
       },
       {
         id: 'art16',
         type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/optimized/spider-pig.jpg`,
+        src: getImagePath('images/art/optimized/spider-pig.jpg'),
         aspectRatio: '1/1',
         title: 'Artwork 16'
       },
       {
         id: 'art17',
         type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/optimized/Traveler.jpg`,
+        src: getImagePath('images/art/optimized/Traveler.jpg'),
         aspectRatio: '1/1',
         title: 'Artwork 17'
       },
       {
         id: 'art18',
         type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/optimized/Untitled_Artwork 68.jpg`,
+        src: getImagePath('images/art/optimized/Untitled_Artwork 68.jpg'),
         aspectRatio: '1/1',
         title: 'Artwork 18'
       },
       {
         id: 'art19',
         type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/optimized/We have to start SOMEWHERE. Comment_dirty_ below and I_ll send you the limk to my short course!.jpg`,
+        src: getImagePath('images/art/optimized/We have to start SOMEWHERE. Comment_dirty_ below and I_ll send you the limk to my short course!.jpg'),
         aspectRatio: '1/1',
         title: 'Artwork 19'
       },
       {
-        id: 'art20',
-        type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/optimized/Untitled_Artwork 82.jpg`,
-        aspectRatio: '1/1',
-        title: 'Artwork 20'
-      },
-      {
         id: 'art21',
         type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/The_Wiz.png`,
+        src: getImagePath('images/art/The_Wiz.png'),
         aspectRatio: '1/1',
         title: 'Artwork 21'
       },
       {
         id: 'art22',
         type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/THe Power of Balance.jpg`,
+        src: getImagePath('images/art/THe Power of Balance.jpg'),
         aspectRatio: '1/1',
         title: 'Artwork 22'
       },
       {
-        id: 'art23',
-        type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/optimized/Traveler.jpg`,
-        aspectRatio: '1/1',
-        title: 'Artwork 23'
-      },
-      {
         id: 'art24',
         type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/photo_2023-12-29_15-20-59-2.jpg`,
+        src: getImagePath('images/art/photo_2023-12-29_15-20-59-2.jpg'),
         aspectRatio: '1/1',
         title: 'Artwork 24'
       },
       {
         id: 'art25',
         type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/photo_2023-12-29_15-20-54.jpg`,
+        src: getImagePath('images/art/photo_2023-12-29_15-20-54.jpg'),
         aspectRatio: '1/1',
         title: 'Artwork 25'
       },
       {
-        id: 'art26',
-        type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/optimized/img_2136-2 (1).jpg`,
-        aspectRatio: '1/1',
-        title: 'Artwork 26'
-      },
-      {
         id: 'art27',
         type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/img_2133.jpg`,
+        src: getImagePath('images/art/img_2133.jpg'),
         aspectRatio: '1/1',
         title: 'Artwork 27'
-      },
-      {
-        id: 'art28',
-        type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/optimized/hand.jpg`,
-        aspectRatio: '1/1',
-        title: 'Artwork 28'
-      },
-      {
-        id: 'art29',
-        type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/optimized/spider-pig.jpg`,
-        aspectRatio: '1/1',
-        title: 'Artwork 29'
-      },
-      {
-        id: 'art30',
-        type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/optimized/eto08628-hdr (1) (1).jpg`,
-        aspectRatio: '1/1',
-        title: 'Artwork 30'
-      },
-      {
-        id: 'art31',
-        type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/optimized/DSC06677 (1).jpg`,
-        aspectRatio: '1/1',
-        title: 'Artwork 31'
-      },
-      {
-        id: 'art32',
-        type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/optimized/DSC00437 (1) (1) (1).jpg`,
-        aspectRatio: '1/1',
-        title: 'Artwork 32'
-      },
-      {
-        id: 'art33',
-        type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/optimized/Hero (1) (1).jpg`,
-        aspectRatio: '1/1',
-        title: 'Artwork 33'
-      },
-      {
-        id: 'art34',
-        type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/optimized/IMG_2656 (1).jpg`,
-        aspectRatio: '1/1',
-        title: 'Artwork 34'
-      },
-      {
-        id: 'art35',
-        type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/optimized/Hero2 (1).jpg`,
-        aspectRatio: '1/1',
-        title: 'Artwork 35'
-      },
-      {
-        id: 'art36',
-        type: 'image',
-        src: `${process.env.PUBLIC_URL}/images/art/optimized/We have to start SOMEWHERE. Comment_dirty_ below and I_ll send you the limk to my short course!.jpg`,
-        aspectRatio: '1/1',
-        title: 'Artwork 36'
       },
       // Regular YouTube videos (16:9)
       {
@@ -464,44 +380,42 @@ const Art = () => {
         title: 'YouTube Short'
       }
     ];
-    return shuffleArray([...items]);
+    return shuffleArray(items);
   }, []);
 
   return (
     <Box
       sx={{
         minHeight: '100vh',
+        width: '100%',
+        position: 'relative',
+        overflow: 'hidden',
         backgroundColor: 'black',
         color: 'white',
-        pt: { xs: 8, md: 10 },
-        pb: 8,
+        pt: { xs: 8, sm: 10 },
+        pb: { xs: 8, sm: 10 }
       }}
     >
       <ProfileImage />
-      <Container maxWidth="lg">
+      <Container maxWidth="xl">
         <Typography
           variant="h2"
           component="h1"
           sx={{
             textAlign: 'center',
             mb: 6,
-            fontSize: { xs: '2.5rem', md: '3.5rem' },
             fontWeight: 'bold',
-            background: 'linear-gradient(45deg, #FF6B6B, #4ECDC4)',
-            backgroundClip: 'text',
-            textFillColor: 'transparent',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
+            fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4rem' }
           }}
         >
           Art Gallery
         </Typography>
 
         <Masonry
-          columns={{ xs: 1, sm: 2, md: 3 }}
+          columns={{ xs: 1, sm: 2, md: 3, lg: 4 }}
           spacing={2}
           sx={{
-            width: '100%',
+            width: 'auto',
             '& .MuiMasonry-root': {
               display: 'flex',
               marginLeft: '-16px',
@@ -526,12 +440,6 @@ const Art = () => {
                 overflow: 'hidden',
                 boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
                 backgroundColor: 'black',
-                '&:hover .play-button': {
-                  opacity: 1,
-                },
-                '&:hover .thumbnail': {
-                  filter: 'brightness(0.7)',
-                },
                 '&:hover': {
                   transform: 'scale(1.02)',
                   transition: 'transform 0.3s ease-in-out'
@@ -539,59 +447,71 @@ const Art = () => {
               }}
               onClick={() => handleItemClick(item)}
             >
-              <img
-                src={item.type === 'youtube' 
-                  ? `https://i.ytimg.com/vi/${item.id}/maxresdefault.jpg`
-                  : item.src}
-                alt={item.title}
-                className="thumbnail"
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                  transition: 'filter 0.3s ease, opacity 0.3s ease',
-                  opacity: loadedThumbnails[item.id] ? 1 : 0,
-                  backgroundColor: 'black'
-                }}
-                onLoad={() => handleThumbnailLoad(item.id)}
-                onError={(e) => {
-                  if (item.type === 'youtube') {
-                    // Try different quality options
-                    const qualities = ['maxresdefault', 'sddefault', 'hqdefault', 'mqdefault', 'default'];
-                    let currentQuality = 0;
-                    
-                    const tryNextQuality = () => {
-                      if (currentQuality < qualities.length) {
-                        e.target.src = `https://i.ytimg.com/vi/${item.id}/${qualities[currentQuality]}.jpg`;
-                        currentQuality++;
+              {item.type === 'youtube' ? (
+                <>
+                  <img
+                    src={`https://i.ytimg.com/vi/${item.id}/maxresdefault.jpg`}
+                    alt={item.title}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      transition: 'filter 0.3s ease, opacity 0.3s ease',
+                      opacity: loadedThumbnails[item.id] ? 1 : 0,
+                      backgroundColor: 'black'
+                    }}
+                    onLoad={() => handleThumbnailLoad(item.id)}
+                    onError={(e) => {
+                      if (item.type === 'youtube') {
+                        // Try different quality options
+                        const qualities = ['maxresdefault', 'sddefault', 'hqdefault', 'mqdefault', 'default'];
+                        let currentQuality = 0;
+                        
+                        const tryNextQuality = () => {
+                          if (currentQuality < qualities.length) {
+                            e.target.src = `https://i.ytimg.com/vi/${item.id}/${qualities[currentQuality]}.jpg`;
+                            currentQuality++;
+                          }
+                        };
+                        
+                        tryNextQuality();
+                        e.target.onerror = tryNextQuality;
                       }
-                    };
-                    
-                    tryNextQuality();
-                    e.target.onerror = tryNextQuality;
-                  }
-                }}
-              />
-              {item.type === 'youtube' && (
-                <IconButton
-                  className="play-button"
-                  sx={{
-                    position: 'absolute',
-                    top: '50%',
-                    left: '50%',
-                    transform: 'translate(-50%, -50%)',
-                    color: 'white',
-                    opacity: 0.8,
-                    transition: 'opacity 0.3s ease, background-color 0.3s ease',
-                    backgroundColor: 'rgba(0, 0, 0, 0.3)',
-                    '&:hover': {
-                      opacity: 1,
-                      backgroundColor: 'rgba(0, 0, 0, 0.5)'
-                    }
+                    }}
+                  />
+                  <IconButton
+                    sx={{
+                      position: 'absolute',
+                      top: '50%',
+                      left: '50%',
+                      transform: 'translate(-50%, -50%)',
+                      color: 'white',
+                      opacity: 0.8,
+                      transition: 'opacity 0.3s ease, background-color 0.3s ease',
+                      backgroundColor: 'rgba(0, 0, 0, 0.3)',
+                      '&:hover': {
+                        opacity: 1,
+                        backgroundColor: 'rgba(0, 0, 0, 0.5)'
+                      }
+                    }}
+                  >
+                    <PlayArrowIcon sx={{ fontSize: 48 }} />
+                  </IconButton>
+                </>
+              ) : (
+                <img
+                  src={item.src}
+                  alt={item.title}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    transition: 'filter 0.3s ease, opacity 0.3s ease',
+                    opacity: loadedThumbnails[item.id] ? 1 : 0,
+                    backgroundColor: 'black'
                   }}
-                >
-                  <PlayArrowIcon sx={{ fontSize: 48 }} />
-                </IconButton>
+                  onLoad={() => handleThumbnailLoad(item.id)}
+                />
               )}
               {!loadedThumbnails[item.id] && (
                 <Box
@@ -627,7 +547,6 @@ const Art = () => {
           ))}
         </Masonry>
 
-        {/* Video Player Dialog */}
         <Dialog
           open={isPlayerOpen}
           onClose={handleClosePlayer}
@@ -635,59 +554,68 @@ const Art = () => {
           fullWidth
           PaperProps={{
             sx: {
-              bgcolor: 'black',
-              color: 'white',
-              borderRadius: 2,
-              maxWidth: '90vw',
-              maxHeight: '90vh',
-              margin: 'auto',
+              backgroundColor: 'transparent',
+              boxShadow: 'none',
+              overflow: 'hidden'
             }
           }}
         >
-          <DialogContent sx={{ p: 0, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            {selectedItem && selectedItem.type === 'youtube' ? (
-              <Box 
-                sx={{ 
-                  width: '100%',
-                  maxWidth: selectedItem.aspectRatio === '9/16' ? '400px' : '800px',
-                  aspectRatio: selectedItem.aspectRatio,
-                  margin: 'auto',
+          <DialogContent sx={{ p: 0, position: 'relative' }}>
+            {selectedItem && (
+              <Box
+                sx={{
                   position: 'relative',
+                  width: '100%',
+                  height: '100%',
+                  minHeight: '80vh',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  backgroundColor: 'rgba(0, 0, 0, 0.9)'
                 }}
               >
-                <iframe
-                  src={`https://www.youtube.com/embed/${selectedItem.id}?autoplay=1&modestbranding=1&rel=0&showinfo=0&controls=1`}
-                  title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    border: 'none',
-                    backgroundColor: 'black'
+                {selectedItem.type === 'youtube' ? (
+                  <iframe
+                    src={`https://www.youtube.com/embed/${selectedItem.id}?autoplay=1&modestbranding=1&rel=0&showinfo=0&controls=1`}
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      maxWidth: selectedItem.aspectRatio === '9/16' ? '400px' : '800px',
+                      aspectRatio: selectedItem.aspectRatio,
+                      border: 'none',
+                      backgroundColor: 'black'
+                    }}
+                  />
+                ) : (
+                  <img
+                    src={selectedItem.src}
+                    alt={selectedItem.title}
+                    style={{
+                      maxWidth: '100%',
+                      maxHeight: '100%',
+                      objectFit: 'contain'
+                    }}
+                  />
+                )}
+                <IconButton
+                  onClick={handleClosePlayer}
+                  sx={{
+                    position: 'absolute',
+                    top: 8,
+                    right: 8,
+                    color: 'white',
+                    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                    '&:hover': {
+                      backgroundColor: 'rgba(0, 0, 0, 0.7)'
+                    }
                   }}
-                />
-              </Box>
-            ) : selectedItem && (
-              <Box 
-                sx={{ 
-                  width: '100%',
-                  maxWidth: '800px',
-                  aspectRatio: selectedItem.aspectRatio,
-                  margin: 'auto',
-                  position: 'relative',
-                }}
-              >
-                <img
-                  src={selectedItem.src}
-                  alt={selectedItem.title}
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'contain',
-                  }}
-                />
+                >
+                  <PlayArrowIcon />
+                </IconButton>
               </Box>
             )}
           </DialogContent>

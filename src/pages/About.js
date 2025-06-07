@@ -1,33 +1,9 @@
-import React, { useState } from 'react';
-import { Box, Container, Typography, Button, TextField, Grid, Dialog, DialogContent } from '@mui/material';
+import React from 'react';
+import { Box, Container, Typography, Button, Grid } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 import ProfileImage from '../components/ProfileImage';
 
 const About = () => {
-  const [contactOpen, setContactOpen] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-
-  const handleContactOpen = () => setContactOpen(true);
-  const handleContactClose = () => setContactOpen(false);
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    handleContactClose();
-  };
-
   return (
     <Box sx={{ minHeight: '100vh', position: 'relative' }}>
       {/* Video Background */}
@@ -156,11 +132,11 @@ const About = () => {
           {/* Contact Buttons */}
           <Box sx={{ textAlign: 'center', mt: 4 }}>
             <Button
+              component="a"
+              href="mailto:roberto@lightsaint.com"
               variant="contained"
-              onClick={handleContactOpen}
+              size="large"
               sx={{
-                mr: 2,
-                mb: { xs: 2, sm: 0 },
                 backgroundColor: 'rgba(0, 0, 0, 0.4)',
                 color: 'white',
                 fontSize: '1.2rem',
@@ -168,6 +144,7 @@ const About = () => {
                 backdropFilter: 'blur(10px)',
                 border: '1px solid rgba(255, 255, 255, 0.2)',
                 transition: 'all 0.3s ease',
+                mr: 2,
                 '&:hover': {
                   backgroundColor: 'rgba(0, 0, 0, 0.5)',
                   transform: 'translateY(-2px)',
@@ -178,10 +155,12 @@ const About = () => {
               Get in Touch
             </Button>
             <Button
-              variant="contained"
+              component="a"
               href="https://calendly.com/lightsaint/coffee-chat"
               target="_blank"
               rel="noopener noreferrer"
+              variant="contained"
+              size="large"
               sx={{
                 backgroundColor: 'rgba(0, 0, 0, 0.4)',
                 color: 'white',
@@ -202,130 +181,6 @@ const About = () => {
           </Box>
         </Container>
       </Box>
-
-      {/* Contact Form Modal */}
-      <Dialog
-        open={contactOpen}
-        onClose={handleContactClose}
-        aria-labelledby="contact-form-modal"
-        maxWidth="sm"
-        fullWidth
-      >
-        <DialogContent sx={{ bgcolor: 'rgba(0, 0, 0, 0.9)', backdropFilter: 'blur(10px)', border: '1px solid rgba(255, 255, 255, 0.2)', color: 'white' }}>
-          <Typography variant="h5" component="h2" sx={{ mb: 3, textAlign: 'center' }}>
-            Get in Touch
-          </Typography>
-          <form onSubmit={handleSubmit}>
-            <TextField
-              fullWidth
-              label="Name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              sx={{
-                mb: 2,
-                '& .MuiOutlinedInput-root': {
-                  color: 'white',
-                  '& fieldset': {
-                    borderColor: 'rgba(255, 255, 255, 0.2)',
-                  },
-                  '&:hover fieldset': {
-                    borderColor: 'rgba(255, 255, 255, 0.4)',
-                  },
-                  '&.Mui-focused fieldset': {
-                    borderColor: 'rgba(255, 255, 255, 0.6)',
-                  },
-                },
-                '& .MuiInputLabel-root': {
-                  color: 'rgba(255, 255, 255, 0.7)',
-                },
-              }}
-            />
-            <TextField
-              fullWidth
-              label="Email"
-              name="email"
-              type="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              sx={{
-                mb: 2,
-                '& .MuiOutlinedInput-root': {
-                  color: 'white',
-                  '& fieldset': {
-                    borderColor: 'rgba(255, 255, 255, 0.2)',
-                  },
-                  '&:hover fieldset': {
-                    borderColor: 'rgba(255, 255, 255, 0.4)',
-                  },
-                  '&.Mui-focused fieldset': {
-                    borderColor: 'rgba(255, 255, 255, 0.6)',
-                  },
-                },
-                '& .MuiInputLabel-root': {
-                  color: 'rgba(255, 255, 255, 0.7)',
-                },
-              }}
-            />
-            <TextField
-              fullWidth
-              label="Message"
-              name="message"
-              multiline
-              rows={4}
-              value={formData.message}
-              onChange={handleChange}
-              required
-              sx={{
-                mb: 3,
-                '& .MuiOutlinedInput-root': {
-                  color: 'white',
-                  '& fieldset': {
-                    borderColor: 'rgba(255, 255, 255, 0.2)',
-                  },
-                  '&:hover fieldset': {
-                    borderColor: 'rgba(255, 255, 255, 0.4)',
-                  },
-                  '&.Mui-focused fieldset': {
-                    borderColor: 'rgba(255, 255, 255, 0.6)',
-                  },
-                },
-                '& .MuiInputLabel-root': {
-                  color: 'rgba(255, 255, 255, 0.7)',
-                },
-              }}
-            />
-            <Box sx={{ display: 'flex', justifyContent: 'flex-end', gap: 2 }}>
-              <Button
-                onClick={handleContactClose}
-                sx={{
-                  color: 'rgba(255, 255, 255, 0.7)',
-                  '&:hover': {
-                    color: 'white',
-                  },
-                }}
-              >
-                Cancel
-              </Button>
-              <Button
-                type="submit"
-                variant="contained"
-                sx={{
-                  backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                  color: 'white',
-                  '&:hover': {
-                    backgroundColor: 'rgba(255, 255, 255, 0.2)',
-                  },
-                }}
-              >
-                Send
-              </Button>
-            </Box>
-          </form>
-        </DialogContent>
-      </Dialog>
     </Box>
   );
 };
