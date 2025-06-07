@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Box, Container, Typography, Dialog, DialogContent, IconButton } from '@mui/material';
 import Masonry from '@mui/lab/Masonry';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
@@ -8,6 +8,16 @@ const Videos = () => {
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [isPlayerOpen, setIsPlayerOpen] = useState(false);
   const [loadedThumbnails, setLoadedThumbnails] = useState({});
+
+  // Helper function to shuffle array
+  const shuffleArray = (array) => {
+    const newArray = [...array];
+    for (let i = newArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    }
+    return newArray;
+  };
 
   const handleVideoClick = (video) => {
     setSelectedVideo(video);
@@ -71,8 +81,59 @@ const Videos = () => {
       aspectRatio: '9/16',
       type: 'youtube',
       title: 'Vertical Video 3'
+    },
+    {
+      id: '7wS_lnvKBKI',
+      aspectRatio: '16/9',
+      type: 'youtube',
+      title: 'New Video 1'
+    },
+    {
+      id: 'GYXx604yPWo',
+      aspectRatio: '16/9',
+      type: 'youtube',
+      title: 'New Video 2'
+    },
+    {
+      id: 'WTbDomXcUEI',
+      aspectRatio: '16/9',
+      type: 'youtube',
+      title: 'New Video 3'
+    },
+    {
+      id: 'ndPFRZQhyzU',
+      aspectRatio: '16/9',
+      type: 'youtube',
+      title: 'New Video 4'
+    },
+    {
+      id: 'UUGweNFaB_o',
+      aspectRatio: '16/9',
+      type: 'youtube',
+      title: 'New Video 5'
+    },
+    {
+      id: 'iJUZD-3s0qU',
+      aspectRatio: '16/9',
+      type: 'youtube',
+      title: 'New Video 6'
+    },
+    {
+      id: '6Pufk6SGRpk',
+      aspectRatio: '9/16',
+      type: 'youtube',
+      title: 'New Short 1'
+    },
+    {
+      id: 'oyftL2qarsM',
+      aspectRatio: '9/16',
+      type: 'youtube',
+      title: 'New Short 2'
     }
   ];
+
+  // Randomize videos on each render
+  const shuffledVideos = useMemo(() => shuffleArray(videos), []);
 
   return (
     <Box
@@ -121,7 +182,7 @@ const Videos = () => {
             },
           }}
         >
-          {videos.map((video) => (
+          {shuffledVideos.map((video) => (
             <Box
               key={video.id}
               sx={{
@@ -147,20 +208,17 @@ const Videos = () => {
               onClick={() => handleVideoClick(video)}
             >
               <img
-                src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`}
+                src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}
                 alt={video.title}
                 className="thumbnail"
                 style={{
                   width: '100%',
                   height: '100%',
                   objectFit: 'cover',
-                  transition: 'filter 0.3s ease',
+                  transition: 'filter 0.3s ease-in-out',
                   opacity: loadedThumbnails[video.id] ? 1 : 0,
                 }}
                 onLoad={() => handleThumbnailLoad(video.id)}
-                onError={(e) => {
-                  e.target.src = `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`;
-                }}
               />
               <IconButton
                 className="play-button"

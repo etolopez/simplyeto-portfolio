@@ -87,20 +87,17 @@ const VideoGrid = ({ videos }) => {
             onClick={() => handleVideoClick(video)}
           >
             <img
-              src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`}
+              src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}
               alt={video.title}
               className="thumbnail"
               style={{
                 width: '100%',
                 height: '100%',
                 objectFit: 'cover',
-                transition: 'filter 0.3s ease',
+                transition: 'filter 0.3s ease-in-out',
                 opacity: loadedThumbnails[video.id] ? 1 : 0,
               }}
               onLoad={() => handleThumbnailLoad(video.id)}
-              onError={(e) => {
-                e.target.src = `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`;
-              }}
             />
             <IconButton
               className="play-button"

@@ -150,7 +150,16 @@ const Home = () => {
       { type: 'youtube', id: 'MiqvZby8pAY', aspectRatio: '16/9', title: 'Ayudanos a Ayudar' },
       { type: 'youtube', id: '4T76gU-AGAg', aspectRatio: '9/16', title: 'Costa Rica Vertical' },
       { type: 'youtube', id: 'ITQX2L_bRoc', aspectRatio: '9/16', title: 'Vertical Video 2' },
-      { type: 'youtube', id: '_CbGzcWEBiY', aspectRatio: '9/16', title: 'Vertical Video 3' }
+      { type: 'youtube', id: '_CbGzcWEBiY', aspectRatio: '9/16', title: 'Vertical Video 3' },
+      // New videos
+      { type: 'youtube', id: '7wS_lnvKBKI', aspectRatio: '16/9', title: 'New Video 1' },
+      { type: 'youtube', id: 'GYXx604yPWo', aspectRatio: '16/9', title: 'New Video 2' },
+      { type: 'youtube', id: 'WTbDomXcUEI', aspectRatio: '16/9', title: 'New Video 3' },
+      { type: 'youtube', id: 'ndPFRZQhyzU', aspectRatio: '16/9', title: 'New Video 4' },
+      { type: 'youtube', id: 'UUGweNFaB_o', aspectRatio: '16/9', title: 'New Video 5' },
+      { type: 'youtube', id: 'iJUZD-3s0qU', aspectRatio: '16/9', title: 'New Video 6' },
+      { type: 'youtube', id: '6Pufk6SGRpk', aspectRatio: '9/16', title: 'New Short 1' },
+      { type: 'youtube', id: 'oyftL2qarsM', aspectRatio: '9/16', title: 'New Short 2' }
     ];
     return shuffleArray([...allVideos]).slice(0, 6);
   }, []);
