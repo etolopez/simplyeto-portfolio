@@ -97,8 +97,7 @@ const Home = () => {
       { type: 'image', src: process.env.PUBLIC_URL + '/images/photography/DSC04385-Editar.jpg', ratio: '1/1' },
       { type: 'image', src: process.env.PUBLIC_URL + '/images/photography/DSC04310.JPG', ratio: '3/4' },
       { type: 'image', src: process.env.PUBLIC_URL + '/images/photography/DSC04041.jpg', ratio: '4/3' },
-      { type: 'image', src: process.env.PUBLIC_URL + '/images/photography/DSC03936.JPG', ratio: '1/1' },
-      { type: 'image', src: process.env.PUBLIC_URL + '/images/photography/eto08628-hdr (1) (1).jpg', ratio: '1/1' }
+      { type: 'image', src: process.env.PUBLIC_URL + '/images/photography/DSC03936.JPG', ratio: '1/1' }
     ];
     return shuffleArray([...allImages]).slice(0, 6);
   }, []);
