@@ -38,7 +38,7 @@ const Art = () => {
       {
         id: 'art1',
         type: 'image',
-        src: '/images/art/FINAL.png',
+        src: '/images/art/optimized/FINAL.jpg',
         aspectRatio: '1/1',
         title: 'Artwork 1'
       },
@@ -115,7 +115,7 @@ const Art = () => {
       {
         id: 'art12',
         type: 'image',
-        src: '/images/art/Sidewalk.png',
+        src: '/images/art/optimized/Sidewalk.jpg',
         aspectRatio: '1/1',
         title: 'Artwork 12'
       },
@@ -136,7 +136,7 @@ const Art = () => {
       {
         id: 'art15',
         type: 'image',
-        src: '/images/art/Untitled_Artwork 64.png',
+        src: '/images/art/optimized/Untitled_Artwork 64.jpg',
         aspectRatio: '1/1',
         title: 'Artwork 15'
       },
@@ -157,7 +157,7 @@ const Art = () => {
       {
         id: 'art18',
         type: 'image',
-        src: '/images/art/Untitled_Artwork 68.png',
+        src: '/images/art/optimized/Untitled_Artwork 68.jpg',
         aspectRatio: '1/1',
         title: 'Artwork 18'
       },
@@ -192,7 +192,7 @@ const Art = () => {
       {
         id: 'art23',
         type: 'image',
-        src: '/images/art/Traveler.png',
+        src: '/images/art/optimized/Traveler.jpg',
         aspectRatio: '1/1',
         title: 'Artwork 23'
       },
@@ -227,14 +227,14 @@ const Art = () => {
       {
         id: 'art28',
         type: 'image',
-        src: '/images/art/hand.png',
+        src: '/images/art/optimized/hand.jpg',
         aspectRatio: '1/1',
         title: 'Artwork 28'
       },
       {
         id: 'art29',
         type: 'image',
-        src: '/images/art/spider-pig.png',
+        src: '/images/art/optimized/spider-pig.jpg',
         aspectRatio: '1/1',
         title: 'Artwork 29'
       },
@@ -244,6 +244,48 @@ const Art = () => {
         src: '/images/art/optimized/eto08628-hdr (1) (1).jpg',
         aspectRatio: '1/1',
         title: 'Artwork 30'
+      },
+      {
+        id: 'art31',
+        type: 'image',
+        src: '/images/art/optimized/DSC06677 (1).jpg',
+        aspectRatio: '1/1',
+        title: 'Artwork 31'
+      },
+      {
+        id: 'art32',
+        type: 'image',
+        src: '/images/art/optimized/DSC00437 (1) (1) (1).jpg',
+        aspectRatio: '1/1',
+        title: 'Artwork 32'
+      },
+      {
+        id: 'art33',
+        type: 'image',
+        src: '/images/art/optimized/Hero (1) (1).jpg',
+        aspectRatio: '1/1',
+        title: 'Artwork 33'
+      },
+      {
+        id: 'art34',
+        type: 'image',
+        src: '/images/art/optimized/IMG_2656 (1).jpg',
+        aspectRatio: '1/1',
+        title: 'Artwork 34'
+      },
+      {
+        id: 'art35',
+        type: 'image',
+        src: '/images/art/optimized/Hero2 (1).jpg',
+        aspectRatio: '1/1',
+        title: 'Artwork 35'
+      },
+      {
+        id: 'art36',
+        type: 'image',
+        src: '/images/art/optimized/We have to start SOMEWHERE. Comment_dirty_ below and I_ll send you the limk to my short course!.jpg',
+        aspectRatio: '1/1',
+        title: 'Artwork 36'
       },
       // Regular YouTube videos (16:9)
       {
@@ -420,13 +462,6 @@ const Art = () => {
         type: 'youtube',
         aspectRatio: '9/16',
         title: 'YouTube Short'
-      },
-      {
-        id: 'art31',
-        type: 'image',
-        src: '/images/art/optimized/img_1690-2.jpg',
-        aspectRatio: '1/1',
-        title: 'Artwork 31'
       }
     ];
     return shuffleArray([...items]);
