@@ -119,6 +119,146 @@ const Art = () => {
         aspectRatio: '1/1',
         title: 'Artwork 12'
       },
+      {
+        id: 'art13',
+        type: 'image',
+        src: '/images/art/Untitled_Artwork 8.jpg',
+        aspectRatio: '1/1',
+        title: 'Artwork 13'
+      },
+      {
+        id: 'art14',
+        type: 'image',
+        src: '/images/art/Untitled_Artwork 12.jpg',
+        aspectRatio: '1/1',
+        title: 'Artwork 14'
+      },
+      {
+        id: 'art15',
+        type: 'image',
+        src: '/images/art/Untitled_Artwork 64.png',
+        aspectRatio: '1/1',
+        title: 'Artwork 15'
+      },
+      {
+        id: 'art16',
+        type: 'image',
+        src: '/images/art/Untitled_Artwork 66.png',
+        aspectRatio: '1/1',
+        title: 'Artwork 16'
+      },
+      {
+        id: 'art17',
+        type: 'image',
+        src: '/images/art/Untitled_Artwork 67.png',
+        aspectRatio: '1/1',
+        title: 'Artwork 17'
+      },
+      {
+        id: 'art18',
+        type: 'image',
+        src: '/images/art/Untitled_Artwork 68.png',
+        aspectRatio: '1/1',
+        title: 'Artwork 18'
+      },
+      {
+        id: 'art19',
+        type: 'image',
+        src: '/images/art/Untitled_Artwork 69.png',
+        aspectRatio: '1/1',
+        title: 'Artwork 19'
+      },
+      {
+        id: 'art20',
+        type: 'image',
+        src: '/images/art/Untitled_Artwork 82.png',
+        aspectRatio: '1/1',
+        title: 'Artwork 20'
+      },
+      {
+        id: 'art21',
+        type: 'image',
+        src: '/images/art/The_Wiz.png',
+        aspectRatio: '1/1',
+        title: 'Artwork 21'
+      },
+      {
+        id: 'art22',
+        type: 'image',
+        src: '/images/art/THe Power of Balance.jpg',
+        aspectRatio: '1/1',
+        title: 'Artwork 22'
+      },
+      {
+        id: 'art23',
+        type: 'image',
+        src: '/images/art/Traveler.png',
+        aspectRatio: '1/1',
+        title: 'Artwork 23'
+      },
+      {
+        id: 'art24',
+        type: 'image',
+        src: '/images/art/We have to start SOMEWHERE. Comment_dirty_ below and I_ll send you the limk to my short course!.png',
+        aspectRatio: '1/1',
+        title: 'Artwork 24'
+      },
+      {
+        id: 'art25',
+        type: 'image',
+        src: '/images/art/photo_2023-12-29_15-20-54.jpg',
+        aspectRatio: '1/1',
+        title: 'Artwork 25'
+      },
+      {
+        id: 'art26',
+        type: 'image',
+        src: '/images/art/photo_2023-12-29_15-20-59-2.jpg',
+        aspectRatio: '1/1',
+        title: 'Artwork 26'
+      },
+      {
+        id: 'art27',
+        type: 'image',
+        src: '/images/art/img_2133.jpg',
+        aspectRatio: '1/1',
+        title: 'Artwork 27'
+      },
+      {
+        id: 'art28',
+        type: 'image',
+        src: '/images/art/img_2136-2.jpg',
+        aspectRatio: '1/1',
+        title: 'Artwork 28'
+      },
+      {
+        id: 'art29',
+        type: 'image',
+        src: '/images/art/img_1690-2.png',
+        aspectRatio: '1/1',
+        title: 'Artwork 29'
+      },
+      {
+        id: 'art30',
+        type: 'image',
+        src: '/images/art/spider-pig.png',
+        aspectRatio: '1/1',
+        title: 'Artwork 30'
+      },
+      {
+        id: 'art31',
+        type: 'image',
+        src: '/images/art/hand.png',
+        aspectRatio: '1/1',
+        title: 'Artwork 31'
+      },
+      {
+        id: 'art32',
+        type: 'image',
+        src: '/images/art/eto08628-hdr (1).jpg',
+        aspectRatio: '1/1',
+        title: 'Artwork 32'
+      },
       // Regular YouTube videos (16:9)
       {
         id: 'YNwuTP5-eU4',

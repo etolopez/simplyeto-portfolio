@@ -40,26 +40,26 @@ const Home = () => {
   };
 
   // Get random hero image from art collection
-  const heroImage = useMemo(() => {
-    const artImages = [
-      '/images/art/FINAL.png',
-      '/images/art/HEGEEME.jpg',
-      '/images/art/DSC03300 (1).jpg',
-      '/images/art/Carne\'Gato.png',
-      '/images/art/Untitled_Artwork 92.png',
-      '/images/art/AZ.png',
-      '/images/art/A_Long_Way_Home.jpg',
-      '/images/art/Copos.png',
-      '/images/art/Fly.jpg',
-      '/images/art/IMG_2653.png',
-      '/images/art/Mugennight (1).png',
-      '/images/art/Sidewalk.png',
-      '/images/art/THe Power of Balance.jpg',
-      '/images/art/The_Wiz.png',
-      '/images/art/Traveler.png'
-    ];
-    return shuffleArray(artImages)[0];
-  }, []);
+  // const heroImage = useMemo(() => {
+  //   const artImages = [
+  //     '/images/art/FINAL.png',
+  //     '/images/art/HEGEEME.jpg',
+  //     '/images/art/DSC03300 (1).jpg',
+  //     '/images/art/Carne\'Gato.png',
+  //     '/images/art/Untitled_Artwork 92.png',
+  //     '/images/art/AZ.png',
+  //     '/images/art/A_Long_Way_Home.jpg',
+  //     '/images/art/Copos.png',
+  //     '/images/art/Fly.jpg',
+  //     '/images/art/IMG_2653.png',
+  //     '/images/art/Mugennight (1).png',
+  //     '/images/art/Sidewalk.png',
+  //     '/images/art/THe Power of Balance.jpg',
+  //     '/images/art/The_Wiz.png',
+  //     '/images/art/Traveler.png'
+  //   ];
+  //   return shuffleArray(artImages)[0];
+  // }, []);
 
   // Art items (6 items total)
   const artItems = useMemo(() => {
@@ -198,21 +198,24 @@ const Home = () => {
           }}
         >
           <iframe
-            src="https://www.youtube.com/embed/BAFEvDJg_s0?autoplay=1&mute=1&loop=1&playlist=BAFEvDJg_s0&controls=0&showinfo=0&rel=0&modestbranding=1"
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/XwODLdBJbuU?autoplay=1&mute=1&loop=1&playlist=XwODLdBJbuU&controls=0&showinfo=0&rel=0"
+            title="Home Background Video"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
             style={{
               position: 'absolute',
               top: '50%',
               left: '50%',
               width: '100vw',
-              height: '56.25vw', // 16:9 aspect ratio
+              height: '56.25vw',
               minHeight: '100vh',
-              minWidth: '177.77vh', // 16:9 aspect ratio
+              minWidth: '177.77vh',
               transform: 'translate(-50%, -50%)',
-              border: 'none',
-              pointerEvents: 'none'
+              pointerEvents: 'none',
             }}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
           />
         </Box>
 

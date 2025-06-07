@@ -150,6 +150,11 @@ const Photography = () => {
         type: 'image',
         src: '/images/photography/3.png',
         alt: 'Photography 27'
+      },
+      {
+        type: 'image',
+        src: '/images/photography/10.jpg',
+        alt: 'Photography 28'
       }
     ];
     return shuffleArray(allItems);

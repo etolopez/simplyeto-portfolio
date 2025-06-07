@@ -1,61 +1,102 @@
-import React from 'react';
-import { Box, Container, Typography, Button, Grid } from '@mui/material';
+import React, { useState } from 'react';
+import { Box, Container, Typography, Button, Dialog, DialogContent, TextField, Grid } from '@mui/material';
+import { Link as RouterLink } from 'react-router-dom';
 import ProfileImage from '../components/ProfileImage';
 
 const About = () => {
-  return (
-    <Box>
-      <ProfileImage />
+  const [contactOpen, setContactOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
 
-      {/* Hero Section */}
+  const handleContactOpen = () => setContactOpen(true);
+  const handleContactClose = () => setContactOpen(false);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission here
+    console.log('Form submitted:', formData);
+    handleContactClose();
+  };
+
+  return (
+    <Box sx={{ minHeight: '100vh', position: 'relative' }}>
+      {/* Video Background */}
       <Box
         sx={{
-          height: '60vh',
-          position: 'relative',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          zIndex: -1,
           overflow: 'hidden',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
         }}
       >
-        <Box
-          component="img"
-          src="/images/art/DSC03300 (1).jpg"
-          alt="Hero Background"
-          sx={{
+        <iframe
+          width="100%"
+          height="100%"
+          src="https://www.youtube.com/embed/sYdZhY-llvI?autoplay=1&mute=1&loop=1&playlist=sYdZhY-llvI&controls=0&showinfo=0&rel=0"
+          title="About Background Video"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          style={{
             position: 'absolute',
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            filter: 'brightness(0.6)',
+            top: '50%',
+            left: '50%',
+            width: '100vw',
+            height: '56.25vw',
+            minHeight: '100vh',
+            minWidth: '177.77vh',
+            transform: 'translate(-50%, -50%)',
+            pointerEvents: 'none',
           }}
         />
-        <Container maxWidth="md" sx={{ position: 'relative', zIndex: 1 }}>
-          <Typography
-            variant="h1"
-            sx={{
-              color: 'white',
-              textAlign: 'center',
-              fontWeight: 'bold',
-              textShadow: '2px 2px 4px rgba(0,0,0,0.5)',
-            }}
-          >
-            About
-          </Typography>
-        </Container>
       </Box>
 
-      {/* Profile Section */}
-      <Box sx={{ py: 8, bgcolor: 'rgba(0, 0, 0, 0.9)' }}>
+      {/* Home Button */}
+      <Box sx={{ position: 'fixed', top: 20, left: 20, zIndex: 9999 }}>
+        <RouterLink to="/" style={{ textDecoration: 'none' }}>
+          <ProfileImage
+            src="/images/art/Mugennight (1).png"
+            alt="Eto"
+            sx={{
+              width: { xs: 40, sm: 50 },
+              height: { xs: 40, sm: 50 },
+              border: '2px solid rgba(255, 255, 255, 0.2)',
+              transition: 'all 0.3s ease',
+              '&:hover': {
+                transform: 'scale(1.1)',
+                border: '2px solid rgba(255, 255, 255, 0.4)',
+              },
+            }}
+          />
+        </RouterLink>
+      </Box>
+
+      {/* Content */}
+      <Box sx={{ position: 'relative', zIndex: 1, minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', py: 8 }}>
         <Container maxWidth="md">
+          {/* Profile Section */}
           <Box
             sx={{
-              backgroundColor: 'rgba(0, 0, 0, 0.7)',
-              backdropFilter: 'blur(10px)',
-              border: '1px solid rgba(255, 255, 255, 0.1)',
+              backgroundColor: 'rgba(0, 0, 0, 0.4)',
+              backdropFilter: 'blur(20px)',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
               borderRadius: 4,
               p: 4,
-              boxShadow: '0 4px 30px rgba(0, 0, 0, 0.3)',
+              boxShadow: '0 4px 30px rgba(0, 0, 0, 0.2)',
+              mb: 4,
             }}
           >
             <Grid container spacing={4}>
@@ -99,52 +140,180 @@ const About = () => {
               </Grid>
             </Grid>
           </Box>
+
+          {/* Contact Buttons */}
+          <Box sx={{ textAlign: 'center', mt: 4 }}>
+            <Button
+              variant="contained"
+              onClick={handleContactOpen}
+              sx={{
+                mr: 2,
+                mb: { xs: 2, sm: 0 },
+                backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                color: 'white',
+                fontSize: '1.2rem',
+                textTransform: 'none',
+                backdropFilter: 'blur(10px)',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                transition: 'all 0.3s ease',
+                '&:hover': {
+                  backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                  transform: 'translateY(-2px)',
+                  boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
+                },
+              }}
+            >
+              Get in Touch
+            </Button>
+            <Button
+              variant="contained"
+              href="https://calendly.com/lightsaint/coffee-chat"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                color: 'white',
+                fontSize: '1.2rem',
+                textTransform: 'none',
+                backdropFilter: 'blur(10px)',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                transition: 'all 0.3s ease',
+                '&:hover': {
+                  backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                  transform: 'translateY(-2px)',
+                  boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
+                },
+              }}
+            >
+              Book a Call
+            </Button>
+          </Box>
         </Container>
       </Box>
 
-      {/* Contact Buttons */}
-      <Box sx={{ textAlign: 'center', mt: 4, mb: 8 }}>
-        <Button
-          variant="contained"
-          href="mailto:eto@lightsaint.media"
-          sx={{
-            mr: 2,
-            mb: { xs: 2, sm: 0 },
-            backgroundColor: 'rgba(173, 216, 230, 0.9)',
-            color: 'black',
-            fontSize: '1.2rem',
-            textTransform: 'none',
-            transition: 'all 0.3s ease',
-            '&:hover': {
-              backgroundColor: 'rgba(173, 216, 230, 1)',
-              transform: 'translateY(-2px)',
-              boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
-            },
-          }}
-        >
-          Get in Touch
-        </Button>
-        <Button
-          variant="contained"
-          href="https://calendly.com/eto-lightsaint/30min"
-          target="_blank"
-          rel="noopener noreferrer"
-          sx={{
-            backgroundColor: 'rgba(173, 216, 230, 0.9)',
-            color: 'black',
-            fontSize: '1.2rem',
-            textTransform: 'none',
-            transition: 'all 0.3s ease',
-            '&:hover': {
-              backgroundColor: 'rgba(173, 216, 230, 1)',
-              transform: 'translateY(-2px)',
-              boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
-            },
-          }}
-        >
-          Book a Call
-        </Button>
-      </Box>
+      {/* Contact Form Modal */}
+      <Dialog
+        open={contactOpen}
+        onClose={handleContactClose}
+        aria-labelledby="contact-form-modal"
+        maxWidth="sm"
+        fullWidth
+      >
+        <DialogContent sx={{ bgcolor: 'rgba(0, 0, 0, 0.9)', backdropFilter: 'blur(10px)', border: '1px solid rgba(255, 255, 255, 0.2)', color: 'white' }}>
+          <Typography variant="h5" component="h2" sx={{ mb: 3, textAlign: 'center' }}>
+            Get in Touch
+          </Typography>
+          <form onSubmit={handleSubmit}>
+            <TextField
+              fullWidth
+              label="Name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              sx={{
+                mb: 2,
+                '& .MuiOutlinedInput-root': {
+                  color: 'white',
+                  '& fieldset': {
+                    borderColor: 'rgba(255, 255, 255, 0.2)',
+                  },
+                  '&:hover fieldset': {
+                    borderColor: 'rgba(255, 255, 255, 0.4)',
+                  },
+                  '&.Mui-focused fieldset': {
+                    borderColor: 'rgba(255, 255, 255, 0.6)',
+                  },
+                },
+                '& .MuiInputLabel-root': {
+                  color: 'rgba(255, 255, 255, 0.7)',
+                },
+              }}
+            />
+            <TextField
+              fullWidth
+              label="Email"
+              name="email"
+              type="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              sx={{
+                mb: 2,
+                '& .MuiOutlinedInput-root': {
+                  color: 'white',
+                  '& fieldset': {
+                    borderColor: 'rgba(255, 255, 255, 0.2)',
+                  },
+                  '&:hover fieldset': {
+                    borderColor: 'rgba(255, 255, 255, 0.4)',
+                  },
+                  '&.Mui-focused fieldset': {
+                    borderColor: 'rgba(255, 255, 255, 0.6)',
+                  },
+                },
+                '& .MuiInputLabel-root': {
+                  color: 'rgba(255, 255, 255, 0.7)',
+                },
+              }}
+            />
+            <TextField
+              fullWidth
+              label="Message"
+              name="message"
+              multiline
+              rows={4}
+              value={formData.message}
+              onChange={handleChange}
+              required
+              sx={{
+                mb: 3,
+                '& .MuiOutlinedInput-root': {
+                  color: 'white',
+                  '& fieldset': {
+                    borderColor: 'rgba(255, 255, 255, 0.2)',
+                  },
+                  '&:hover fieldset': {
+                    borderColor: 'rgba(255, 255, 255, 0.4)',
+                  },
+                  '&.Mui-focused fieldset': {
+                    borderColor: 'rgba(255, 255, 255, 0.6)',
+                  },
+                },
+                '& .MuiInputLabel-root': {
+                  color: 'rgba(255, 255, 255, 0.7)',
+                },
+              }}
+            />
+            <Box sx={{ display: 'flex', justifyContent: 'flex-end', gap: 2 }}>
+              <Button
+                onClick={handleContactClose}
+                sx={{
+                  color: 'rgba(255, 255, 255, 0.7)',
+                  '&:hover': {
+                    color: 'white',
+                  },
+                }}
+              >
+                Cancel
+              </Button>
+              <Button
+                type="submit"
+                variant="contained"
+                sx={{
+                  backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                  color: 'white',
+                  '&:hover': {
+                    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                  },
+                }}
+              >
+                Send
+              </Button>
+            </Box>
+          </form>
+        </DialogContent>
+      </Dialog>
     </Box>
   );
 };
