@@ -9,6 +9,7 @@ import Photography from './pages/Photography';
 import Art from './pages/Art';
 import Videos from './pages/Videos';
 import Store from './pages/Store';
+import Products from './pages/Products';
 import './App.css';
 
 const theme = createTheme({
@@ -41,6 +42,7 @@ function App() {
               <Route path="/art" element={<Art />} />
               <Route path="/videos" element={<Videos />} />
               <Route path="/store" element={<Store />} />
+              <Route path="/products" element={<Products />} />
             </Routes>
           </main>
         </div>

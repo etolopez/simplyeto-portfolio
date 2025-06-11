@@ -14,6 +14,7 @@ const Navbar = () => {
     { text: 'Photography', path: '/photography' },
     { text: 'Art', path: '/art' },
     { text: 'Videos', path: '/videos' },
+    { text: 'Products', path: '/products' },
     { text: 'Store', path: '/store' },
     { text: 'About', path: '/about' },
   ];
