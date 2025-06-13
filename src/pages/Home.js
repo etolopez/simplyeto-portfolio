@@ -234,7 +234,7 @@ const Home = () => {
             </Button>
             <Button
               component="a"
-              href="https://calendly.com/lightsaint/coffee-chat"
+              href="https://simplyeto.myshopify.com"
               target="_blank"
               rel="noopener noreferrer"
               variant="contained"
@@ -248,7 +248,7 @@ const Home = () => {
                 },
               }}
             >
-              Book a Call
+              Get Prints
             </Button>
           </Box>
         </Container>
@@ -378,7 +378,7 @@ const Home = () => {
           </Button>
           <Button
             component="a"
-            href="https://calendly.com/lightsaint/coffee-chat"
+            href="https://simplyeto.myshopify.com"
             target="_blank"
             rel="noopener noreferrer"
             variant="contained"
@@ -391,7 +391,7 @@ const Home = () => {
               },
             }}
           >
-            Book a Call
+            Get Prints
           </Button>
         </Box>
 
