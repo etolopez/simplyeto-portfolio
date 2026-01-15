@@ -234,7 +234,7 @@ const Home = () => {
             </Button>
             <Button
               component="a"
-              href="https://simplyeto.myshopify.com"
+              href="https://wa.me/c/50688212970"
               target="_blank"
               rel="noopener noreferrer"
               variant="contained"
@@ -378,7 +378,7 @@ const Home = () => {
           </Button>
           <Button
             component="a"
-            href="https://simplyeto.myshopify.com"
+            href="https://wa.me/c/50688212970"
             target="_blank"
             rel="noopener noreferrer"
             variant="contained"
